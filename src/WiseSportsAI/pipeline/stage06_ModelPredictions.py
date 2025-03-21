@@ -1,5 +1,6 @@
 import pandas as pd
 from WiseSportsAI.components.modelpredictions import ModelPredictor
+from WiseSportsAI.logging import logger
 
 def main():
     model_home_path = "Artifacts/TrainedModels/xgb_home_score_model.pkl"
@@ -8,6 +9,8 @@ def main():
     label_encoder_away_path = "Artifacts/LabelEncoderaway_team_name.pkl"
 
     print("<------------------ 🚀 Stage06: Started Model Predictions ------------------>")
+    logger.info("<------------------ 🚀 Stage06: Started Model Predictions ------------------>")
+
 
     predictor = ModelPredictor(model_home_path, model_away_path, label_encoder_home_path, label_encoder_away_path)
 
@@ -24,6 +27,7 @@ def main():
     print(f"{away_team} (Away): {predicted_away_score:.0f}")
 
     print("<------------------ ✅ Model Predictions Completed ------------------>\n\n")
+    logger.info("<------------------ ✅ Model Predictions Completed ------------------>\n\n")
 
 if __name__ == "__main__":
     main()

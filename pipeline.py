@@ -8,10 +8,13 @@ from WiseSportsAI.pipeline.stage04_DataPreprocessing import main as stage04_main
 from WiseSportsAI.pipeline.stage05_ModelTraining import main as stage05_main
 from WiseSportsAI.pipeline.stage06_ModelPredictions import main as stage06_main
 from WiseSportsAI.pipeline.stage07_FuturePredictions import main as stage07_main
+from WiseSportsAI.logging import logger
 
 def run_pipeline():
     """Run the entire pipeline from stage 1 to stage 7."""
     print("Started WiseSportsAI Pipeline 🫠 ")
+    logger.info("Started WiseSportsAI Pipeline 🫠 ")
+
     start_time = datetime.now()
 
     try:
@@ -37,6 +40,7 @@ def run_pipeline():
         stage07_main()
 
         print("WiseSportsAI Pipeline Completed Successfully 😁")
+        logger.info("WiseSportsAI Pipeline Completed Successfully 😁")
 
     except Exception as e:
         print(f"❌ Pipeline failed with error: {e}")
