@@ -1,6 +1,9 @@
 from WiseSportsAI.components.datapreparation import DataPreparation
+from WiseSportsAI.logging import logger
 
 def main():
+    
+    logger.info("< ------------------- 🚀 Stage 02: Started Data Preparation -------------------> ")
     print("< ------------------- 🚀 Stage 02: Started Data Preparation -------------------> ")
     
     data_directory = "Artifacts/DataScraping/Teams"
@@ -8,6 +11,7 @@ def main():
     data_prep.run()
     
     print("<------------------- ✅ Stage 02: Data Preparation Completed ------------------->\n\n")
+    logger.info("<------------------- ✅ Stage 02: Data Preparation Completed ------------------->\n\n")
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,15 @@
 import requests
 from WiseSportsAI.components.futurepredictions import FuturePredictions
+from WiseSportsAI.logging import logger
+from WiseSportsAI.utils.utils import read_yaml
 
 FASTAPI_URL = "http://0.0.0.0:8080/predict"
 
 def main():
     
     print("<------------------ 🚀 Stage07: Started Future Predictions ------------------>")
+    logger.info("<------------------ 🚀 Stage07: Started Future Predictions ------------------>")
+    
 
     future_predictions = FuturePredictions()
 
@@ -34,6 +38,7 @@ def main():
         print("No NBA games scheduled for tomorrow.")
 
     print("<------------------ ✅ Future Predictions Completed ------------------>\n\n")
+    logger.info("<------------------ ✅ Future Predictions Completed ------------------>")
 
 if __name__ == "__main__":
     main()
