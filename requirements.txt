@@ -1,0 +1,13 @@
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.6.1
+xgboost==2.1.4
+requests==2.32.3
+matplotlib==3.10.1
+scipy==1.15.2
+selenium==4.29.0
+fastapi==0.115.11
+uvicorn==0.34.0
+pydantic==2.10.6
+
+-e .
