@@ -48,7 +48,6 @@ async def predict_scores(request: PredictionRequest):
 @app.post("/futurepredict")
 async def future_predict():
     try:
-        # Load predictions from the file
         predictions_file = "Artifacts/FuturePredictions/future_predictions.csv"
         if not os.path.exists(predictions_file):
             raise HTTPException(status_code=404, detail="No future predictions found.")
