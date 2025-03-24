@@ -47,15 +47,13 @@ jobs:
           script: |
             echo "🔹 Setting up project directory..."
             sudo mkdir -p /home/ubuntu/wisesports
-
-            # Change ownership to the `ubuntu` user
             sudo chown -R ubuntu:ubuntu /home/ubuntu/wisesports
             sudo chmod -R 755 /home/ubuntu/wisesports
             cd /home/ubuntu/wisesports
 
             echo "🔹 Cloning or pulling the latest code..."
             if [ ! -d "WiseSportsAO" ]; then
-              git clone https://github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
+              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
             fi
 
             cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
@@ -83,3 +81,5 @@ jobs:
             docker system prune -af
 
             echo "✅ Deployment completed successfully!"
+      ```
+      ```
