@@ -16,13 +16,12 @@ TEAM_ABBREVIATIONS = {
     "Utah Jazz": "UTA", "Washington Wizards": "WAS"
 }
 
-# Mapping from ESPN's team abbreviations to FastAPI's expected abbreviations
 ESPN_TO_FASTAPI_MAPPING = {"PHX": "PHO", "CHA": "CHO", "BKN": "BRK"}
 
 class FuturePredictions:
     def __init__(self):
         """Initialize the FuturePredictions class."""
-        self.tomorrow = (datetime.utcnow() + timedelta(days=1)).date().isoformat()
+        self.tomorrow = (datetime.utcnow() + timedelta(days=0)).date().isoformat()
 
     def fetch_tomorrows_games(self) -> List[Dict]:
         """Fetch tomorrow's NBA games from ESPN API."""

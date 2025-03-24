@@ -1,10 +1,13 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import pandas as pd
-from WiseSportsAI.components.modelpredictions import ModelPredictor
-import numpy as np
-import uvicorn
 import os
+import uvicorn
+import pandas as pd
+import numpy as np
+from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse, JSONResponse
+from typing import List, Dict
+from WiseSportsAI.components.modelpredictions import ModelPredictor
+
 
 app = FastAPI()
 
@@ -12,6 +15,18 @@ class PredictionRequest(BaseModel):
     home_team: str
     away_team: str
     match_date: str
+
+class InjuryImpactResponse(BaseModel):
+    home_team: str
+    away_team: str
+    original_home_score: float
+    original_away_score: float
+    adjusted_home_score: float
+    adjusted_away_score: float
+    home_net_impact: float
+    away_net_impact: float
+    home_injured_players: List[Dict]
+    away_injured_players: List[Dict]
 
 model_home_path = "Artifacts/TrainedModels/xgb_home_score_model.pkl"
 model_away_path = "Artifacts/TrainedModels/xgb_away_score_model.pkl"
@@ -56,6 +71,38 @@ async def future_predict():
         predictions = predictions_df.to_dict(orient="records")
 
         return {"predictions": predictions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.post("/injuries-predictions", response_model=List[InjuryImpactResponse])
+async def get_injuries_predictions():
+    try:
+        file_path = "Artifacts/FuturePredictions/future_injuries_predictions.csv"
+        if not os.path.exists(file_path):
+            raise HTTPException(status_code=404, detail="No injury-adjusted predictions found")
+
+        predictions_df = pd.read_csv(file_path)
+        
+        predictions_df['home_injury_details'] = predictions_df['home_injury_details'].apply(eval)
+        predictions_df['away_injury_details'] = predictions_df['away_injury_details'].apply(eval)
+        
+        predictions = []
+        for _, row in predictions_df.iterrows():
+            predictions.append({
+                "home_team": row["home_team"],
+                "away_team": row["away_team"],
+                "original_home_score": float(row["original_home_score"]),
+                "original_away_score": float(row["original_away_score"]),
+                "adjusted_home_score": float(row["adjusted_home_score"]),
+                "adjusted_away_score": float(row["adjusted_away_score"]),
+                "home_net_impact": float(row["home_net_impact"]),
+                "away_net_impact": float(row["away_net_impact"]),
+                "home_injured_players": row["home_injury_details"],
+                "away_injured_players": row["away_injury_details"]
+            })
+        
+        return predictions
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
