@@ -45,6 +45,11 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          mkdir -p /home/ec2-user/wisesports
+          cd /home/ec2-user/wisesports
+          git clone https://github.com/hamzakhanswati/WiseSportsAI.git || true
+          cd WiseSportsAI
+          git pull origin main
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
           docker-compose -f ${{ env.COMPOSE_FILE }} down
           docker-compose -f ${{ env.COMPOSE_FILE }} pull
