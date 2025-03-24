@@ -81,5 +81,3 @@ jobs:
             docker system prune -af
 
             echo "✅ Deployment completed successfully!"
-      ```
-      ```
