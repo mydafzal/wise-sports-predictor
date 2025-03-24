@@ -8,6 +8,7 @@ from WiseSportsAI.pipeline.stage04_DataPreprocessing import main as stage04_main
 from WiseSportsAI.pipeline.stage05_ModelTraining import main as stage05_main
 from WiseSportsAI.pipeline.stage06_ModelPredictions import main as stage06_main
 from WiseSportsAI.pipeline.stage07_FuturePredictions import main as stage07_main
+from WiseSportsAI.pipeline.stage08_InjuriesImpact import main as stage08_main
 from WiseSportsAI.logging import logger
 
 def run_pipeline():
@@ -38,6 +39,9 @@ def run_pipeline():
 
         # Stage 7: Future Predictions
         stage07_main()
+
+        # Stage 8: Injuries Impact Analysis
+        stage08_main()
 
         print("WiseSportsAI Pipeline Completed Successfully 😁")
         logger.info("WiseSportsAI Pipeline Completed Successfully 😁")
