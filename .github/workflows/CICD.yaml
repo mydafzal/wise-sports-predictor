@@ -47,7 +47,7 @@ jobs:
         script: |
           mkdir -p /home/ec2-user/wisesports
           cd /home/ec2-user/wisesports
-          git clone https://github.com/hamzakhanswati/WiseSportsAI.git || true
+          git clone https://github.com/Hmzkhnswt/WiseSportsAO.git || true
           cd WiseSportsAI
           git pull origin main
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
