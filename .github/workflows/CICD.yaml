@@ -66,6 +66,9 @@ jobs:
             # ✅ Apply stashed changes back (optional)
             git stash pop || echo "No stashed changes to apply."
 
+            echo "🔹 Navigating to project directory..."
+            cd /home/ubuntu/wisesports/WiseSportsAO || { echo "❌ Directory not found!"; exit 1; }
+
             echo "🔹 Checking if docker-compose.yml exists..."
             if [ ! -f "docker-compose.yml" ]; then
               echo "❌ Error: docker-compose.yml not found!"
