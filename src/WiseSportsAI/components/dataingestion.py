@@ -35,11 +35,11 @@ class DataIngestion:
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.set_page_load_timeout(60)  # Set page load timeout to 60 seconds
+        self.driver.set_page_load_timeout(60)  
     
     def scrape_team_data(self, team_abbr, filename):
         max_retries = 3
-        retry_delay = 10  # Seconds between retry attempts
+        retry_delay = 10 
         url = f"https://www.basketball-reference.com/teams/{team_abbr}/2025/gamelog/"
         
         for attempt in range(max_retries):
@@ -51,16 +51,15 @@ class DataIngestion:
                 table = WebDriverWait(self.driver, 45).until(
                     EC.presence_of_element_located((By.ID, "team_game_log_reg"))
                 )
-                break  # Success - exit retry loop
+                break  
             except Exception as e:
                 print(f"Attempt {attempt+1} failed: {str(e)}")
                 if attempt == max_retries - 1:
                     print(f"Max retries exhausted for {team_abbr}. Skipping...")
                     return
                 time.sleep(retry_delay)
-                self.driver.refresh()  # Refresh browser instance
+                self.driver.refresh()  
 
-        # Extract and save data
         try:
             headers = [th.text for th in table.find_elements(By.TAG_NAME, "th")]
             rows = []
@@ -82,7 +81,7 @@ class DataIngestion:
     def run(self):
         for team_abbr, filename in self.team_mapping.items():
             self.scrape_team_data(team_abbr, filename)
-            time.sleep(10)  # Longer delay between teams to avoid rate limiting
+            time.sleep(10)  
         self.driver.quit()
         print("Data ingestion process completed.")
 
