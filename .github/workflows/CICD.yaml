@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKERHUB_REPO: hamzakhnswati/wisesportsai
+  DOCKERHUB_REPO: hamzakhanswati/wisesportsai
   COMPOSE_FILE: docker-compose.yml
 
 jobs:
@@ -53,14 +53,18 @@ jobs:
 
             echo "🔹 Cloning or pulling the latest code..."
             if [ ! -d "WiseSportsAO" ]; then
-              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
+              git clone https://***@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
             fi
 
             cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
 
-            echo "🔹 Resetting repository to avoid conflicts..."
-            git reset --hard origin/main || { echo "❌ Failed to reset repository!"; exit 1; }
+            # ✅ Stash local changes before pulling
+            git stash || { echo "❌ Failed to stash local changes!"; exit 1; }
+
             git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
+
+            # ✅ Apply stashed changes back (optional)
+            git stash pop || echo "No stashed changes to apply."
 
             echo "🔹 Checking if docker-compose.yml exists..."
             if [ ! -f "docker-compose.yml" ]; then
@@ -79,9 +83,6 @@ jobs:
 
             echo "🔹 Starting the application..."
             docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
-
-            echo "🔹 Enabling auto-restart for containers..."
-            docker update --restart always $(docker ps -q)
 
             echo "🔹 Cleaning up unused Docker resources..."
             docker system prune -af
