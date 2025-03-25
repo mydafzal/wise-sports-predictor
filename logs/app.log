@@ -57,3 +57,5 @@
 2025-03-24 23:56:43,740 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
 2025-03-24 23:58:09,900 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
 2025-03-24 23:58:09,900 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-26 00:09:43,956 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-26 00:09:43,957 - stage01_DataIngestion.py - None - INFO - <------------------- 🚀 Stage01: Started Data Ingestion Pipeline ------------------->
