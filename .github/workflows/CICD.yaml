@@ -1,84 +1,84 @@
-name: CI/CD Pipeline
+# name: CI/CD Pipeline
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
-env:
-  DOCKERHUB_REPO: hamzakhanswati/wisesportsai
-  COMPOSE_FILE: docker-compose.yml
+# env:
+#   DOCKERHUB_REPO: hamzakhanswati/wisesportsai
+#   COMPOSE_FILE: docker-compose.yml
 
-jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+# jobs:
+#   build-and-push:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+#       - name: Login to Docker Hub
+#         uses: docker/login-action@v1
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ env.DOCKERHUB_REPO }}:latest
+#       - name: Build and push Docker image
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: .
+#           file: ./Dockerfile
+#           push: true
+#           tags: ${{ env.DOCKERHUB_REPO }}:latest
 
-  deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    steps:
-      - name: SSH into EC2 and deploy
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            echo "🔹 Setting up project directory..."
-            sudo mkdir -p /home/ubuntu/wisesports
-            sudo chown -R ubuntu:ubuntu /home/ubuntu/wisesports
-            sudo chmod -R 755 /home/ubuntu/wisesports
-            cd /home/ubuntu/wisesports
+#   deploy:
+#     needs: build-and-push
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: SSH into EC2 and deploy
+#         uses: appleboy/ssh-action@v0.1.10
+#         with:
+#           host: ${{ secrets.EC2_HOST }}
+#           username: ${{ secrets.EC2_USER }}
+#           key: ${{ secrets.EC2_SSH_KEY }}
+#           script: |
+#             echo "🔹 Setting up project directory..."
+#             sudo mkdir -p /home/ubuntu/wisesports
+#             sudo chown -R ubuntu:ubuntu /home/ubuntu/wisesports
+#             sudo chmod -R 755 /home/ubuntu/wisesports
+#             cd /home/ubuntu/wisesports
 
-            echo "🔹 Cloning or pulling the latest code..."
-            if [ ! -d "WiseSportsAO" ]; then
-              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
-            fi
+#             echo "🔹 Cloning or pulling the latest code..."
+#             if [ ! -d "WiseSportsAO" ]; then
+#               git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
+#             fi
 
-            cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
-            git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
+#             cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
+#             git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
 
-            echo "🔹 Checking if docker-compose.yml exists..."
-            if [ ! -f "docker-compose.yml" ]; then
-              echo "❌ Error: docker-compose.yml not found!"
-              exit 1
-            fi
+#             echo "🔹 Checking if docker-compose.yml exists..."
+#             if [ ! -f "docker-compose.yml" ]; then
+#               echo "❌ Error: docker-compose.yml not found!"
+#               exit 1
+#             fi
 
-            echo "🔹 Logging into Docker Hub securely..."
-            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+#             echo "🔹 Logging into Docker Hub securely..."
+#             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-            echo "🔹 Stopping existing containers..."
-            docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
+#             echo "🔹 Stopping existing containers..."
+#             docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
 
-            echo "🔹 Pulling the latest Docker image..."
-            docker-compose pull || { echo "❌ Failed to pull Docker images!"; exit 1; }
+#             echo "🔹 Pulling the latest Docker image..."
+#             docker-compose pull || { echo "❌ Failed to pull Docker images!"; exit 1; }
 
-            echo "🔹 Starting the application..."
-            docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
+#             echo "🔹 Starting the application..."
+#             docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
 
-            echo "🔹 Cleaning up unused Docker resources..."
-            docker system prune -af
+#             echo "🔹 Cleaning up unused Docker resources..."
+#             docker system prune -af
 
-            echo "✅ Deployment completed successfully!"
+#             echo "✅ Deployment completed successfully!"
         
