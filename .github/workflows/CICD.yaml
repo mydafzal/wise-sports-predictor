@@ -78,8 +78,13 @@ jobs:
             echo "🔹 Logging into Docker Hub securely..."
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-            echo "🔹 Stopping existing containers..."
-            docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
+            echo "🔹 Checking for running containers..."
+            if [ "$(docker ps -q)" ]; then
+              echo "🔹 Stopping existing containers..."
+              docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
+            else
+              echo "✅ No running containers found. Skipping stop step."
+            fi
 
             echo "🔹 Pulling the latest Docker image..."
             docker-compose pull || { echo "❌ Failed to pull Docker images!"; exit 1; }
