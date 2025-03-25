@@ -46,28 +46,18 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             echo "🔹 Setting up project directory..."
-            mkdir -p /home/ubuntu/wisesports
-            chown -R ubuntu:ubuntu /home/ubuntu/wisesports
-            chmod -R 755 /home/ubuntu/wisesports
+            sudo mkdir -p /home/ubuntu/wisesports
+            sudo chown -R ubuntu:ubuntu /home/ubuntu/wisesports
+            sudo chmod -R 755 /home/ubuntu/wisesports
             cd /home/ubuntu/wisesports
 
             echo "🔹 Cloning or pulling the latest code..."
             if [ ! -d "WiseSportsAO" ]; then
-              git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
+              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
             fi
 
             cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
-
-            # Stash local changes before pulling
-            git stash || { echo "❌ Failed to stash local changes!"; exit 1; }
-
             git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
-
-            # Apply stashed changes back (optional)
-            git stash pop || echo "No stashed changes to apply."
-
-            echo "🔹 Navigating to project directory..."
-            cd /home/ubuntu/wisesports/WiseSportsAO || { echo "❌ Directory not found!"; exit 1; }
 
             echo "🔹 Checking if docker-compose.yml exists..."
             if [ ! -f "docker-compose.yml" ]; then
@@ -78,13 +68,8 @@ jobs:
             echo "🔹 Logging into Docker Hub securely..."
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-            echo "🔹 Checking for running containers..."
-            if [ "$(docker ps -q)" ]; then
-              echo "🔹 Stopping existing containers..."
-              docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
-            else
-              echo "✅ No running containers found. Skipping stop step."
-            fi
+            echo "🔹 Stopping existing containers..."
+            docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
 
             echo "🔹 Pulling the latest Docker image..."
             docker-compose pull || { echo "❌ Failed to pull Docker images!"; exit 1; }
@@ -96,3 +81,4 @@ jobs:
             docker system prune -af
 
             echo "✅ Deployment completed successfully!"
+        
