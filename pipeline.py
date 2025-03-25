@@ -20,7 +20,7 @@ def run_pipeline():
 
     try:
         # Stage 1: Data Ingestion
-        stage01_main()
+        # stage01_main()
 
         # Stage 2: Data Preparation
         stage02_main()
