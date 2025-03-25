@@ -8,7 +8,6 @@ from fastapi.responses import FileResponse, JSONResponse
 from typing import List, Dict
 from WiseSportsAI.components.modelpredictions import ModelPredictor
 
-
 app = FastAPI()
 
 class PredictionRequest(BaseModel):
