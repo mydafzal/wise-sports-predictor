@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKERHUB_REPO: hamzakhanswati/wisesportsai
+  DOCKERHUB_REPO: hamzakhnswati/wisesportsai
   COMPOSE_FILE: docker-compose.yml
 
 jobs:
@@ -57,6 +57,9 @@ jobs:
             fi
 
             cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
+
+            echo "🔹 Resetting repository to avoid conflicts..."
+            git reset --hard origin/main || { echo "❌ Failed to reset repository!"; exit 1; }
             git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
 
             echo "🔹 Checking if docker-compose.yml exists..."
@@ -76,6 +79,9 @@ jobs:
 
             echo "🔹 Starting the application..."
             docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
+
+            echo "🔹 Enabling auto-restart for containers..."
+            docker update --restart always $(docker ps -q)
 
             echo "🔹 Cleaning up unused Docker resources..."
             docker system prune -af
