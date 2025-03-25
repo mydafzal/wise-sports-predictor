@@ -35,38 +35,54 @@ class DataIngestion:
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome(options=chrome_options)
+        self.driver.set_page_load_timeout(60)  # Set page load timeout to 60 seconds
     
     def scrape_team_data(self, team_abbr, filename):
+        max_retries = 3
+        retry_delay = 10  # Seconds between retry attempts
         url = f"https://www.basketball-reference.com/teams/{team_abbr}/2025/gamelog/"
-        print(f"Scraping data for {team_abbr} from {url}")
-        self.driver.get(url)
         
+        for attempt in range(max_retries):
+            try:
+                print(f"Attempt {attempt+1}/{max_retries} for {team_abbr}")
+                self.driver.get(url)
+                
+                # Wait for table to load with extended timeout
+                table = WebDriverWait(self.driver, 45).until(
+                    EC.presence_of_element_located((By.ID, "team_game_log_reg"))
+                )
+                break  # Success - exit retry loop
+            except Exception as e:
+                print(f"Attempt {attempt+1} failed: {str(e)}")
+                if attempt == max_retries - 1:
+                    print(f"Max retries exhausted for {team_abbr}. Skipping...")
+                    return
+                time.sleep(retry_delay)
+                self.driver.refresh()  # Refresh browser instance
+
+        # Extract and save data
         try:
-            table = WebDriverWait(self.driver, 30).until(
-                EC.presence_of_element_located((By.ID, "team_game_log_reg"))
-            )
-        except:
-            print(f"Error: Table not found for {team_abbr}. Skipping...")
-            return
-        
-        headers = [th.text for th in table.find_elements(By.TAG_NAME, "th")]
-        rows = []
-        for row in table.find_elements(By.TAG_NAME, "tr"):
-            cells = [cell.text for cell in row.find_elements(By.XPATH, ".//th | .//td")]
-            if cells:
-                rows.append(cells)
-        
-        file_path = os.path.join(self.output_dir, filename)
-        with open(file_path, mode="w", newline="", encoding="utf-8") as file:
-            writer = csv.writer(file)
-            writer.writerow(headers)
-            writer.writerows(rows[1:])  # Skip the first row (header row)
-        
-        print(f"Data for {team_abbr} saved to {file_path}")
-    
+            headers = [th.text for th in table.find_elements(By.TAG_NAME, "th")]
+            rows = []
+            for row in table.find_elements(By.TAG_NAME, "tr"):
+                cells = [cell.text for cell in row.find_elements(By.XPATH, ".//th | .//td")]
+                if cells:
+                    rows.append(cells)
+            
+            file_path = os.path.join(self.output_dir, filename)
+            with open(file_path, "w", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                writer.writerow(headers)
+                writer.writerows(rows[1:])
+            
+            print(f"Successfully saved data for {team_abbr} to {file_path}")
+        except Exception as e:
+            print(f"Error processing data for {team_abbr}: {str(e)}")
+
     def run(self):
         for team_abbr, filename in self.team_mapping.items():
             self.scrape_team_data(team_abbr, filename)
-            time.sleep(2)  # Avoid overwhelming the server
+            time.sleep(10)  # Longer delay between teams to avoid rate limiting
         self.driver.quit()
-        print("Data Scraping Complete.")
+        print("Data ingestion process completed.")
+
