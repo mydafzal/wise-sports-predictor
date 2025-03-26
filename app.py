@@ -7,6 +7,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 from typing import List, Dict
 from WiseSportsAI.components.modelpredictions import ModelPredictor
+from WiseSportsAI.components.injuriesimpact import InjuriesImpact
 
 app = FastAPI()
 
@@ -20,12 +21,16 @@ class InjuryImpactResponse(BaseModel):
     away_team: str
     original_home_score: float
     original_away_score: float
-    adjusted_home_score: float
-    adjusted_away_score: float
+    initial_adjusted_home_score: float
+    initial_adjusted_away_score: float
+    final_adjusted_home_score: float
+    final_adjusted_away_score: float
     home_net_impact: float
     away_net_impact: float
     home_injured_players: List[Dict]
     away_injured_players: List[Dict]
+    cross_impact_home_boost: float
+    cross_impact_away_boost: float
 
 model_home_path = "Artifacts/TrainedModels/xgb_home_score_model.pkl"
 model_away_path = "Artifacts/TrainedModels/xgb_away_score_model.pkl"
@@ -34,6 +39,14 @@ label_encoder_away_path = "Artifacts/LabelEncoderaway_team_name.pkl"
 historical_data = pd.read_csv("Artifacts/DataScraping/MergedDataSet.csv")
 
 predictor = ModelPredictor(model_home_path, model_away_path, label_encoder_home_path, label_encoder_away_path)
+injuries_analyzer = InjuriesImpact()
+
+def safe_float_convert(value, default=0.0):
+    """Safely convert value to float with default fallback"""
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return default
 
 @app.post("/predict")
 async def predict_scores(request: PredictionRequest):
@@ -79,29 +92,39 @@ async def get_injuries_predictions():
     try:
         file_path = "Artifacts/FuturePredictions/future_injuries_predictions.csv"
         if not os.path.exists(file_path):
-            raise HTTPException(status_code=404, detail="No injury-adjusted predictions found")
+            raise HTTPException(status_code=404, detail="No injury-adjusted predictions found. Run injuries analysis first.")
 
         predictions_df = pd.read_csv(file_path)
         
-        predictions_df['home_injury_details'] = predictions_df['home_injury_details'].apply(eval)
-        predictions_df['away_injury_details'] = predictions_df['away_injury_details'].apply(eval)
+        predictions_df['home_injury_details'] = predictions_df['home_injury_details'].apply(
+            lambda x: eval(x) if isinstance(x, str) else []
+        )
+        predictions_df['away_injury_details'] = predictions_df['away_injury_details'].apply(
+            lambda x: eval(x) if isinstance(x, str) else []
+        )
         
-        predictions = []
+        # Prepare the response
+        results = []
         for _, row in predictions_df.iterrows():
-            predictions.append({
+            results.append({
                 "home_team": row["home_team"],
                 "away_team": row["away_team"],
-                "original_home_score": float(row["original_home_score"]),
-                "original_away_score": float(row["original_away_score"]),
-                "adjusted_home_score": float(row["adjusted_home_score"]),
-                "adjusted_away_score": float(row["adjusted_away_score"]),
-                "home_net_impact": float(row["home_net_impact"]),
-                "away_net_impact": float(row["away_net_impact"]),
+                "original_home_score": safe_float_convert(row["original_home_score"]),
+                "original_away_score": safe_float_convert(row["original_away_score"]),
+                "initial_adjusted_home_score": safe_float_convert(row.get("initial_adjusted_home_score", row["adjusted_home_score"])),
+                "initial_adjusted_away_score": safe_float_convert(row.get("initial_adjusted_away_score", row["adjusted_away_score"])),
+                "final_adjusted_home_score": safe_float_convert(row["adjusted_home_score"]),
+                "final_adjusted_away_score": safe_float_convert(row["adjusted_away_score"]),
+                "home_net_impact": safe_float_convert(row["home_net_impact"]),
+                "away_net_impact": safe_float_convert(row["away_net_impact"]),
                 "home_injured_players": row["home_injury_details"],
-                "away_injured_players": row["away_injury_details"]
+                "away_injured_players": row["away_injury_details"],
+                "cross_impact_home_boost": safe_float_convert(row.get("cross_impact_home_boost", 0)),
+                "cross_impact_away_boost": safe_float_convert(row.get("cross_impact_away_boost", 0))
             })
         
-        return predictions
+        return results
+        
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

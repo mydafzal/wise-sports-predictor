@@ -59,3 +59,111 @@
 2025-03-24 23:58:09,900 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
 2025-03-26 00:09:43,956 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
 2025-03-26 00:09:43,957 - stage01_DataIngestion.py - None - INFO - <------------------- 🚀 Stage01: Started Data Ingestion Pipeline ------------------->
+2025-03-26 01:43:17,826 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 01:47:25,391 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 01:59:06,210 - stage08_InjuriesImpact.py - None - INFO - <🚀> Stage08: Starting Enhanced Injury Impact Analysis
+2025-03-26 01:59:16,924 - stage08_InjuriesImpact.py - None - INFO - <🚀> Stage08: Starting Enhanced Injury Impact Analysis
+2025-03-26 01:59:18,122 - stage08_InjuriesImpact.py - None - INFO - DAL @ BRK | Original: 98.0-113.0 | Adjusted: 98.0-113.0
+2025-03-26 01:59:20,164 - stage08_InjuriesImpact.py - None - INFO - MIN @ IND | Original: 115.0-113.0 | Adjusted: 115.0-113.0
+2025-03-26 01:59:22,811 - stage08_InjuriesImpact.py - None - INFO - OKC @ LAC | Original: 110.0-118.0 | Adjusted: 110.0-118.0
+2025-03-26 01:59:25,642 - stage08_InjuriesImpact.py - None - INFO - LAL @ ORL | Original: 102.0-112.0 | Adjusted: 102.0-112.0
+2025-03-26 01:59:27,601 - stage08_InjuriesImpact.py - None - INFO - TOR @ WAS | Original: 107.0-108.0 | Adjusted: 107.0-108.0
+2025-03-26 01:59:27,611 - stage08_InjuriesImpact.py - None - INFO - <✅> Stage08: Injury Impact Analysis Completed
+2025-03-26 02:00:32,625 - stage08_InjuriesImpact.py - None - INFO - <🚀> Stage08: Starting Enhanced Injury Impact Analysis
+2025-03-26 02:03:13,772 - stage08_InjuriesImpact.py - None - INFO - <🚀> Stage08: Starting Enhanced Injury Impact Analysis
+2025-03-26 02:03:15,667 - stage08_InjuriesImpact.py - None - INFO - DAL @ BRK | Original: 98.0-113.0 | Adjusted: 98.0-113.0
+2025-03-26 02:03:17,603 - stage08_InjuriesImpact.py - None - INFO - MIN @ IND | Original: 115.0-113.0 | Adjusted: 115.0-113.0
+2025-03-26 02:03:20,022 - stage08_InjuriesImpact.py - None - INFO - OKC @ LAC | Original: 110.0-118.0 | Adjusted: 110.0-118.0
+2025-03-26 02:03:22,434 - stage08_InjuriesImpact.py - None - INFO - LAL @ ORL | Original: 102.0-112.0 | Adjusted: 102.0-112.0
+2025-03-26 02:03:23,849 - stage08_InjuriesImpact.py - None - INFO - TOR @ WAS | Original: 107.0-108.0 | Adjusted: 107.0-108.0
+2025-03-26 02:03:23,859 - stage08_InjuriesImpact.py - None - INFO - <✅> Stage08: Injury Impact Analysis Completed
+2025-03-26 02:06:17,058 - stage08_InjuriesImpact.py - None - INFO - <🚀> Stage08: Starting Enhanced Injury Impact Analysis
+2025-03-26 02:06:18,160 - injuriesimpact.py - None - DEBUG - No significant injuries for BRK
+2025-03-26 02:06:19,158 - injuriesimpact.py - None - DEBUG - No significant injuries for DAL
+2025-03-26 02:06:19,159 - stage08_InjuriesImpact.py - None - INFO - DAL @ BRK | Original: 98.0-113.0 | Adjusted: 98.0-113.0
+2025-03-26 02:06:19,633 - injuriesimpact.py - None - DEBUG - No significant injuries for IND
+2025-03-26 02:06:20,575 - injuriesimpact.py - None - DEBUG - No significant injuries for MIN
+2025-03-26 02:06:20,576 - stage08_InjuriesImpact.py - None - INFO - MIN @ IND | Original: 115.0-113.0 | Adjusted: 115.0-113.0
+2025-03-26 02:06:21,567 - injuriesimpact.py - None - DEBUG - No significant injuries for LAC
+2025-03-26 02:06:22,340 - injuriesimpact.py - None - DEBUG - No significant injuries for OKC
+2025-03-26 02:06:22,347 - stage08_InjuriesImpact.py - None - INFO - OKC @ LAC | Original: 110.0-118.0 | Adjusted: 110.0-118.0
+2025-03-26 02:06:22,825 - injuriesimpact.py - None - DEBUG - No significant injuries for ORL
+2025-03-26 02:06:23,906 - injuriesimpact.py - None - DEBUG - No significant injuries for LAL
+2025-03-26 02:06:23,907 - stage08_InjuriesImpact.py - None - INFO - LAL @ ORL | Original: 102.0-112.0 | Adjusted: 102.0-112.0
+2025-03-26 02:06:24,852 - injuriesimpact.py - None - DEBUG - No significant injuries for WAS
+2025-03-26 02:06:41,137 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:08:09,378 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-26 02:28:38,324 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:37:22,651 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:39:51,792 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:41:56,017 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:50:34,160 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 02:52:01,600 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-26 03:01:44,721 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 03:03:10,217 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-26 03:11:56,817 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-26 03:11:56,818 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-26 03:11:57,203 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-26 03:11:57,204 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-26 03:11:57,286 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-26 03:11:57,287 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-26 03:12:14,098 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-26 03:12:14,098 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-26 03:12:37,095 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-26 03:12:37,095 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-26 03:12:37,325 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-26 03:12:37,329 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 03:13:21,696 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 03:13:21,697 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 03:15:10,467 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-26 03:15:27,911 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-26 03:15:27,912 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-26 20:38:38,510 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 20:39:12,988 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 20:40:18,478 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 20:40:57,262 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 20:41:33,594 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 20:42:57,110 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 20:43:46,481 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 21:53:52,694 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 21:54:43,605 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 21:55:36,573 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 21:56:29,405 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 21:59:38,272 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-26 21:59:38,273 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-26 21:59:38,640 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-26 21:59:38,640 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-26 21:59:38,725 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-26 21:59:38,725 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-26 22:00:00,597 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-26 22:00:00,598 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-26 22:00:24,569 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-26 22:00:24,569 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-26 22:00:24,800 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-26 22:00:24,805 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-26 22:01:15,622 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-26 22:01:15,623 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 22:04:18,058 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-26 22:04:18,058 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-26 23:44:00,601 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-26 23:45:40,048 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>

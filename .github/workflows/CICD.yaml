@@ -6,36 +6,8 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  DOCKERHUB_REPO: hamzakhanswati/wisesportsai
-  COMPOSE_FILE: docker-compose.yml
-
 jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ env.DOCKERHUB_REPO }}:latest
-
   deploy:
-    needs: build-and-push
     runs-on: ubuntu-latest
     steps:
       - name: SSH into EC2 and deploy
@@ -51,12 +23,12 @@ jobs:
             sudo chmod -R 755 /home/ubuntu/wisesports
             cd /home/ubuntu/wisesports
 
-            echo "🔹 Cloning or pulling the latest code..."
-            if [ ! -d "WiseSportsAO" ]; then
-              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAO.git || { echo "❌ Failed to clone repository!"; exit 1; }
+            echo "🔹 Cloning or updating repository..."
+            if [ ! -d "WiseSportsAI" ]; then
+              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAI.git || { echo "❌ Failed to clone repository!"; exit 1; }
             fi
 
-            cd WiseSportsAO || { echo "❌ Failed to access repository directory!"; exit 1; }
+            cd WiseSportsAI || { echo "❌ Failed to access repository directory!"; exit 1; }
             git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
 
             echo "🔹 Checking if docker-compose.yml exists..."
@@ -65,20 +37,13 @@ jobs:
               exit 1
             fi
 
-            echo "🔹 Logging into Docker Hub securely..."
-            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-
             echo "🔹 Stopping existing containers..."
-            docker-compose down || { echo "❌ Failed to stop containers!"; exit 1; }
+            docker-compose down || { echo "⚠️ Warning: No containers to stop"; }
 
-            echo "🔹 Pulling the latest Docker image..."
-            docker-compose pull || { echo "❌ Failed to pull Docker images!"; exit 1; }
-
-            echo "🔹 Starting the application..."
+            echo "🔹 Building and starting containers..."
             docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
 
             echo "🔹 Cleaning up unused Docker resources..."
             docker system prune -af
 
             echo "✅ Deployment completed successfully!"
-        

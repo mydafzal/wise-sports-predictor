@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime, timedelta
 from typing import List, Dict
+from zoneinfo import ZoneInfo  
 
-# Constants
 BASE_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team}/schedule"
 
 TEAM_ABBREVIATIONS = {
@@ -12,7 +12,7 @@ TEAM_ABBREVIATIONS = {
     "LA Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM", "Miami Heat": "MIA",
     "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK",
     "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX",
-    "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR",
+    "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antionio Spurs": "SAS", "Toronto Raptors": "TOR",
     "Utah Jazz": "UTA", "Washington Wizards": "WAS"
 }
 
@@ -20,11 +20,15 @@ ESPN_TO_FASTAPI_MAPPING = {"PHX": "PHO", "CHA": "CHO", "BKN": "BRK"}
 
 class FuturePredictions:
     def __init__(self):
-        """Initialize the FuturePredictions class."""
-        self.tomorrow = (datetime.utcnow() + timedelta(days=0)).date().isoformat()
+        """Initialize the FuturePredictions class with US Eastern Time."""
+        eastern_tz = ZoneInfo("America/New_York")
+        now = datetime.now(eastern_tz)
+        tomorrow = now + timedelta(days=0)
+        self.tomorrow = tomorrow.date().isoformat()
+        print("Tomorrow's date (ET):", self.tomorrow)
 
     def fetch_tomorrows_games(self) -> List[Dict]:
-        """Fetch tomorrow's NBA games from ESPN API."""
+        """Fetch tomorrow's NBA games from ESPN API based on US Eastern Time."""
         tomorrow_games = []
         seen_games = set()
 
@@ -38,7 +42,19 @@ class FuturePredictions:
 
                 for event in events:
                     game_id = event["id"]
-                    game_date = event["date"][:10]
+                    game_date_str = event["date"]
+
+                    if 'Z' in game_date_str:
+                        game_date_str = game_date_str.replace('Z', '+00:00')
+                    try:
+                        game_dt = datetime.fromisoformat(game_date_str)
+                    except ValueError as e:
+                        print(f"Error parsing date {game_date_str}: {e}")
+                        continue
+
+                    eastern_tz = ZoneInfo("America/New_York")
+                    game_dt_eastern = game_dt.astimezone(eastern_tz)
+                    game_date = game_dt_eastern.date().isoformat()
 
                     if game_date == self.tomorrow and game_id not in seen_games:
                         teams_info = event["competitions"][0]["competitors"]
@@ -53,7 +69,6 @@ class FuturePredictions:
                             else:
                                 away_team = team_abbr
 
-                        # Convert ESPN abbreviations to FastAPI expected ones
                         home_team = ESPN_TO_FASTAPI_MAPPING.get(home_team, home_team)
                         away_team = ESPN_TO_FASTAPI_MAPPING.get(away_team, away_team)
 
