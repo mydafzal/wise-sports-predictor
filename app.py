@@ -8,8 +8,17 @@ from fastapi.responses import FileResponse, JSONResponse
 from typing import List, Dict
 from WiseSportsAI.components.modelpredictions import ModelPredictor
 from WiseSportsAI.components.injuriesimpact import InjuriesImpact
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"], 
+    allow_headers=["*"],  
+)
 
 class PredictionRequest(BaseModel):
     home_team: str
