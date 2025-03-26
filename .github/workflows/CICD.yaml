@@ -26,10 +26,15 @@ jobs:
             echo "🔹 Cloning or updating repository..."
             if [ ! -d "WiseSportsAI" ]; then
               git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAI.git || { echo "❌ Failed to clone repository!"; exit 1; }
+              cd WiseSportsAI
+            else
+              cd WiseSportsAI
+              echo "🔹 Resetting any local changes..."
+              git reset --hard HEAD || { echo "⚠️ Could not reset local changes"; }
+              git clean -fd || { echo "⚠️ Could not clean untracked files"; }
+              echo "🔹 Pulling latest changes..."
+              git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
             fi
-
-            cd WiseSportsAI || { echo "❌ Failed to access repository directory!"; exit 1; }
-            git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
 
             echo "🔹 Checking if docker-compose.yml exists..."
             if [ ! -f "docker-compose.yml" ]; then
