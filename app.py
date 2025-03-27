@@ -112,7 +112,6 @@ async def get_injuries_predictions():
             lambda x: eval(x) if isinstance(x, str) else []
         )
         
-        # Prepare the response
         results = []
         for _, row in predictions_df.iterrows():
             results.append({
