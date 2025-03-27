@@ -30,10 +30,13 @@ jobs:
             else
               cd WiseSportsAI
               echo "🔹 Resetting any local changes..."
-              git reset --hard HEAD || { echo "⚠️ Could not reset local changes"; }
-              git clean -fd || { echo "⚠️ Could not clean untracked files"; }
-              echo "🔹 Pulling latest changes..."
-              git pull origin main || { echo "❌ Failed to pull latest code!"; exit 1; }
+              git reset --hard HEAD || { echo "⚠️ Could not reset local changes"; exit 1; }
+              echo "🔹 Force cleaning all untracked files and directories..."
+              git clean -fdx || { echo "⚠️ Could not clean repository"; exit 1; }
+              echo "🔹 Fetching all changes..."
+              git fetch --all || { echo "❌ Failed to fetch changes!"; exit 1; }
+              echo "🔹 Resetting to origin/main..."
+              git reset --hard origin/main || { echo "❌ Failed to reset to origin/main!"; exit 1; }
             fi
 
             echo "🔹 Checking if docker-compose.yml exists..."
