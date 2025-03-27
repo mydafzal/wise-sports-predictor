@@ -23,11 +23,9 @@ class TeamsDataAddition:
             "BRK": "Brooklyn Nets", "CHO": "Charlotte Hornets"
         }
 
-        # Drop 'Wins' column
         if 'Wins' in self.df1.columns:
             self.df1.drop(columns=['Wins'], inplace=True)
 
-        # Rename columns safely
         rename_map_1 = {
             'Losses': 'Wins',
             'Win/Loss %': 'Losses',
@@ -37,11 +35,9 @@ class TeamsDataAddition:
         }
         self.df1.rename(columns=rename_map_1, inplace=True)
 
-        # Drop additional columns if they exist
         drop_columns = ['Rank', 'Pace']
         self.df1.drop(columns=[col for col in drop_columns if col in self.df1.columns], inplace=True)
 
-        # Rename next set of columns safely
         rename_map_2 = {
             'Pace Rel': 'Pace',
             'Off Rtg': 'Pace_Rel',
@@ -52,12 +48,10 @@ class TeamsDataAddition:
         }
         self.df1.rename(columns=rename_map_2, inplace=True)
 
-        # Drop last 4 columns only if we know their names
         num_cols_to_drop = 4
         if self.df1.shape[1] > num_cols_to_drop:
             self.df1 = self.df1.iloc[:, :-num_cols_to_drop]
 
-        # Replace team names with abbreviations
         team_mapping_reverse = {v: k for k, v in team_mapping.items()}
         if "Team Name" in self.df1.columns:
             self.df1["Team Name"] = self.df1["Team Name"].replace(team_mapping_reverse)
