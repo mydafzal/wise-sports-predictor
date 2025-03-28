@@ -1,0 +1,6353 @@
+{
+  "base_stats": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/teams/19/statistics/0?lang=en&region=us",
+    "season": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025?lang=en&region=us"
+    },
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+    },
+    "splits": {
+      "id": "0",
+      "name": "All Splits",
+      "abbreviation": "Total",
+      "type": "total",
+      "categories": [
+        {
+          "name": "defensive",
+          "displayName": "Defensive",
+          "shortDisplayName": "Defensive",
+          "abbreviation": "def",
+          "summary": "",
+          "stats": [
+            {
+              "name": "blocks",
+              "displayName": "Blocks",
+              "shortDisplayName": "BLK",
+              "description": "Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player.",
+              "abbreviation": "BLK",
+              "value": 442.0,
+              "displayValue": "442",
+              "perGameValue": 5.0,
+              "perGameDisplayValue": "5",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "defensiveRebounds",
+              "displayName": "Defensive Rebounds",
+              "shortDisplayName": "DREB",
+              "description": "The number of times when the defense obtains the possession of the ball after a missed shot by the offense.",
+              "abbreviation": "DR",
+              "value": 2265.0,
+              "displayValue": "2265",
+              "perGameValue": 30.0,
+              "perGameDisplayValue": "30",
+              "rank": 13,
+              "rankDisplayValue": "13th"
+            },
+            {
+              "name": "steals",
+              "displayName": "Steals",
+              "shortDisplayName": "STL",
+              "description": "The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player.",
+              "abbreviation": "STL",
+              "value": 647.0,
+              "displayValue": "647",
+              "perGameValue": 8.0,
+              "perGameDisplayValue": "8",
+              "rank": 3,
+              "rankDisplayValue": "3rd"
+            },
+            {
+              "name": "turnoverPoints",
+              "displayName": "Points Conceded Off Turnovers",
+              "shortDisplayName": "Points Conceded Off Turnovers",
+              "description": "The amount of points resulting from the possession following a turnover.",
+              "abbreviation": "Points Conceded Off Turnovers",
+              "value": 0.0,
+              "displayValue": "0",
+              "perGameValue": 17.0,
+              "perGameDisplayValue": "17"
+            },
+            {
+              "name": "defReboundRate",
+              "displayName": "Defensive Rebound Rate",
+              "shortDisplayName": "DRR",
+              "description": "The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)].",
+              "abbreviation": "DRR",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avgDefensiveRebounds",
+              "displayName": "Defensive Rebounds Per Game",
+              "shortDisplayName": "DRPG",
+              "description": "The average defensive rebounds per game.",
+              "abbreviation": "DR",
+              "value": 30.608109,
+              "displayValue": "30.6"
+            },
+            {
+              "name": "avgBlocks",
+              "displayName": "Blocks Per Game",
+              "shortDisplayName": "BPG",
+              "description": "The average blocks per game.",
+              "abbreviation": "BLK",
+              "value": 5.972973,
+              "displayValue": "6.0"
+            },
+            {
+              "name": "avgSteals",
+              "displayName": "Steals Per Game",
+              "shortDisplayName": "SPG",
+              "description": "The average steals per game.",
+              "abbreviation": "STL",
+              "value": 8.743243,
+              "displayValue": "8.7"
+            },
+            {
+              "name": "avg48DefensiveRebounds",
+              "displayName": "Defensive Rebounds Per 48",
+              "shortDisplayName": "DREB/48",
+              "description": "The average number of defensive rebounds per 48 minutes.",
+              "abbreviation": "DR",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Blocks",
+              "displayName": "Blocks Per 48",
+              "shortDisplayName": "BLK/48",
+              "description": "The average number of blocks per 48 minutes.",
+              "abbreviation": "BLK",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Steals",
+              "displayName": "Steals Per 48",
+              "shortDisplayName": "STL/48",
+              "description": "The average number of steals per 48 minutes.",
+              "abbreviation": "STL",
+              "value": 0.0,
+              "displayValue": "0.0"
+            }
+          ]
+        },
+        {
+          "name": "general",
+          "displayName": "General",
+          "shortDisplayName": "General",
+          "abbreviation": "gen",
+          "summary": "",
+          "stats": [
+            {
+              "name": "disqualifications",
+              "displayName": "Disqualifications",
+              "shortDisplayName": "DQ",
+              "description": "The number of times a player reached the foul limit.",
+              "abbreviation": "DQ",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "flagrantFouls",
+              "displayName": "Flagrant Fouls",
+              "shortDisplayName": "FLAG",
+              "description": "The number of fouls that the officials thought were unnecessary or excessive.",
+              "abbreviation": "FLAG",
+              "value": 5.0,
+              "displayValue": "5",
+              "rank": 6,
+              "rankDisplayValue": "Tied-6th"
+            },
+            {
+              "name": "fouls",
+              "displayName": "Fouls",
+              "shortDisplayName": "PF",
+              "description": "The number of times a player had illegal contact with the opponent.",
+              "abbreviation": "PF",
+              "value": 1521.0,
+              "displayValue": "1521",
+              "perGameValue": 20.0,
+              "perGameDisplayValue": "20",
+              "rank": 2,
+              "rankDisplayValue": "2nd"
+            },
+            {
+              "name": "reboundRate",
+              "displayName": "Rebound Rate",
+              "shortDisplayName": "REBR",
+              "description": "The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by [Player Minutes x (Team Rebounds + Opponent Rebounds)]",
+              "abbreviation": "REBR",
+              "value": 50.113,
+              "displayValue": "50.1",
+              "rank": 7,
+              "rankDisplayValue": "7th"
+            },
+            {
+              "name": "ejections",
+              "displayName": "Ejections",
+              "shortDisplayName": "EJECT",
+              "description": "The number of times a player or coach is removed from the game as a result of a serious offense.",
+              "abbreviation": "EJECT",
+              "value": 3.0,
+              "displayValue": "3",
+              "rank": 4,
+              "rankDisplayValue": "Tied-4th"
+            },
+            {
+              "name": "technicalFouls",
+              "displayName": "Technical Fouls",
+              "shortDisplayName": "TECH",
+              "description": "The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations).",
+              "abbreviation": "TECH",
+              "value": 112.0,
+              "displayValue": "112",
+              "rank": 3,
+              "rankDisplayValue": "3rd"
+            },
+            {
+              "name": "rebounds",
+              "displayName": "Rebounds",
+              "shortDisplayName": "REB",
+              "description": "The total number of rebounds (offensive and defensive).",
+              "abbreviation": "REB",
+              "value": 3092.0,
+              "displayValue": "3092",
+              "perGameValue": 41.0,
+              "perGameDisplayValue": "41",
+              "rank": 17,
+              "rankDisplayValue": "17th"
+            },
+            {
+              "name": "minutes",
+              "displayName": "Minutes",
+              "shortDisplayName": "MIN",
+              "description": "The total number of minutes played.",
+              "abbreviation": "MIN",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "avgMinutes",
+              "displayName": "Minutes Per Game",
+              "shortDisplayName": "MPG",
+              "description": "The average number of minutes per game.",
+              "abbreviation": "MIN",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "fantasyRating",
+              "displayName": "Fantasy Rating",
+              "shortDisplayName": "FANT",
+              "description": "The Fantasy Rating of a player.",
+              "abbreviation": "FANT",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "NBARating",
+              "displayName": "Rating",
+              "shortDisplayName": "Rating",
+              "description": "Custom formula to rate the performance of a player based on points, assists, steals, blocks, turnovers, rebounds, three pointers, and free throws",
+              "abbreviation": "RTG",
+              "value": 191.77026,
+              "displayValue": "191.8",
+              "rank": 30,
+              "rankDisplayValue": "30th"
+            },
+            {
+              "name": "plusMinus",
+              "displayName": "Plus-Minus",
+              "shortDisplayName": "+/-",
+              "description": "A player's estimated on-court impact on team performance measured in point differential per 100 possessions.",
+              "abbreviation": "+/-",
+              "value": -1.0,
+              "displayValue": "-1",
+              "perGameValue": -1.0,
+              "perGameDisplayValue": "-1",
+              "rank": 1,
+              "rankDisplayValue": "Tied-1st"
+            },
+            {
+              "name": "gameDayOfYear",
+              "displayName": "Game Day of Year",
+              "shortDisplayName": "DOY",
+              "description": "The day of the season on which this game falls; if it's the 15th day of the regular season in Nov, the game day of year is 15 (ie, game day of year != day of year).",
+              "abbreviation": "DOY",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "avgRebounds",
+              "displayName": "Rebounds Per Game",
+              "shortDisplayName": "RPG",
+              "description": "The average rebounds per game.",
+              "abbreviation": "REB",
+              "value": 41.783783,
+              "displayValue": "41.8"
+            },
+            {
+              "name": "avgFouls",
+              "displayName": "Fouls Per Game",
+              "shortDisplayName": "PFPG",
+              "description": "The average fouls committed per game.",
+              "abbreviation": "PF",
+              "value": 20.554054,
+              "displayValue": "20.6"
+            },
+            {
+              "name": "avgFlagrantFouls",
+              "displayName": "Flagrant Fouls Per Game",
+              "shortDisplayName": "FLAGPG",
+              "description": "The average number of flagrant fouls per game.",
+              "abbreviation": "FLAGPG",
+              "value": 0.067567565,
+              "displayValue": "0.1"
+            },
+            {
+              "name": "avgTechnicalFouls",
+              "displayName": "Technical Fouls Per Game",
+              "shortDisplayName": "TECHPG",
+              "description": "The average number of technical fouls per game.",
+              "abbreviation": "TECHPG",
+              "value": 1.5135136,
+              "displayValue": "1.5"
+            },
+            {
+              "name": "avgEjections",
+              "displayName": "Ejections Per Game",
+              "shortDisplayName": "EJCTPG",
+              "description": "The average ejections per game.",
+              "abbreviation": "EJCTPG",
+              "value": 0.04054054,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avgDisqualifications",
+              "displayName": "Disqualifications Per Game",
+              "shortDisplayName": "DQPG",
+              "description": "The average number of disqualifications per game.",
+              "abbreviation": "DQPG",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "assistTurnoverRatio",
+              "displayName": "Assist To Turnover Ratio",
+              "shortDisplayName": "AST/TO",
+              "description": "The average number of assists a player or team records per turnover",
+              "abbreviation": "AST/TO",
+              "value": 1.7266186,
+              "displayValue": "1.7",
+              "perGameValue": 1.692307710647583,
+              "perGameDisplayValue": "1.692",
+              "rank": 1,
+              "rankDisplayValue": "Tied-1st"
+            },
+            {
+              "name": "stealFoulRatio",
+              "displayName": "Steal To Foul Ratio",
+              "shortDisplayName": "STL/PF",
+              "description": "The average number of steals a player or team records per foul committed.",
+              "abbreviation": "STL/PF",
+              "value": 0.42537805,
+              "displayValue": "0.4",
+              "perGameValue": 0.4000000059604645,
+              "perGameDisplayValue": "0.4",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "blockFoulRatio",
+              "displayName": "Block To Foul Ratio",
+              "shortDisplayName": "BLK/PF",
+              "description": "The average number of blocks a player or record per foul committed.",
+              "abbreviation": "BLK/PF",
+              "value": 0.2905983,
+              "displayValue": "0.3",
+              "perGameValue": 0.25,
+              "perGameDisplayValue": "0.25"
+            },
+            {
+              "name": "avgTeamRebounds",
+              "displayName": "Team Rebounds Per Game",
+              "shortDisplayName": "TREBPG",
+              "description": "The average number of rebounds for a team per game.",
+              "abbreviation": "TREBPG",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "totalRebounds",
+              "displayName": "Rebounds",
+              "shortDisplayName": "REB",
+              "description": "The total number of rebounds for a team or player",
+              "abbreviation": "REB",
+              "value": 3092.0,
+              "displayValue": "3092",
+              "perGameValue": 41.0,
+              "perGameDisplayValue": "41",
+              "rank": 17,
+              "rankDisplayValue": "17th"
+            },
+            {
+              "name": "totalTechnicalFouls",
+              "displayName": "Total Technical Fouls",
+              "shortDisplayName": "TECH",
+              "description": "The total number of technical fouls for a team or player",
+              "abbreviation": "TECH",
+              "value": 112.0,
+              "displayValue": "112",
+              "rank": 3,
+              "rankDisplayValue": "3rd"
+            },
+            {
+              "name": "teamAssistTurnoverRatio",
+              "displayName": "Assist To Turnover Ratio",
+              "shortDisplayName": "AST/TO",
+              "description": "The number of assists per turnover for a team",
+              "abbreviation": "AST/TO",
+              "value": 21.265823,
+              "displayValue": "21.3",
+              "perGameValue": 22.0,
+              "perGameDisplayValue": "22",
+              "rank": 7,
+              "rankDisplayValue": "Tied-7th"
+            },
+            {
+              "name": "teamRebounds",
+              "displayName": "Team Rebounds",
+              "shortDisplayName": "TREB",
+              "description": "The total number of rebounds for a team",
+              "abbreviation": "TREB",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "stealTurnoverRatio",
+              "displayName": "Steal To Turnover Ratio",
+              "shortDisplayName": "STL/TO",
+              "description": "The number of steals per turnover",
+              "abbreviation": "STL/TO",
+              "value": 0.66495377,
+              "displayValue": "0.7",
+              "perGameValue": 0.6153846383094788,
+              "perGameDisplayValue": "0.615"
+            },
+            {
+              "name": "avg48Rebounds",
+              "displayName": "Rebounds Per 48 Minutes",
+              "shortDisplayName": "REB/48",
+              "description": "The average number of rebounds per 48 minutes.",
+              "abbreviation": "REB",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Fouls",
+              "displayName": "Fouls Per 48 Minutes",
+              "shortDisplayName": "PF/48",
+              "description": "The average number of fouls committed per 48 minutes.",
+              "abbreviation": "PF",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48FlagrantFouls",
+              "displayName": "Flagrant Fouls Per 48 Minutes",
+              "shortDisplayName": "FLAG/48",
+              "description": "The average number of flagrant fouls committed per 48 minutes.",
+              "abbreviation": "FLAG/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48TechnicalFouls",
+              "displayName": "Technical Fouls Per 48 Minutes",
+              "shortDisplayName": "TECH/48",
+              "description": "The average number of technical fouls committed per 48 minutes.",
+              "abbreviation": "TECH/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Ejections",
+              "displayName": "Ejections Per 48 Minutes",
+              "shortDisplayName": "EJECT/48",
+              "description": "The average number of ejections per 48 minutes.",
+              "abbreviation": "EJECT/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Disqualifications",
+              "displayName": "Disqualifications Per 48 Minutes",
+              "shortDisplayName": "DQ/48",
+              "description": "The average number of disqualifications per 48 minutes.",
+              "abbreviation": "DQ/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "gamesPlayed",
+              "displayName": "Games Played",
+              "shortDisplayName": "GP",
+              "description": "Games Played",
+              "abbreviation": "GP",
+              "value": 74.0,
+              "displayValue": "74",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "gamesStarted",
+              "displayName": "Games Started",
+              "shortDisplayName": "GS",
+              "description": "The number of games started by an athlete.",
+              "abbreviation": "GS",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "doubleDouble",
+              "displayName": "Double Double",
+              "shortDisplayName": "DBLDBL",
+              "description": "The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots",
+              "abbreviation": "DD2",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "tripleDouble",
+              "displayName": "Triple Double",
+              "shortDisplayName": "TRIDBL",
+              "description": "The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots",
+              "abbreviation": "TD3",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ]
+        },
+        {
+          "name": "offensive",
+          "displayName": "Offensive",
+          "shortDisplayName": "Offensive",
+          "abbreviation": "off",
+          "summary": "",
+          "stats": [
+            {
+              "name": "assists",
+              "displayName": "Assists",
+              "shortDisplayName": "AST",
+              "description": "The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was \"assisting\" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist.",
+              "abbreviation": "AST",
+              "value": 1680.0,
+              "displayValue": "1680",
+              "perGameValue": 22.0,
+              "perGameDisplayValue": "22",
+              "rank": 14,
+              "rankDisplayValue": "Tied-14th"
+            },
+            {
+              "name": "effectiveFGPct",
+              "displayName": "Effective Field Goal Percentage",
+              "shortDisplayName": "EFF FG%",
+              "description": "Metric that gives 3pt field goals more worth than 2pt field goals: (FGM + (0.5 x 3PTM)) / FGA",
+              "abbreviation": "EFF FG%",
+              "value": 50.583,
+              "displayValue": "50.6",
+              "rank": 14,
+              "rankDisplayValue": "14th"
+            },
+            {
+              "name": "fieldGoals",
+              "displayName": "Field Goals",
+              "shortDisplayName": "FG",
+              "description": "Field Goal makes and attempts.",
+              "abbreviation": "FG",
+              "value": 0.442117,
+              "displayValue": "2807/6349",
+              "perGameValue": 0.435294,
+              "perGameDisplayValue": "0.435"
+            },
+            {
+              "name": "fieldGoalsAttempted",
+              "displayName": "Field Goals Attempted",
+              "shortDisplayName": "FGA",
+              "description": "The number of times a 2pt field goal was attempted.",
+              "abbreviation": "FGA",
+              "value": 6349.0,
+              "displayValue": "6349",
+              "perGameValue": 85.0,
+              "perGameDisplayValue": "85",
+              "rank": 12,
+              "rankDisplayValue": "12th"
+            },
+            {
+              "name": "fieldGoalsMade",
+              "displayName": "Field Goals Made",
+              "shortDisplayName": "FGM",
+              "description": "The number of times a 2pt field goal was made.",
+              "abbreviation": "FGM",
+              "value": 2807.0,
+              "displayValue": "2807",
+              "perGameValue": 37.0,
+              "perGameDisplayValue": "37",
+              "rank": 13,
+              "rankDisplayValue": "13th"
+            },
+            {
+              "name": "fieldGoalPct",
+              "displayName": "Field Goal Percentage",
+              "shortDisplayName": "FG%",
+              "description": "The ratio of field goals made to field goals attempted: FGM / FGA",
+              "abbreviation": "FG%",
+              "value": 44.21200180053711,
+              "displayValue": "44.2",
+              "perGameValue": 0.44200000166893005,
+              "perGameDisplayValue": "0.442",
+              "rank": 12,
+              "rankDisplayValue": "12th"
+            },
+            {
+              "name": "freeThrows",
+              "displayName": "Free Throws",
+              "shortDisplayName": "FT",
+              "description": "Free Throw makes and attempts.",
+              "abbreviation": "FT",
+              "value": 0.773672,
+              "displayValue": "1340/1732",
+              "perGameValue": 0.782609,
+              "perGameDisplayValue": "0.783"
+            },
+            {
+              "name": "freeThrowPct",
+              "displayName": "Free Throw Percentage",
+              "shortDisplayName": "FT%",
+              "description": "The ratio of free throws made to free throws attempted: FTM / FTA",
+              "abbreviation": "FT%",
+              "value": 77.36699676513672,
+              "displayValue": "77.4",
+              "perGameValue": 0.7739999890327454,
+              "perGameDisplayValue": "0.774",
+              "rank": 13,
+              "rankDisplayValue": "13th"
+            },
+            {
+              "name": "freeThrowsAttempted",
+              "displayName": "Free Throws Attempted",
+              "shortDisplayName": "FTA",
+              "description": "The number of times a free throw was attempted.",
+              "abbreviation": "FTA",
+              "value": 1732.0,
+              "displayValue": "1732",
+              "perGameValue": 23.0,
+              "perGameDisplayValue": "23",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "freeThrowsMade",
+              "displayName": "Free Throws Made",
+              "shortDisplayName": "FTM",
+              "description": "The number of times a free throw was made.",
+              "abbreviation": "FTM",
+              "value": 1340.0,
+              "displayValue": "1340",
+              "perGameValue": 18.0,
+              "perGameDisplayValue": "18",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "offensiveRebounds",
+              "displayName": "Offensive Rebounds",
+              "shortDisplayName": "OREB",
+              "description": "The number of times when the offense obtains the possession of the ball after a missed shot.",
+              "abbreviation": "OR",
+              "value": 827.0,
+              "displayValue": "827",
+              "perGameValue": 11.0,
+              "perGameDisplayValue": "11",
+              "rank": 4,
+              "rankDisplayValue": "4th"
+            },
+            {
+              "name": "points",
+              "displayName": "Points",
+              "shortDisplayName": "PTS",
+              "description": "The number of points scored.",
+              "abbreviation": "PTS",
+              "value": 7763.0,
+              "displayValue": "7763",
+              "perGameValue": 104.0,
+              "perGameDisplayValue": "104",
+              "rank": 13,
+              "rankDisplayValue": "13th"
+            },
+            {
+              "name": "turnovers",
+              "displayName": "Turnovers",
+              "shortDisplayName": "TO",
+              "description": "The number of times a player loses possession to the other team.",
+              "abbreviation": "TO",
+              "value": 973.0,
+              "displayValue": "973",
+              "perGameValue": 13.0,
+              "perGameDisplayValue": "13",
+              "rank": 8,
+              "rankDisplayValue": "8th"
+            },
+            {
+              "name": "threePointPct",
+              "displayName": "3-Point Field Goal Percentage",
+              "shortDisplayName": "3P%",
+              "description": "The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.",
+              "abbreviation": "3P%",
+              "value": 31.068000793457028,
+              "displayValue": "31.1",
+              "perGameValue": 0.3109999895095825,
+              "perGameDisplayValue": "0.311",
+              "rank": 15,
+              "rankDisplayValue": "15th"
+            },
+            {
+              "name": "threePointFieldGoalsAttempted",
+              "displayName": "3-Point Field Goals Attempted",
+              "shortDisplayName": "3PA",
+              "description": "The number of times a 3pt field goal was attempted.",
+              "abbreviation": "3PA",
+              "value": 2604.0,
+              "displayValue": "2604",
+              "perGameValue": 35.0,
+              "perGameDisplayValue": "35",
+              "rank": 11,
+              "rankDisplayValue": "11th"
+            },
+            {
+              "name": "threePointFieldGoalsMade",
+              "displayName": "3-Point Field Goals Made",
+              "shortDisplayName": "3PM",
+              "description": "The number of times a 3pt field goal was made.",
+              "abbreviation": "3PM",
+              "value": 809.0,
+              "displayValue": "809",
+              "perGameValue": 10.0,
+              "perGameDisplayValue": "10",
+              "rank": 15,
+              "rankDisplayValue": "15th"
+            },
+            {
+              "name": "trueShootingPct",
+              "displayName": "True Shooting Percentage",
+              "shortDisplayName": "TS%",
+              "description": "What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by [(FGA + (FTA x 0.44)].",
+              "abbreviation": "TS%",
+              "value": 54.584,
+              "displayValue": "54.6",
+              "rank": 14,
+              "rankDisplayValue": "14th"
+            },
+            {
+              "name": "teamTurnovers",
+              "displayName": "Team Turnovers",
+              "shortDisplayName": "TTO",
+              "description": "The number of turnovers for the team.",
+              "abbreviation": "TTO",
+              "value": 79.0,
+              "displayValue": "79",
+              "perGameValue": 1.0,
+              "perGameDisplayValue": "1",
+              "rank": 2,
+              "rankDisplayValue": "2nd"
+            },
+            {
+              "name": "totalTurnovers",
+              "displayName": "Total Turnovers",
+              "shortDisplayName": "ToTO",
+              "description": "The number of turnovers plus team turnovers for the team.",
+              "abbreviation": "ToTO",
+              "value": 1052.0,
+              "displayValue": "1052",
+              "perGameValue": 14.0,
+              "perGameDisplayValue": "14"
+            },
+            {
+              "name": "assistRatio",
+              "displayName": "Assist Ratio",
+              "shortDisplayName": "AST",
+              "description": "The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].",
+              "abbreviation": "AST",
+              "value": 17.068,
+              "displayValue": "17.1",
+              "rank": 15,
+              "rankDisplayValue": "15th"
+            },
+            {
+              "name": "pointsInPaint",
+              "displayName": "Points in the Paint",
+              "shortDisplayName": "PIP",
+              "description": "The amount of points scored in the area known as \"the Paint\"(the rectangle between the foul line and the baseline).",
+              "abbreviation": "PIP",
+              "value": 3394.0,
+              "displayValue": "3394",
+              "perGameValue": 45.0,
+              "perGameDisplayValue": "45",
+              "rank": 9,
+              "rankDisplayValue": "9th"
+            },
+            {
+              "name": "offReboundRate",
+              "displayName": "Offensive Rebound Rate",
+              "shortDisplayName": "ORR",
+              "description": "The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)].",
+              "abbreviation": "ORR",
+              "value": 25.485,
+              "displayValue": "25.5",
+              "rank": 7,
+              "rankDisplayValue": "7th"
+            },
+            {
+              "name": "turnoverRatio",
+              "displayName": "Turnover Ratio",
+              "shortDisplayName": "TO",
+              "description": "The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].",
+              "abbreviation": "TO",
+              "value": 12.887,
+              "displayValue": "12.9",
+              "rank": 7,
+              "rankDisplayValue": "7th"
+            },
+            {
+              "name": "fastBreakPoints",
+              "displayName": "Fast Break Points",
+              "shortDisplayName": "FBPs",
+              "description": "The number of points scored on fast breaks.",
+              "abbreviation": "FBPs",
+              "value": 1031.0,
+              "displayValue": "1031"
+            },
+            {
+              "name": "possessions",
+              "displayName": "Possessions",
+              "shortDisplayName": "POSS",
+              "description": "The total number of possessions for a team or player.",
+              "abbreviation": "POSS",
+              "value": 7336.08,
+              "displayValue": "7336",
+              "rank": 8,
+              "rankDisplayValue": "8th"
+            },
+            {
+              "name": "paceFactor",
+              "displayName": "Pace Factor",
+              "shortDisplayName": "PACE",
+              "description": "The number of possessions a team uses per game.",
+              "abbreviation": "PACE",
+              "value": 98.074,
+              "displayValue": "98.1",
+              "rank": 14,
+              "rankDisplayValue": "14th"
+            },
+            {
+              "name": "avgFieldGoalsMade",
+              "displayName": "Average Field Goals Made",
+              "shortDisplayName": "AFGM",
+              "description": "The average field goals made per game.",
+              "abbreviation": "FGM",
+              "value": 37.932434,
+              "displayValue": "37.9"
+            },
+            {
+              "name": "avgFieldGoalsAttempted",
+              "displayName": "Average Field Goals Attempted",
+              "shortDisplayName": "AFGA",
+              "description": "The average field goals attempted per game.",
+              "abbreviation": "FGA",
+              "value": 85.797295,
+              "displayValue": "85.8"
+            },
+            {
+              "name": "avgThreePointFieldGoalsMade",
+              "displayName": "Average 3-Point Field Goals Made",
+              "shortDisplayName": "A3PM",
+              "description": "The average three point field goals made per game.",
+              "abbreviation": "3PM",
+              "value": 10.932432,
+              "displayValue": "10.9"
+            },
+            {
+              "name": "avgThreePointFieldGoalsAttempted",
+              "displayName": "Average 3-Point Field Goals Attempted",
+              "shortDisplayName": "A3PA",
+              "description": "The average three point field goals attempted per game.",
+              "abbreviation": "3PA",
+              "value": 35.18919,
+              "displayValue": "35.2"
+            },
+            {
+              "name": "avgFreeThrowsMade",
+              "displayName": "Average Free Throws Made",
+              "shortDisplayName": "AFTM",
+              "description": "The average free throw shots made per game.",
+              "abbreviation": "FTM",
+              "value": 18.108109,
+              "displayValue": "18.1"
+            },
+            {
+              "name": "avgFreeThrowsAttempted",
+              "displayName": "Average Free Throws Attempted",
+              "shortDisplayName": "AFTA",
+              "description": "The average free throw shots attempted per game.",
+              "abbreviation": "FTA",
+              "value": 23.405405,
+              "displayValue": "23.4"
+            },
+            {
+              "name": "avgPoints",
+              "displayName": "Points Per Game",
+              "shortDisplayName": "PPG",
+              "description": "The average number of points scored per game.",
+              "abbreviation": "PTS",
+              "value": 104.9054,
+              "displayValue": "104.9"
+            },
+            {
+              "name": "avgOffensiveRebounds",
+              "displayName": "Offensive Rebounds Per Game",
+              "shortDisplayName": "ORPG",
+              "description": "The average offensive rebounds per game.",
+              "abbreviation": "OR",
+              "value": 11.175675,
+              "displayValue": "11.2"
+            },
+            {
+              "name": "avgAssists",
+              "displayName": "Assists Per Game",
+              "shortDisplayName": "APG",
+              "description": "The average assists per game.",
+              "abbreviation": "AST",
+              "value": 22.702703,
+              "displayValue": "22.7"
+            },
+            {
+              "name": "avgTurnovers",
+              "displayName": "Turnovers Per Game",
+              "shortDisplayName": "TOPG",
+              "description": "The average turnovers committed per game.",
+              "abbreviation": "TO",
+              "value": 13.148648,
+              "displayValue": "13.1"
+            },
+            {
+              "name": "offensiveReboundPct",
+              "displayName": "Offensive Rebound Percentage",
+              "shortDisplayName": "OR%",
+              "description": "The percentage of the number of times they obtain the possession of the ball after a missed shot.",
+              "abbreviation": "OR%",
+              "value": 0.23348391,
+              "displayValue": "0.2",
+              "perGameValue": 0.2291666716337204,
+              "perGameDisplayValue": "0.229",
+              "rank": 4,
+              "rankDisplayValue": "Tied-4th"
+            },
+            {
+              "name": "estimatedPossessions",
+              "displayName": "Estimated Possessions",
+              "shortDisplayName": "EP",
+              "description": "An estimation of the number of possessions for a team or player.",
+              "abbreviation": "EP",
+              "value": 7266.8,
+              "displayValue": "7266.8",
+              "perGameValue": 97.19999694824219,
+              "perGameDisplayValue": "97.2",
+              "rank": 18,
+              "rankDisplayValue": "18th"
+            },
+            {
+              "name": "avgEstimatedPossessions",
+              "displayName": "Estimated Possessions Per Game",
+              "shortDisplayName": "AEP",
+              "description": "The average number of estimated possessions per game for a team or player.",
+              "abbreviation": "EP",
+              "value": 98.2,
+              "displayValue": "98.2",
+              "rank": 18,
+              "rankDisplayValue": "18th"
+            },
+            {
+              "name": "pointsPerEstimatedPossessions",
+              "displayName": "Points Per Estimated Possession",
+              "shortDisplayName": "PPEP",
+              "description": "The number of points per estimated possession for a team or player",
+              "abbreviation": "PPEP",
+              "value": 1.0682832,
+              "displayValue": "1.1",
+              "perGameValue": 1.0699589252471924,
+              "perGameDisplayValue": "1.07"
+            },
+            {
+              "name": "avgTeamTurnovers",
+              "displayName": "Team Turnovers Per Game",
+              "shortDisplayName": "ATTO",
+              "description": "The average number of turnovers for a team per game.",
+              "abbreviation": "TTO",
+              "value": 1.0675676,
+              "displayValue": "1.1",
+              "rank": 2,
+              "rankDisplayValue": "2nd"
+            },
+            {
+              "name": "avgTotalTurnovers",
+              "displayName": "Total Turnovers Per Game",
+              "shortDisplayName": "AToTO",
+              "description": "The average number of total turnovers for a team per game.",
+              "abbreviation": "ToTO",
+              "value": 14.21621584892273,
+              "displayValue": "14.2"
+            },
+            {
+              "name": "threePointFieldGoalPct",
+              "displayName": "3-Point Field Goal Percentage",
+              "shortDisplayName": "3P%",
+              "description": "The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.",
+              "abbreviation": "3P%",
+              "value": 31.067588925361633,
+              "displayValue": "31.1",
+              "perGameValue": 0.2857142984867096,
+              "perGameDisplayValue": "0.286",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "twoPointFieldGoalsMade",
+              "displayName": "2-Point Field Goals Made",
+              "shortDisplayName": "2PM",
+              "description": "The number of 2-point field goals made for a team or player.",
+              "abbreviation": "2PM",
+              "value": 1998.0,
+              "displayValue": "1998.0",
+              "perGameValue": 27.0,
+              "perGameDisplayValue": "27",
+              "rank": 2,
+              "rankDisplayValue": "Tied-2nd"
+            },
+            {
+              "name": "twoPointFieldGoalsAttempted",
+              "displayName": "2-Point Field Goals Attempted",
+              "shortDisplayName": "2PA",
+              "description": "The number of 2-point field goals attempted for a team or player.",
+              "abbreviation": "2PA",
+              "value": 3745.0,
+              "displayValue": "3745.0",
+              "perGameValue": 50.0,
+              "perGameDisplayValue": "50",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "avgTwoPointFieldGoalsMade",
+              "displayName": "2-Point Field Goals Made per Game",
+              "shortDisplayName": "2PM",
+              "description": "The number of 2-point field goals made per game for a team or player.",
+              "abbreviation": "2PM",
+              "value": 27.0,
+              "displayValue": "27.0",
+              "rank": 2,
+              "rankDisplayValue": "Tied-2nd"
+            },
+            {
+              "name": "avgTwoPointFieldGoalsAttempted",
+              "displayName": "2-Point Field Goals Attempted per Game",
+              "shortDisplayName": "2PA",
+              "description": "The number of 2-point field goals attempted per game for a team or player.",
+              "abbreviation": "2PA",
+              "value": 50.60811,
+              "displayValue": "50.6",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "twoPointFieldGoalPct",
+              "displayName": "2-Point Field Goal Percentage",
+              "shortDisplayName": "2P%",
+              "description": "The percentage of 2-points fields goals made by a team or player.",
+              "abbreviation": "2P%",
+              "value": 53.351134061813354,
+              "displayValue": "53.4",
+              "perGameValue": 0.5400000214576721,
+              "perGameDisplayValue": "0.54",
+              "rank": 2,
+              "rankDisplayValue": "Tied-2nd"
+            },
+            {
+              "name": "shootingEfficiency",
+              "displayName": "Shooting Efficiency",
+              "shortDisplayName": "SH-EFF",
+              "description": "The efficiency with which a team or player shoots the basketball.",
+              "abbreviation": "SH-EFF",
+              "value": 0.50582767,
+              "displayValue": "0.51",
+              "perGameValue": 0.5058823823928833,
+              "perGameDisplayValue": "0.506"
+            },
+            {
+              "name": "scoringEfficiency",
+              "displayName": "Scoring Efficiency",
+              "shortDisplayName": "SC-EFF",
+              "description": "The efficiency with which a team or player scores the basketball.",
+              "abbreviation": "SC-EFF",
+              "value": 1.2227123,
+              "displayValue": "1.223",
+              "perGameValue": 1.2235294580459595,
+              "perGameDisplayValue": "1.224",
+              "rank": 1,
+              "rankDisplayValue": "1st"
+            },
+            {
+              "name": "avg48FieldGoalsMade",
+              "displayName": "Fieldgoals Made Per 48",
+              "shortDisplayName": "FGM/48",
+              "description": "The average number of fieldgoals made per 48 minutes.",
+              "abbreviation": "FGM/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48FieldGoalsAttempted",
+              "displayName": "Fieldgoals Attempted Per 48",
+              "shortDisplayName": "FGA/48",
+              "description": "The average number of fieldgoals attempted per 48 minutes.",
+              "abbreviation": "FGA/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48ThreePointFieldGoalsMade",
+              "displayName": "3-Point Fieldgoals Made Per 48",
+              "shortDisplayName": "3PM/48",
+              "description": "The average per number of 3-Pointers made per 48 minutes.",
+              "abbreviation": "3PM/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48ThreePointFieldGoalsAttempted",
+              "displayName": "3-Point Fieldgoals Attempted Per 48",
+              "shortDisplayName": "3PA/48",
+              "description": "The average number of 3-pointers attempted per 48 minutes.",
+              "abbreviation": "3PA/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48FreeThrowsMade",
+              "displayName": "Freethrows Made Per 48",
+              "shortDisplayName": "FTM/48",
+              "description": "The average number of Free Throws made per 48 minutes.",
+              "abbreviation": "FTM/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48FreeThrowsAttempted",
+              "displayName": "Freethrows Attempted Per 48",
+              "shortDisplayName": "FTA/48",
+              "description": "The average number of free throws attempted per 48 minutes.",
+              "abbreviation": "FTA/48",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Points",
+              "displayName": "Points Scored Per 48",
+              "shortDisplayName": "PTS/48",
+              "description": "The average number of points scored per 48 minutes.",
+              "abbreviation": "PTS",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48OffensiveRebounds",
+              "displayName": "Offensive Rebounds Per 48",
+              "shortDisplayName": "OREB/48",
+              "description": "The average number of offenseive rebounds per 48 minutes.",
+              "abbreviation": "OR",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Assists",
+              "displayName": "Assists Per 48",
+              "shortDisplayName": "AST/48",
+              "description": "The average number of assists per 48 minutes.",
+              "abbreviation": "AST",
+              "value": 0.0,
+              "displayValue": "0.0"
+            },
+            {
+              "name": "avg48Turnovers",
+              "displayName": "Turnovers",
+              "shortDisplayName": "TO/48",
+              "description": "The average number of turnovers per 48 minutes.",
+              "abbreviation": "TO",
+              "value": 0.0,
+              "displayValue": "0.0"
+            }
+          ]
+        }
+      ]
+    },
+    "seasonType": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2?lang=en&region=us"
+    }
+  },
+  "recent_games": [
+    {
+      "game_id": "401705396",
+      "date": "2025-02-26T00:30Z",
+      "opponent": "CLE",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 82,
+        "points_allowed": 122,
+        "rebounds": 35.0,
+        "assists": 21.0,
+        "steals": 7.0,
+        "blocks": 8.0,
+        "turnovers": 10.0,
+        "field_goal_pct": 36.7,
+        "three_point_pct": 17.9,
+        "free_throw_pct": 78.6,
+        "points_in_paint": 48.0,
+        "fast_break_points": 23.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 0.0
+      }
+    },
+    {
+      "game_id": "401705411",
+      "date": "2025-02-28T00:00Z",
+      "opponent": "GS",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 115,
+        "points_allowed": 121,
+        "rebounds": 46.0,
+        "assists": 23.0,
+        "steals": 9.0,
+        "blocks": 4.0,
+        "turnovers": 18.0,
+        "field_goal_pct": 50.6,
+        "three_point_pct": 39.3,
+        "free_throw_pct": 77.8,
+        "points_in_paint": 56.0,
+        "fast_break_points": 18.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 17.0
+      }
+    },
+    {
+      "game_id": "401705436",
+      "date": "2025-03-02T23:00Z",
+      "opponent": "TOR",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 102,
+        "points_allowed": 104,
+        "rebounds": 35.0,
+        "assists": 17.0,
+        "steals": 3.0,
+        "blocks": 5.0,
+        "turnovers": 14.0,
+        "field_goal_pct": 44.8,
+        "three_point_pct": 33.3,
+        "free_throw_pct": 83.3,
+        "points_in_paint": 38.0,
+        "fast_break_points": 10.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 3.0
+      }
+    },
+    {
+      "game_id": "401705449",
+      "date": "2025-03-05T00:00Z",
+      "opponent": "TOR",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 113,
+        "points_allowed": 114,
+        "rebounds": 35.0,
+        "assists": 28.0,
+        "steals": 12.0,
+        "blocks": 5.0,
+        "turnovers": 14.0,
+        "field_goal_pct": 48.2,
+        "three_point_pct": 41.7,
+        "free_throw_pct": 78.3,
+        "points_in_paint": 38.0,
+        "fast_break_points": 9.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 7.0
+      }
+    },
+    {
+      "game_id": "401705510",
+      "date": "2025-03-07T00:00Z",
+      "opponent": "CHI",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 123,
+        "points_allowed": 125,
+        "rebounds": 33.0,
+        "assists": 26.0,
+        "steals": 10.0,
+        "blocks": 5.0,
+        "turnovers": 12.0,
+        "field_goal_pct": 46.0,
+        "three_point_pct": 27.3,
+        "free_throw_pct": 85.0,
+        "points_in_paint": 54.0,
+        "fast_break_points": 13.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 11.0
+      }
+    },
+    {
+      "game_id": "401705483",
+      "date": "2025-03-09T01:00Z",
+      "opponent": "MIL",
+      "home": false,
+      "win": true,
+      "stats": {
+        "points": 111,
+        "points_allowed": 109,
+        "rebounds": 34.0,
+        "assists": 19.0,
+        "steals": 5.0,
+        "blocks": 5.0,
+        "turnovers": 10.0,
+        "field_goal_pct": 51.2,
+        "three_point_pct": 37.5,
+        "free_throw_pct": 78.9,
+        "points_in_paint": 38.0,
+        "fast_break_points": 7.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 17.0
+      }
+    },
+    {
+      "game_id": "401705500",
+      "date": "2025-03-11T00:00Z",
+      "opponent": "HOU",
+      "home": false,
+      "win": false,
+      "stats": {
+        "points": 84,
+        "points_allowed": 97,
+        "rebounds": 42.0,
+        "assists": 15.0,
+        "steals": 10.0,
+        "blocks": 5.0,
+        "turnovers": 8.0,
+        "field_goal_pct": 32.6,
+        "three_point_pct": 25.0,
+        "free_throw_pct": 83.3,
+        "points_in_paint": 36.0,
+        "fast_break_points": 10.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 9.0
+      }
+    },
+    {
+      "game_id": "401705707",
+      "date": "2025-03-14T00:00Z",
+      "opponent": "NO",
+      "home": false,
+      "win": true,
+      "stats": {
+        "points": 113,
+        "points_allowed": 93,
+        "rebounds": 39.0,
+        "assists": 25.0,
+        "steals": 7.0,
+        "blocks": 7.0,
+        "turnovers": 8.0,
+        "field_goal_pct": 51.8,
+        "three_point_pct": 39.4,
+        "free_throw_pct": 77.8,
+        "points_in_paint": 46.0,
+        "fast_break_points": 8.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 36.0
+      }
+    },
+    {
+      "game_id": "401705529",
+      "date": "2025-03-15T00:00Z",
+      "opponent": "MIN",
+      "home": false,
+      "win": false,
+      "stats": {
+        "points": 111,
+        "points_allowed": 118,
+        "rebounds": 31.0,
+        "assists": 18.0,
+        "steals": 9.0,
+        "blocks": 5.0,
+        "turnovers": 11.0,
+        "field_goal_pct": 44.9,
+        "three_point_pct": 42.9,
+        "free_throw_pct": 86.4,
+        "points_in_paint": 50.0,
+        "fast_break_points": 9.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 11.0
+      }
+    },
+    {
+      "game_id": "401705545",
+      "date": "2025-03-16T17:00Z",
+      "opponent": "CLE",
+      "home": false,
+      "win": true,
+      "stats": {
+        "points": 108,
+        "points_allowed": 103,
+        "rebounds": 47.0,
+        "assists": 21.0,
+        "steals": 11.0,
+        "blocks": 3.0,
+        "turnovers": 15.0,
+        "field_goal_pct": 42.0,
+        "three_point_pct": 41.9,
+        "free_throw_pct": 79.4,
+        "points_in_paint": 30.0,
+        "fast_break_points": 16.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 5.0
+      }
+    },
+    {
+      "game_id": "401705565",
+      "date": "2025-03-19T23:00Z",
+      "opponent": "HOU",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 108,
+        "points_allowed": 116,
+        "rebounds": 41.0,
+        "assists": 23.0,
+        "steals": 7.0,
+        "blocks": 4.0,
+        "turnovers": 12.0,
+        "field_goal_pct": 44.6,
+        "three_point_pct": 25.7,
+        "free_throw_pct": 85.0,
+        "points_in_paint": 60.0,
+        "fast_break_points": 7.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 8.0
+      }
+    },
+    {
+      "game_id": "401705580",
+      "date": "2025-03-21T23:00Z",
+      "opponent": "WSH",
+      "home": false,
+      "win": true,
+      "stats": {
+        "points": 120,
+        "points_allowed": 105,
+        "rebounds": 55.0,
+        "assists": 25.0,
+        "steals": 9.0,
+        "blocks": 8.0,
+        "turnovers": 12.0,
+        "field_goal_pct": 47.9,
+        "three_point_pct": 40.5,
+        "free_throw_pct": 84.6,
+        "points_in_paint": 48.0,
+        "fast_break_points": 24.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 33.0
+      }
+    },
+    {
+      "game_id": "401705604",
+      "date": "2025-03-24T23:00Z",
+      "opponent": "LAL",
+      "home": true,
+      "win": true,
+      "stats": {
+        "points": 118,
+        "points_allowed": 106,
+        "rebounds": 43.0,
+        "assists": 25.0,
+        "steals": 6.0,
+        "blocks": 4.0,
+        "turnovers": 8.0,
+        "field_goal_pct": 49.4,
+        "three_point_pct": 37.5,
+        "free_throw_pct": 82.6,
+        "points_in_paint": 44.0,
+        "fast_break_points": 20.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 17.0
+      }
+    },
+    {
+      "game_id": "401705611",
+      "date": "2025-03-25T23:00Z",
+      "opponent": "CHA",
+      "home": false,
+      "win": true,
+      "stats": {
+        "points": 111,
+        "points_allowed": 104,
+        "rebounds": 50.0,
+        "assists": 22.0,
+        "steals": 5.0,
+        "blocks": 4.0,
+        "turnovers": 8.0,
+        "field_goal_pct": 45.6,
+        "three_point_pct": 31.0,
+        "free_throw_pct": 84.2,
+        "points_in_paint": 48.0,
+        "fast_break_points": 17.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 13.0
+      }
+    },
+    {
+      "game_id": "401705626",
+      "date": "2025-03-27T23:00Z",
+      "opponent": "DAL",
+      "home": true,
+      "win": false,
+      "stats": {
+        "points": 92,
+        "points_allowed": 101,
+        "rebounds": 44.0,
+        "assists": 14.0,
+        "steals": 5.0,
+        "blocks": 5.0,
+        "turnovers": 16.0,
+        "field_goal_pct": 42.5,
+        "three_point_pct": 16.7,
+        "free_throw_pct": 79.2,
+        "points_in_paint": 48.0,
+        "fast_break_points": 14.0,
+        "second_chance_points": 0.0,
+        "biggest_lead": 11.0
+      }
+    }
+  ],
+  "recent_averages": {
+    "points": 106.2,
+    "points_allowed": 110.6,
+    "rebounds": 37.7,
+    "assists": 21.3,
+    "steals": 8.3,
+    "blocks": 5.2,
+    "turnovers": 12.0,
+    "field_goal_pct": 44.88,
+    "three_point_pct": 34.61999999999999,
+    "free_throw_pct": 80.87999999999998,
+    "points_in_paint": 43.4,
+    "fast_break_points": 12.3,
+    "second_chance_points": 0.0
+  },
+  "last_game_date": "2025-02-26T00:30Z",
+  "roster": [
+    {
+      "id": "4432809",
+      "uid": "s:40~l:46~a:4432809",
+      "guid": "390cbbeb-9761-1174-69a8-831a5b201127",
+      "alternateIds": {
+        "sdr": "4432809"
+      },
+      "firstName": "Cole",
+      "lastName": "Anthony",
+      "fullName": "Cole Anthony",
+      "displayName": "Cole Anthony",
+      "shortName": "C. Anthony",
+      "weight": 185.0,
+      "displayWeight": "185 lbs",
+      "height": 74.0,
+      "displayHeight": "6' 2\"",
+      "age": 24,
+      "dateOfBirth": "2000-05-15T07:00Z",
+      "debutYear": 2020,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432809/cole-anthony",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4432809/cole-anthony",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4432809/cole-anthony",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4432809/cole-anthony",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4432809/cole-anthony",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4432809/cole-anthony",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432809/cole-anthony",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432809/cole-anthony",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "New York",
+        "state": "NY",
+        "country": "USA"
+      },
+      "college": {
+        "id": "153",
+        "mascot": "Tar Heels",
+        "name": "North Carolina",
+        "shortName": "North Carolina",
+        "abbrev": "UNC",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "cole-anthony",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432809.png",
+        "alt": "Cole Anthony"
+      },
+      "jersey": "50",
+      "position": {
+        "id": "1",
+        "name": "Point Guard",
+        "displayName": "Point Guard",
+        "abbreviation": "PG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [
+        {
+          "status": "Out",
+          "date": "2025-03-27T21:25Z"
+        }
+      ],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 12900000,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 5539771,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 3613680,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 3449400,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 3285120,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 4
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 12900000,
+        "outgoingTradeValue": 12900000,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 12900000,
+        "salaryRemaining": 0,
+        "yearsRemaining": 3,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4432573",
+      "uid": "s:40~l:46~a:4432573",
+      "guid": "b121848a-30d3-3fad-b6ab-74bf04005533",
+      "alternateIds": {
+        "sdr": "4432573"
+      },
+      "firstName": "Paolo",
+      "lastName": "Banchero",
+      "fullName": "Paolo Banchero",
+      "displayName": "Paolo Banchero",
+      "shortName": "P. Banchero",
+      "weight": 250.0,
+      "displayWeight": "250 lbs",
+      "height": 82.0,
+      "displayHeight": "6' 10\"",
+      "age": 22,
+      "dateOfBirth": "2002-11-12T08:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432573/paolo-banchero",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4432573/paolo-banchero",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4432573/paolo-banchero",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4432573/paolo-banchero",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4432573/paolo-banchero",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4432573/paolo-banchero",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432573/paolo-banchero",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432573/paolo-banchero",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Seattle",
+        "state": "WA",
+        "country": "USA"
+      },
+      "college": {
+        "id": "150",
+        "mascot": "Blue Devils",
+        "name": "Duke",
+        "shortName": "Duke",
+        "abbrev": "DUKE",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          }
+        ]
+      },
+      "slug": "paolo-banchero",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
+        "alt": "Paolo Banchero"
+      },
+      "jersey": "5",
+      "position": {
+        "id": "6",
+        "name": "Power Forward",
+        "displayName": "Power Forward",
+        "abbreviation": "PF",
+        "leaf": true,
+        "parent": {
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 12160800,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 11608080,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 11055120,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 2
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 12160800,
+        "outgoingTradeValue": 12160800,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 12160800,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4348700",
+      "uid": "s:40~l:46~a:4348700",
+      "guid": "da823cfc-a5b0-d5e8-44c8-19017b7cd254",
+      "alternateIds": {
+        "sdr": "4348700"
+      },
+      "firstName": "Goga",
+      "lastName": "Bitadze",
+      "fullName": "Goga Bitadze",
+      "displayName": "Goga Bitadze",
+      "shortName": "G. Bitadze",
+      "weight": 250.0,
+      "displayWeight": "250 lbs",
+      "height": 82.0,
+      "displayHeight": "6' 10\"",
+      "age": 25,
+      "dateOfBirth": "1999-07-20T07:00Z",
+      "debutYear": 2019,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4348700/goga-bitadze",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4348700/goga-bitadze",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4348700/goga-bitadze",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4348700/goga-bitadze",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4348700/goga-bitadze",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4348700/goga-bitadze",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4348700/goga-bitadze",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4348700/goga-bitadze",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Sagarejo",
+        "country": "Georgia"
+      },
+      "citizenship": "Georgia",
+      "slug": "goga-bitadze",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4348700.png",
+        "alt": "Goga Bitadze"
+      },
+      "jersey": "35",
+      "position": {
+        "id": "9",
+        "name": "Center",
+        "displayName": "Center",
+        "abbreviation": "C",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 9057971,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 2062585,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 612181,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 3098400,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 2957520,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 2816760,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 5
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 9057971,
+        "outgoingTradeValue": 9057971,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 9057971,
+        "salaryRemaining": 0,
+        "yearsRemaining": 3,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": true,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4712849",
+      "uid": "s:40~l:46~a:4712849",
+      "guid": "819d6a57-b641-309d-bfbb-555428f8950e",
+      "alternateIds": {
+        "sdr": "4712849"
+      },
+      "firstName": "Anthony",
+      "lastName": "Black",
+      "fullName": "Anthony Black",
+      "displayName": "Anthony Black",
+      "shortName": "A. Black",
+      "weight": 200.0,
+      "displayWeight": "200 lbs",
+      "height": 79.0,
+      "displayHeight": "6' 7\"",
+      "age": 21,
+      "dateOfBirth": "2004-01-20T08:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4712849/anthony-black",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4712849/anthony-black",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4712849/anthony-black",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4712849/anthony-black",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4712849/anthony-black",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4712849/anthony-black",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4712849/anthony-black",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4712849/anthony-black",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Duncanville",
+        "state": "TX",
+        "country": "USA"
+      },
+      "college": {
+        "id": "8",
+        "mascot": "Razorbacks",
+        "name": "Arkansas",
+        "shortName": "Arkansas",
+        "abbrev": "ARK",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-03-01T14:17Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/8.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-03-01T14:18Z"
+          }
+        ]
+      },
+      "slug": "anthony-black",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4712849.png",
+        "alt": "Anthony Black"
+      },
+      "jersey": "0",
+      "position": {
+        "id": "3",
+        "name": "Guard",
+        "displayName": "Guard",
+        "abbreviation": "G",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 7607760,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 7245480,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 1
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 7607760,
+        "outgoingTradeValue": 7607760,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 7607760,
+        "salaryRemaining": 0,
+        "yearsRemaining": 3,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "2581018",
+      "uid": "s:40~l:46~a:2581018",
+      "guid": "171eb159-a032-0148-a7ab-946354f6991a",
+      "alternateIds": {
+        "sdr": "2581018"
+      },
+      "firstName": "Kentavious",
+      "lastName": "Caldwell-Pope",
+      "fullName": "Kentavious Caldwell-Pope",
+      "displayName": "Kentavious Caldwell-Pope",
+      "shortName": "K. Caldwell-Pope",
+      "weight": 204.0,
+      "displayWeight": "204 lbs",
+      "height": 77.0,
+      "displayHeight": "6' 5\"",
+      "age": 32,
+      "dateOfBirth": "1993-02-18T08:00Z",
+      "debutYear": 2013,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/2581018/kentavious-caldwell-pope",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/2581018/kentavious-caldwell-pope",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Thomaston",
+        "state": "GA",
+        "country": "USA"
+      },
+      "college": {
+        "id": "61",
+        "mascot": "Bulldogs",
+        "name": "Georgia",
+        "shortName": "Georgia",
+        "abbrev": "UGA",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/61.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          }
+        ]
+      },
+      "slug": "kentavious-caldwell-pope",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/2581018.png",
+        "alt": "Kentavious Caldwell-Pope"
+      },
+      "jersey": "3",
+      "hand": {
+        "type": "BOTH",
+        "abbreviation": "B",
+        "displayValue": "Both"
+      },
+      "position": {
+        "id": "2",
+        "name": "Shooting Guard",
+        "displayName": "Shooting Guard",
+        "abbreviation": "SG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 22757000,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 14704938,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 14004703,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 13038862,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 12073020,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 8089282,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 12000000,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 17745894,
+          "season": {
+            "year": 2018,
+            "startDate": "2017-09-30T07:00Z",
+            "endDate": "2018-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 3678319,
+          "season": {
+            "year": 2017,
+            "startDate": "2016-10-01T07:00Z",
+            "endDate": "2017-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 2891760,
+          "season": {
+            "year": 2016,
+            "startDate": "2015-10-01T07:00Z",
+            "endDate": "2016-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 2772480,
+          "season": {
+            "year": 2015,
+            "startDate": "2014-10-03T07:00Z",
+            "endDate": "2015-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 2653080,
+          "season": {
+            "year": 2014,
+            "startDate": "2013-10-04T07:00Z",
+            "endDate": "2014-07-01T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 11
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 22757000,
+        "outgoingTradeValue": 22757000,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 22757000,
+        "salaryRemaining": 0,
+        "yearsRemaining": 3,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4277847",
+      "uid": "s:40~l:46~a:4277847",
+      "guid": "14e2b9be-12d2-af66-d4d6-daa301c64168",
+      "alternateIds": {
+        "sdr": "4277847"
+      },
+      "firstName": "Wendell",
+      "lastName": "Carter Jr.",
+      "fullName": "Wendell Carter Jr.",
+      "displayName": "Wendell Carter Jr.",
+      "shortName": "W. Carter Jr.",
+      "weight": 270.0,
+      "displayWeight": "270 lbs",
+      "height": 82.0,
+      "displayHeight": "6' 10\"",
+      "age": 25,
+      "dateOfBirth": "1999-04-16T07:00Z",
+      "debutYear": 2018,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4277847/wendell-carter-jr",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4277847/wendell-carter-jr",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4277847/wendell-carter-jr",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4277847/wendell-carter-jr",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4277847/wendell-carter-jr",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4277847/wendell-carter-jr",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4277847/wendell-carter-jr",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4277847/wendell-carter-jr",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Atlanta",
+        "state": "GA",
+        "country": "USA"
+      },
+      "college": {
+        "id": "150",
+        "mascot": "Blue Devils",
+        "name": "Duke",
+        "shortName": "Duke",
+        "abbrev": "DUKE",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          }
+        ]
+      },
+      "slug": "wendell-carter-jr",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4277847.png",
+        "alt": "Wendell Carter Jr."
+      },
+      "jersey": "34",
+      "position": {
+        "id": "9",
+        "name": "Center",
+        "displayName": "Center",
+        "abbreviation": "C",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 11950000,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 13050000,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 14150000,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 6920027,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 5448840,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 5201400,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 4441200,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 6
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 11950000,
+        "outgoingTradeValue": 11950000,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 11950000,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4702382",
+      "uid": "s:40~l:46~a:4702382",
+      "guid": "6d67f9b8-3a96-3d9d-a8be-b85566d5103b",
+      "alternateIds": {
+        "sdr": "4702382"
+      },
+      "firstName": "Tristan",
+      "lastName": "da Silva",
+      "fullName": "Tristan da Silva",
+      "displayName": "Tristan da Silva",
+      "shortName": "T. da Silva",
+      "weight": 217.0,
+      "displayWeight": "217 lbs",
+      "height": 80.0,
+      "displayHeight": "6' 8\"",
+      "age": 23,
+      "dateOfBirth": "2001-05-15T07:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4702382/tristan-da-silva",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4702382/tristan-da-silva",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4702382/tristan-da-silva",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4702382/tristan-da-silva",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4702382/tristan-da-silva",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4702382/tristan-da-silva",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4702382/tristan-da-silva",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4702382/tristan-da-silva",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Munich",
+        "country": "Germany"
+      },
+      "college": {
+        "id": "38",
+        "mascot": "Buffaloes",
+        "name": "Colorado",
+        "shortName": "Colorado",
+        "abbrev": "COLO",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/38.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-11-09T21:51Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/38.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-11-09T21:51Z"
+          }
+        ]
+      },
+      "slug": "tristan-da-silva",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4702382.png",
+        "alt": "Tristan da Silva"
+      },
+      "jersey": "23",
+      "position": {
+        "id": "7",
+        "name": "Forward",
+        "displayName": "Forward",
+        "abbreviation": "F",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 3628440,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 0
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 3628440,
+        "outgoingTradeValue": 3628440,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 3628440,
+        "salaryRemaining": 0,
+        "yearsRemaining": 4,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "2999547",
+      "uid": "s:40~l:46~a:2999547",
+      "guid": "80977674-266a-5c4a-16a5-f7efe9961fe0",
+      "alternateIds": {
+        "sdr": "2999547"
+      },
+      "firstName": "Gary",
+      "lastName": "Harris",
+      "fullName": "Gary Harris",
+      "displayName": "Gary Harris",
+      "shortName": "G. Harris",
+      "weight": 210.0,
+      "displayWeight": "210 lbs",
+      "height": 76.0,
+      "displayHeight": "6' 4\"",
+      "age": 30,
+      "dateOfBirth": "1994-09-14T07:00Z",
+      "debutYear": 2014,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/2999547/gary-harris",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/2999547/gary-harris",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/2999547/gary-harris",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/2999547/gary-harris",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/2999547/gary-harris",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/2999547/gary-harris",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/2999547/gary-harris",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/2999547/gary-harris",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Fishers",
+        "state": "IN",
+        "country": "USA"
+      },
+      "college": {
+        "id": "127",
+        "mascot": "Spartans",
+        "name": "Michigan State",
+        "shortName": "Michigan State",
+        "abbrev": "MSU",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/127.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          }
+        ]
+      },
+      "slug": "gary-harris",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/2999547.png",
+        "alt": "Gary Harris"
+      },
+      "jersey": "14",
+      "position": {
+        "id": "2",
+        "name": "Shooting Guard",
+        "displayName": "Shooting Guard",
+        "abbreviation": "SG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 6730769,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 13000000,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 13000000,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 20482143,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 19610714,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 17839286,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 16517857,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 2550055,
+          "season": {
+            "year": 2018,
+            "startDate": "2017-09-30T07:00Z",
+            "endDate": "2018-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 1655880,
+          "season": {
+            "year": 2017,
+            "startDate": "2016-10-01T07:00Z",
+            "endDate": "2017-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 1584480,
+          "season": {
+            "year": 2016,
+            "startDate": "2015-10-01T07:00Z",
+            "endDate": "2016-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 1519200,
+          "season": {
+            "year": 2015,
+            "startDate": "2014-10-03T07:00Z",
+            "endDate": "2015-07-01T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 10
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 6730769,
+        "outgoingTradeValue": 6730769,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 6730769,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": true,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4433623",
+      "uid": "s:40~l:46~a:4433623",
+      "guid": "7a86ff35-9d6a-33cd-b913-0cf31e7fabf8",
+      "alternateIds": {
+        "sdr": "4433623"
+      },
+      "firstName": "Caleb",
+      "lastName": "Houstan",
+      "fullName": "Caleb Houstan",
+      "displayName": "Caleb Houstan",
+      "shortName": "C. Houstan",
+      "weight": 205.0,
+      "displayWeight": "205 lbs",
+      "height": 80.0,
+      "displayHeight": "6' 8\"",
+      "age": 22,
+      "dateOfBirth": "2003-01-09T08:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4433623/caleb-houstan",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4433623/caleb-houstan",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4433623/caleb-houstan",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4433623/caleb-houstan",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4433623/caleb-houstan",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4433623/caleb-houstan",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4433623/caleb-houstan",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4433623/caleb-houstan",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Mississauga",
+        "state": "ON",
+        "country": "Canada"
+      },
+      "college": {
+        "id": "130",
+        "mascot": "Wolverines",
+        "name": "Michigan",
+        "shortName": "Michigan",
+        "abbrev": "MICH",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "caleb-houstan",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4433623.png",
+        "alt": "Caleb Houstan"
+      },
+      "jersey": "2",
+      "hand": {
+        "type": "RIGHT",
+        "abbreviation": "R",
+        "displayValue": "Right"
+      },
+      "position": {
+        "id": "3",
+        "name": "Guard",
+        "displayName": "Guard",
+        "abbreviation": "G",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 2019693,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 2000000,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 2000000,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 2
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 2019693,
+        "outgoingTradeValue": 2019693,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 2019693,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "5105806",
+      "uid": "s:40~l:46~a:5105806",
+      "guid": "652458a0-a7aa-37b9-811c-be78045cc762",
+      "alternateIds": {
+        "sdr": "5105806"
+      },
+      "firstName": "Jett",
+      "lastName": "Howard",
+      "fullName": "Jett Howard",
+      "displayName": "Jett Howard",
+      "shortName": "J. Howard",
+      "weight": 215.0,
+      "displayWeight": "215 lbs",
+      "height": 78.0,
+      "displayHeight": "6' 6\"",
+      "age": 21,
+      "dateOfBirth": "2003-09-14T07:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/5105806/jett-howard",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/5105806/jett-howard",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/5105806/jett-howard",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/5105806/jett-howard",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/5105806/jett-howard",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/5105806/jett-howard",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/5105806/jett-howard",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/5105806/jett-howard",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Miami",
+        "state": "FL",
+        "country": "USA"
+      },
+      "college": {
+        "id": "130",
+        "mascot": "Wolverines",
+        "name": "Michigan",
+        "shortName": "Michigan",
+        "abbrev": "MICH",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "jett-howard",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/5105806.png",
+        "alt": "Jett Howard"
+      },
+      "jersey": "13",
+      "position": {
+        "id": "3",
+        "name": "Guard",
+        "displayName": "Guard",
+        "abbreviation": "G",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 5278320,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 5026800,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 1
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 5278320,
+        "outgoingTradeValue": 5278320,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 5278320,
+        "salaryRemaining": 0,
+        "yearsRemaining": 3,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4065654",
+      "uid": "s:40~l:46~a:4065654",
+      "guid": "99d3b132-e33a-2cc7-8cf9-236b06d7c625",
+      "alternateIds": {
+        "sdr": "4065654"
+      },
+      "firstName": "Jonathan",
+      "lastName": "Isaac",
+      "fullName": "Jonathan Isaac",
+      "displayName": "Jonathan Isaac",
+      "shortName": "J. Isaac",
+      "weight": 230.0,
+      "displayWeight": "230 lbs",
+      "height": 82.0,
+      "displayHeight": "6' 10\"",
+      "age": 27,
+      "dateOfBirth": "1997-10-03T07:00Z",
+      "debutYear": 2017,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4065654/jonathan-isaac",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4065654/jonathan-isaac",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4065654/jonathan-isaac",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4065654/jonathan-isaac",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4065654/jonathan-isaac",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4065654/jonathan-isaac",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4065654/jonathan-isaac",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4065654/jonathan-isaac",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Naples",
+        "state": "FL",
+        "country": "USA"
+      },
+      "college": {
+        "id": "52",
+        "mascot": "Seminoles",
+        "name": "Florida State",
+        "shortName": "Florida State",
+        "abbrev": "FSU",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/52.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          }
+        ]
+      },
+      "slug": "jonathan-isaac",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065654.png",
+        "alt": "Jonathan Isaac"
+      },
+      "jersey": "1",
+      "hand": {
+        "type": "LEFT",
+        "abbreviation": "L",
+        "displayValue": "Left"
+      },
+      "position": {
+        "id": "6",
+        "name": "Power Forward",
+        "displayName": "Power Forward",
+        "abbreviation": "PF",
+        "leaf": true,
+        "parent": {
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 25000000,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 17400000,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 17400000,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 17400000,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 7362566,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 5806440,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 4969080,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 4969080,
+          "season": {
+            "year": 2018,
+            "startDate": "2017-09-30T07:00Z",
+            "endDate": "2018-07-01T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 7
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 25000000,
+        "outgoingTradeValue": 25000000,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 25000000,
+        "salaryRemaining": 0,
+        "yearsRemaining": 5,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": true,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "6446",
+      "uid": "s:40~l:46~a:6446",
+      "guid": "c8370b0d-572a-4034-8738-f981c19cd657",
+      "alternateIds": {
+        "sdr": "2530755"
+      },
+      "firstName": "Cory",
+      "lastName": "Joseph",
+      "fullName": "Cory Joseph",
+      "displayName": "Cory Joseph",
+      "shortName": "C. Joseph",
+      "weight": 200.0,
+      "displayWeight": "200 lbs",
+      "height": 74.0,
+      "displayHeight": "6' 2\"",
+      "age": 33,
+      "dateOfBirth": "1991-08-20T07:00Z",
+      "debutYear": 2011,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/6446/cory-joseph",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/6446/cory-joseph",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/6446/cory-joseph",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/6446/cory-joseph",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/6446/cory-joseph",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/6446/cory-joseph",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/6446/cory-joseph",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/6446/cory-joseph",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Toronto",
+        "state": "ON",
+        "country": "Canada"
+      },
+      "citizenship": "Canada",
+      "college": {
+        "id": "251",
+        "mascot": "Longhorns",
+        "name": "Texas",
+        "shortName": "Texas",
+        "abbrev": "TEX",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/251.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2018-06-05T12:08Z"
+          }
+        ]
+      },
+      "slug": "cory-joseph",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/6446.png",
+        "alt": "Cory Joseph"
+      },
+      "jersey": "10",
+      "position": {
+        "id": "1",
+        "name": "Point Guard",
+        "displayName": "Point Guard",
+        "abbreviation": "PG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 3303771,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 2019706,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 5155500,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 4910000,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 12600000,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 12000000,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 7945000,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 7945000,
+          "season": {
+            "year": 2018,
+            "startDate": "2017-09-30T07:00Z",
+            "endDate": "2018-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 7315000,
+          "season": {
+            "year": 2017,
+            "startDate": "2016-10-01T07:00Z",
+            "endDate": "2017-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 7000000,
+          "season": {
+            "year": 2016,
+            "startDate": "2015-10-01T07:00Z",
+            "endDate": "2016-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 2023261,
+          "season": {
+            "year": 2015,
+            "startDate": "2014-10-03T07:00Z",
+            "endDate": "2015-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 1120920,
+          "season": {
+            "year": 2014,
+            "startDate": "2013-10-04T07:00Z",
+            "endDate": "2014-07-01T06:59Z"
+          }
+        },
+        {
+          "salary": 1074720,
+          "season": {
+            "year": 2013,
+            "startDate": "2012-09-20T07:00Z",
+            "endDate": "2013-07-12T06:59Z"
+          }
+        },
+        {
+          "salary": 1074720,
+          "season": {
+            "year": 2012,
+            "startDate": "2011-12-09T08:00Z",
+            "endDate": "2012-06-27T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 13
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 3303771,
+        "outgoingTradeValue": 3303771,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 3303771,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": true,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4397071",
+      "uid": "s:40~l:46~a:4397071",
+      "guid": "4cc27007-370b-a383-7234-0c9e917e6e40",
+      "alternateIds": {
+        "sdr": "4397071"
+      },
+      "firstName": "Mac",
+      "lastName": "McClung",
+      "fullName": "Mac McClung",
+      "displayName": "Mac McClung",
+      "shortName": "M. McClung",
+      "weight": 185.0,
+      "displayWeight": "185 lbs",
+      "height": 74.0,
+      "displayHeight": "6' 2\"",
+      "age": 26,
+      "dateOfBirth": "1999-01-06T08:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4397071/mac-mcclung",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4397071/mac-mcclung",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4397071/mac-mcclung",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4397071/mac-mcclung",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4397071/mac-mcclung",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4397071/mac-mcclung",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4397071/mac-mcclung",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4397071/mac-mcclung",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Gate City",
+        "state": "VA",
+        "country": "USA"
+      },
+      "college": {
+        "id": "2641",
+        "mascot": "Red Raiders",
+        "name": "Texas Tech",
+        "shortName": "Texas Tech",
+        "abbrev": "TTU",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2641.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-09-07T19:32Z"
+          }
+        ]
+      },
+      "slug": "mac-mcclung",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4397071.png",
+        "alt": "Mac McClung"
+      },
+      "jersey": "8",
+      "position": {
+        "id": "3",
+        "name": "Guard",
+        "displayName": "Guard",
+        "abbreviation": "G",
+        "leaf": false
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 0,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 0,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 2
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": true
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 0,
+        "outgoingTradeValue": 0,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 0,
+        "salaryRemaining": 0,
+        "yearsRemaining": 1,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4409222",
+      "uid": "s:40~l:46~a:4409222",
+      "guid": "6c5bee00-a5d6-c5e3-5110-1b34e1727ea3",
+      "alternateIds": {
+        "sdr": "4409222"
+      },
+      "firstName": "Trevelin",
+      "lastName": "Queen",
+      "fullName": "Trevelin Queen",
+      "displayName": "Trevelin Queen",
+      "shortName": "T. Queen",
+      "weight": 190.0,
+      "displayWeight": "190 lbs",
+      "height": 77.0,
+      "displayHeight": "6' 5\"",
+      "age": 28,
+      "dateOfBirth": "1997-02-25T08:00Z",
+      "debutYear": 2020,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4409222/trevelin-queen",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4409222/trevelin-queen",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4409222/trevelin-queen",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4409222/trevelin-queen",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4409222/trevelin-queen",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4409222/trevelin-queen",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4409222/trevelin-queen",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4409222/trevelin-queen",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Glen Burnie",
+        "state": "MD",
+        "country": "USA"
+      },
+      "college": {
+        "id": "166",
+        "mascot": "Aggies",
+        "name": "New Mexico State",
+        "shortName": "New Mexico State",
+        "abbrev": "NMSU",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/166.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-09-02T00:59Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/166.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-09-02T00:34Z"
+          }
+        ]
+      },
+      "slug": "trevelin-queen",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4409222.png",
+        "alt": "Trevelin Queen"
+      },
+      "jersey": "12",
+      "position": {
+        "id": "2",
+        "name": "Shooting Guard",
+        "displayName": "Shooting Guard",
+        "abbreviation": "SG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 0,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 0,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 1637966,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 0,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 3
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": true
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 0,
+        "outgoingTradeValue": 0,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 0,
+        "salaryRemaining": 0,
+        "yearsRemaining": 1,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4432165",
+      "uid": "s:40~l:46~a:4432165",
+      "guid": "bd1767da-2774-3ec3-9c48-f443f0777bf6",
+      "alternateIds": {
+        "sdr": "4432165"
+      },
+      "firstName": "Jalen",
+      "lastName": "Suggs",
+      "fullName": "Jalen Suggs",
+      "displayName": "Jalen Suggs",
+      "shortName": "J. Suggs",
+      "weight": 205.0,
+      "displayWeight": "205 lbs",
+      "height": 77.0,
+      "displayHeight": "6' 5\"",
+      "age": 23,
+      "dateOfBirth": "2001-06-03T07:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432165/jalen-suggs",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4432165/jalen-suggs",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4432165/jalen-suggs",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4432165/jalen-suggs",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4432165/jalen-suggs",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4432165/jalen-suggs",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4432165/jalen-suggs",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432165/jalen-suggs",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Saint Paul",
+        "state": "MN",
+        "country": "USA"
+      },
+      "college": {
+        "id": "2250",
+        "mascot": "Bulldogs",
+        "name": "Gonzaga",
+        "shortName": "Gonzaga",
+        "abbrev": "GONZ",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2250.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "jalen-suggs",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432165.png",
+        "alt": "Jalen Suggs"
+      },
+      "jersey": "4",
+      "position": {
+        "id": "2",
+        "name": "Shooting Guard",
+        "displayName": "Shooting Guard",
+        "abbreviation": "SG",
+        "leaf": true,
+        "parent": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        }
+      },
+      "injuries": [
+        {
+          "status": "Out",
+          "date": "2025-03-04T16:06Z"
+        }
+      ],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 9188385,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 7252080,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 6922320,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 6593040,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 3
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 26614731,
+        "outgoingTradeValue": 9188385,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 9188385,
+        "salaryRemaining": 0,
+        "yearsRemaining": 6,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4278516",
+      "uid": "s:40~l:46~a:4278516",
+      "guid": "eee7a511-9e66-7669-2686-9f149e2ba8a5",
+      "alternateIds": {
+        "sdr": "4278516"
+      },
+      "firstName": "Ethan",
+      "lastName": "Thompson",
+      "fullName": "Ethan Thompson",
+      "displayName": "Ethan Thompson",
+      "shortName": "E. Thompson",
+      "weight": 195.0,
+      "displayWeight": "195 lbs",
+      "height": 77.0,
+      "displayHeight": "6' 5\"",
+      "age": 25,
+      "dateOfBirth": "1999-05-04T07:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4278516/ethan-thompson",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4278516/ethan-thompson",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4278516/ethan-thompson",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4278516/ethan-thompson",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4278516/ethan-thompson",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4278516/ethan-thompson",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4278516/ethan-thompson",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4278516/ethan-thompson",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "USA"
+      },
+      "college": {
+        "id": "204",
+        "mascot": "Beavers",
+        "name": "Oregon State",
+        "shortName": "Oregon State",
+        "abbrev": "ORST",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/204.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-22T17:01Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/204.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-22T17:01Z"
+          }
+        ]
+      },
+      "slug": "ethan-thompson",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4278516.png",
+        "alt": "Ethan Thompson"
+      },
+      "jersey": "55",
+      "position": {
+        "id": "3",
+        "name": "Guard",
+        "displayName": "Guard",
+        "abbreviation": "G",
+        "leaf": false
+      },
+      "injuries": [],
+      "contracts": [],
+      "experience": {
+        "years": 0
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "4566434",
+      "uid": "s:40~l:46~a:4566434",
+      "guid": "a585c182-99b5-3f9f-97ec-4382128e8e9f",
+      "alternateIds": {
+        "sdr": "4566434"
+      },
+      "firstName": "Franz",
+      "lastName": "Wagner",
+      "fullName": "Franz Wagner",
+      "displayName": "Franz Wagner",
+      "shortName": "F. Wagner",
+      "weight": 220.0,
+      "displayWeight": "220 lbs",
+      "height": 82.0,
+      "displayHeight": "6' 10\"",
+      "age": 23,
+      "dateOfBirth": "2001-08-27T07:00Z",
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4566434/franz-wagner",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/4566434/franz-wagner",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/4566434/franz-wagner",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/4566434/franz-wagner",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/4566434/franz-wagner",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/4566434/franz-wagner",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/4566434/franz-wagner",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/4566434/franz-wagner",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Berlin",
+        "country": "Germany"
+      },
+      "college": {
+        "id": "130",
+        "mascot": "Wolverines",
+        "name": "Michigan",
+        "shortName": "Michigan",
+        "abbrev": "MICH",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "franz-wagner",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
+        "alt": "Franz Wagner"
+      },
+      "jersey": "22",
+      "position": {
+        "id": "5",
+        "name": "Small Forward",
+        "displayName": "Small Forward",
+        "abbreviation": "SF",
+        "leaf": true,
+        "parent": {
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
+        }
+      },
+      "injuries": [],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 7007092,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 5508720,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 5258280,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 5007840,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 3
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": true
+        },
+        "incomingTradeValue": 36672176,
+        "outgoingTradeValue": 7007092,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 7007092,
+        "salaryRemaining": 0,
+        "yearsRemaining": 6,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": false,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    },
+    {
+      "id": "3150844",
+      "uid": "s:40~l:46~a:3150844",
+      "guid": "77dabd3e-f335-70aa-b04b-e579fc0efec4",
+      "alternateIds": {
+        "sdr": "3150844"
+      },
+      "firstName": "Moritz",
+      "lastName": "Wagner",
+      "fullName": "Moritz Wagner",
+      "displayName": "Moritz Wagner",
+      "shortName": "M. Wagner",
+      "weight": 245.0,
+      "displayWeight": "245 lbs",
+      "height": 83.0,
+      "displayHeight": "6' 11\"",
+      "age": 27,
+      "dateOfBirth": "1997-04-26T07:00Z",
+      "debutYear": 2018,
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/3150844/moritz-wagner",
+          "text": "Player Card",
+          "shortText": "Player Card",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/stats/_/id/3150844/moritz-wagner",
+          "text": "Stats",
+          "shortText": "Stats",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/splits/_/id/3150844/moritz-wagner",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/gamelog/_/id/3150844/moritz-wagner",
+          "text": "Game Log",
+          "shortText": "Game Log",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/news/_/id/3150844/moritz-wagner",
+          "text": "News",
+          "shortText": "News",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/bio/_/id/3150844/moritz-wagner",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/_/id/3150844/moritz-wagner",
+          "text": "Overview",
+          "shortText": "Overview",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "advancedstats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://www.espn.com/nba/player/advancedstats/_/id/3150844/moritz-wagner",
+          "text": "Advanced Stats",
+          "shortText": "Advanced Stats",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {
+        "city": "Berlin",
+        "country": "Germany"
+      },
+      "college": {
+        "id": "130",
+        "mascot": "Wolverines",
+        "name": "Michigan",
+        "shortName": "Michigan",
+        "abbrev": "MICH",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2023-02-17T21:15Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2023-02-17T21:14Z"
+          }
+        ]
+      },
+      "slug": "moritz-wagner",
+      "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/nba/players/full/3150844.png",
+        "alt": "Moritz Wagner"
+      },
+      "jersey": "21",
+      "position": {
+        "id": "9",
+        "name": "Center",
+        "displayName": "Center",
+        "abbreviation": "C",
+        "leaf": false
+      },
+      "injuries": [
+        {
+          "status": "Out",
+          "date": "2025-01-09T15:24Z"
+        }
+      ],
+      "teams": [
+        {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/19?lang=en&region=us"
+        }
+      ],
+      "contracts": [
+        {
+          "salary": 11000000,
+          "season": {
+            "year": 2025,
+            "startDate": "2024-09-24T07:00Z",
+            "endDate": "2025-06-28T06:59Z"
+          }
+        },
+        {
+          "salary": 8000000,
+          "season": {
+            "year": 2024,
+            "startDate": "2023-10-05T07:00Z",
+            "endDate": "2024-06-21T06:59Z"
+          }
+        },
+        {
+          "salary": 1878720,
+          "season": {
+            "year": 2023,
+            "startDate": "2022-08-30T07:00Z",
+            "endDate": "2023-06-24T06:59Z"
+          }
+        },
+        {
+          "salary": 1729217,
+          "season": {
+            "year": 2022,
+            "startDate": "2021-09-22T07:00Z",
+            "endDate": "2022-06-20T06:59Z"
+          }
+        },
+        {
+          "salary": 221995,
+          "season": {
+            "year": 2021,
+            "startDate": "2020-12-02T08:00Z",
+            "endDate": "2021-07-23T06:59Z"
+          }
+        },
+        {
+          "salary": 2063520,
+          "season": {
+            "year": 2020,
+            "startDate": "2019-09-28T07:00Z",
+            "endDate": "2020-10-22T06:59Z"
+          }
+        },
+        {
+          "salary": 1762080,
+          "season": {
+            "year": 2019,
+            "startDate": "2018-09-13T07:00Z",
+            "endDate": "2019-06-24T06:59Z"
+          }
+        }
+      ],
+      "experience": {
+        "years": 6
+      },
+      "contract": {
+        "birdStatus": 0,
+        "baseYearCompensation": {
+          "active": false
+        },
+        "poisonPillProvision": {
+          "active": false
+        },
+        "incomingTradeValue": 11000000,
+        "outgoingTradeValue": 11000000,
+        "minimumSalaryException": false,
+        "optionType": 0,
+        "salary": 11000000,
+        "salaryRemaining": 0,
+        "yearsRemaining": 2,
+        "season": {
+          "year": 2025,
+          "startDate": "2024-09-24T07:00Z",
+          "endDate": "2025-06-28T06:59Z"
+        },
+        "tradeKicker": {
+          "active": false,
+          "percentage": 0.0,
+          "value": 0,
+          "tradeValue": 0
+        },
+        "tradeRestriction": true,
+        "unsignedForeignPick": false,
+        "active": true
+      },
+      "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+      }
+    }
+  ],
+  "trends": {
+    "momentum": 0.4,
+    "fatigue": 1.0,
+    "rest_days": 31,
+    "consistency": 0.3333333333333333
+  },
+  "last_updated": "2025-03-29T00:58:06.624277"
+}

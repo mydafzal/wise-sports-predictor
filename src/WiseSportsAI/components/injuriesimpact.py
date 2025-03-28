@@ -10,9 +10,12 @@ class InjuriesImpact:
         self.replacement_factor = 0.9  # Teams recover 90% of lost production
         
         self.ABBREVIATION_MAPPING = {
-            "CHO": "CHA",  # Charlotte Hornets
-            "PHO": "PHX",  # Phoenix Suns
-            "BRK": "BKN"   # Brooklyn Nets
+            "CHO": "CHA",  
+            "PHO": "PHX",  
+            "BRK": "BKN" ,  
+            "UTA": "UTAH",
+            "NOP" : "NO" 
+
         }
         
         self.POSITION_IMPACT = {

@@ -2,10 +2,12 @@ import os
 import uvicorn
 import pandas as pd
 import numpy as np
+import json
+from pathlib import Path
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
-from typing import List, Dict
+from typing import List, Dict, Optional
 from WiseSportsAI.components.modelpredictions import ModelPredictor
 from WiseSportsAI.components.injuriesimpact import InjuriesImpact
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,6 +21,10 @@ app.add_middleware(
     allow_methods=["*"], 
     allow_headers=["*"],  
 )
+
+# Configuration
+BASE_DIR = Path("Artifacts/TeamStats")
+TEAM_MAPPING_FILE = Path("Artifacts/TeamInfo/team_mapping.csv")
 
 class PredictionRequest(BaseModel):
     home_team: str
@@ -41,6 +47,30 @@ class InjuryImpactResponse(BaseModel):
     cross_impact_home_boost: float
     cross_impact_away_boost: float
 
+class TeamStatsResponse(BaseModel):
+    team_name: str
+    team_abbreviation: str
+    team_id: str
+    stats: Dict
+
+TEAM_ABBREVIATIONS = {
+    "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN", "Charlotte Hornets": "CHA",
+    "Chicago Bulls": "CHI", "Cleveland Cavaliers": "CLE", "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN",
+    "Detroit Pistons": "DET", "Golden State Warriors": "GSW", "Houston Rockets": "HOU", "Indiana Pacers": "IND",
+    "LA Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM", "Miami Heat": "MIA",
+    "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK",
+    "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX",
+    "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR",
+    "Utah Jazz": "UTA", "Washington Wizards": "WAS"
+}
+
+ESPN_TO_FASTAPI_MAPPING = {"PHX": "PHO", "CHA": "CHO", "BKN": "BRK"}
+
+# Initialize mappings
+ABBREVIATION_TO_ID = {}
+TEAM_ABBREVIATIONS_REVERSED = {v: k for k, v in TEAM_ABBREVIATIONS.items()}
+
+# Initialize models and data
 model_home_path = "Artifacts/TrainedModels/xgb_home_score_model.pkl"
 model_away_path = "Artifacts/TrainedModels/xgb_away_score_model.pkl"
 label_encoder_home_path = "Artifacts/LabelEncoderhome_team_name.pkl"
@@ -57,6 +87,36 @@ def safe_float_convert(value, default=0.0):
     except (ValueError, TypeError):
         return default
 
+def load_team_mapping() -> Dict[str, str]:
+    """Load team abbreviation to ID mapping"""
+    if not TEAM_MAPPING_FILE.exists():
+        raise FileNotFoundError(f"Team mapping file not found at {TEAM_MAPPING_FILE}")
+    
+    df = pd.read_csv(TEAM_MAPPING_FILE)
+    global ABBREVIATION_TO_ID
+    
+    # Create mapping from abbreviation to team ID
+    for _, row in df.iterrows():
+        team_name = row['team_name']
+        if team_name in TEAM_ABBREVIATIONS:
+            abbrev = TEAM_ABBREVIATIONS[team_name]
+            ABBREVIATION_TO_ID[abbrev] = row['team_id']
+    
+    return ABBREVIATION_TO_ID
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize application state"""
+    # Ensure the team stats directory exists
+    BASE_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Load team mappings
+    try:
+        load_team_mapping()
+    except Exception as e:
+        print(f"Failed to load team mapping: {e}")
+
+# Existing routes
 @app.post("/predict")
 async def predict_scores(request: PredictionRequest):
     try:
@@ -133,6 +193,49 @@ async def get_injuries_predictions():
         
         return results
         
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Team stats routes
+@app.get("/team/{team_abbrev}", response_model=TeamStatsResponse)
+async def get_team_stats_by_abbrev(team_abbrev: str):
+    """Get stats for a team by abbreviation (e.g., GSW, LAL)"""
+    try:
+        # Handle any abbreviation mappings
+        team_abbrev = team_abbrev.upper()
+        team_abbrev = ESPN_TO_FASTAPI_MAPPING.get(team_abbrev, team_abbrev)
+        
+        if team_abbrev not in ABBREVIATION_TO_ID:
+            raise HTTPException(status_code=404, detail="Team abbreviation not found")
+        
+        team_id = ABBREVIATION_TO_ID[team_abbrev]
+        stats_file = BASE_DIR / f"{team_id}.json"
+        
+        if not stats_file.exists():
+            raise HTTPException(status_code=404, detail="Team stats not available")
+        
+        with open(stats_file, 'r') as f:
+            stats_data = json.load(f)
+        
+        return {
+            "team_name": TEAM_ABBREVIATIONS_REVERSED.get(team_abbrev, team_abbrev),
+            "team_abbreviation": team_abbrev,
+            "team_id": team_id,
+            "stats": stats_data
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/teams/abbreviations", response_class=JSONResponse)
+async def list_team_abbreviations():
+    """List all available team abbreviations"""
+    try:
+        return {
+            "abbreviations": list(ABBREVIATION_TO_ID.keys())
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
