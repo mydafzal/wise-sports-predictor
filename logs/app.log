@@ -171,3 +171,491 @@
 2025-03-27 02:31:55,885 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
 2025-03-27 02:34:41,210 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
 2025-03-27 02:35:13,985 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:16:35,692 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:16:35,693 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:16:36,067 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:16:36,067 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:16:36,153 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:16:36,153 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:16:51,844 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:16:51,845 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:17:29,720 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:17:29,721 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:17:29,939 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:17:29,943 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:18:24,822 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:18:24,823 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:18:45,635 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 20:20:27,301 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:20:27,302 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:21:30,366 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:21:30,366 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:21:30,743 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:21:30,743 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:21:30,825 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:21:30,826 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:21:47,460 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:21:47,461 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:22:10,006 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:22:10,007 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:22:10,229 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:22:10,233 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:22:54,911 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:22:54,911 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:25:12,107 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:25:12,108 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:31:51,309 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:31:51,323 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:31:51,657 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:31:51,658 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:31:51,744 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:31:51,745 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:32:08,668 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:32:08,669 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:32:32,035 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:32:32,036 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:32:32,267 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:32:32,271 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:33:28,285 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:33:28,286 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:34:31,830 - injuriesimpact.py - None - ERROR - Failed to fetch roster for UTA (ESPN: UTA): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/UTA/roster
+2025-03-28 20:34:35,382 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 20:35:07,094 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:35:07,094 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:42:37,513 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:42:37,513 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:42:37,828 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:42:37,828 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:42:37,923 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:42:37,923 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:43:04,501 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:43:04,502 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:43:38,474 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:43:38,474 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:43:38,739 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:43:38,745 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:44:06,484 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:44:06,484 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:45:16,332 - injuriesimpact.py - None - ERROR - Failed to fetch roster for UTA (ESPN: UTA): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/UTA/roster
+2025-03-28 20:45:16,973 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 20:45:51,744 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:45:51,745 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:46:16,178 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:46:16,178 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:46:16,530 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:46:16,530 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:46:16,618 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:46:16,618 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:46:40,325 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:46:40,326 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:47:23,900 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:47:23,901 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:47:24,170 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:47:24,176 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:48:03,860 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:48:03,861 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:48:58,417 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 20:49:22,739 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:49:22,740 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:53:01,937 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:53:01,937 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:53:02,282 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:53:02,282 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:53:02,365 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:53:02,366 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:53:19,559 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:53:19,560 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:53:47,424 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:53:47,424 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:53:47,677 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:53:47,682 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:54:40,554 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:54:40,555 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:55:36,566 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 20:55:59,476 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 20:55:59,477 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 20:57:14,409 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:57:14,410 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:57:14,742 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:57:14,743 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:57:14,819 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:57:14,820 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:57:31,223 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:57:31,224 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 20:57:54,536 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 20:57:54,537 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 20:57:54,757 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 20:57:54,761 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 20:58:38,116 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 20:58:38,117 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 20:59:31,990 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 20:59:31,990 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 20:59:32,312 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 20:59:32,312 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 20:59:32,392 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 20:59:32,393 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 20:59:48,536 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 20:59:48,536 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 21:00:14,387 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 21:00:14,388 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 21:00:14,636 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 21:00:14,641 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 21:01:08,784 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 21:01:08,785 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 21:02:28,305 - injuriesimpact.py - None - ERROR - Failed to fetch roster for UTA (ESPN: UTA): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/UTA/roster
+2025-03-28 21:02:31,332 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 21:03:12,141 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 21:03:12,142 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 21:11:56,169 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 21:13:57,777 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 21:50:59,369 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 21:50:59,370 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 21:50:59,746 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 21:50:59,746 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 21:50:59,830 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 21:50:59,831 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 21:52:23,045 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 21:52:23,046 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 21:52:23,367 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 21:52:23,367 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 21:52:23,442 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 21:52:23,443 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 21:52:40,100 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 21:52:40,100 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 21:53:11,356 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 21:53:11,357 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 21:53:11,608 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 21:53:11,614 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 21:59:48,215 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 21:59:48,216 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 21:59:48,534 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 21:59:48,535 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 21:59:48,631 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 21:59:48,632 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:00:07,389 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 22:00:07,390 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 22:00:32,241 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 22:00:32,242 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 22:00:32,473 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 22:00:32,477 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 22:22:04,283 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:22:04,284 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:22:04,628 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:22:04,628 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:22:04,713 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:22:04,714 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:22:43,006 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:22:43,007 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:22:43,388 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:22:43,388 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:22:43,466 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:22:43,467 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:23:41,792 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:23:41,793 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:23:42,113 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:23:42,113 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:23:42,189 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:23:42,190 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:24:00,588 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 22:24:00,589 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 22:24:26,810 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 22:24:26,811 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 22:24:27,031 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 22:24:27,036 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Future Predictions ------------------>
+2025-03-28 22:25:17,196 - stage07_FuturePredictions.py - None - INFO - Generated 7 predictions
+2025-03-28 22:25:17,199 - stage07_FuturePredictions.py - None - INFO - Predictions saved to Artifacts/FuturePredictions/future_predictions.csv
+2025-03-28 22:25:17,199 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 22:25:17,199 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 22:27:22,302 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 22:27:22,303 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 22:28:44,161 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:28:44,162 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:28:44,558 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:28:44,558 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:28:44,638 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:28:44,639 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:29:01,550 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 22:29:01,551 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 22:29:31,820 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 22:29:31,820 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 22:29:32,065 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 22:29:32,074 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Future Predictions ------------------>
+2025-03-28 22:31:34,547 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:31:34,547 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:31:34,937 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:31:34,937 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:31:35,016 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:31:35,016 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:31:51,323 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 22:31:51,324 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 22:32:26,848 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 22:32:26,849 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 22:32:27,071 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 22:32:27,076 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Future Predictions ------------------>
+2025-03-28 22:33:02,873 - stage07_FuturePredictions.py - None - INFO - Generated 7 predictions
+2025-03-28 22:33:02,878 - stage07_FuturePredictions.py - None - INFO - Predictions saved to Artifacts/FuturePredictions/future_predictions.csv
+2025-03-28 22:33:02,878 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 22:33:02,879 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 22:34:56,792 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 22:34:56,794 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 22:46:39,665 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 22:46:39,666 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 22:46:40,024 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 22:46:40,025 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 22:46:40,108 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 22:46:40,108 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 22:47:00,267 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 22:47:00,267 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 22:47:28,879 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 22:47:28,880 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 22:47:29,101 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 22:47:29,106 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Future Predictions ------------------>
+2025-03-28 22:48:17,606 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705641', 'date': '2025-03-29', 'home_team': 'WAS', 'away_team': 'BKN'}: 400 Client Error: Bad Request for url: http://0.0.0.0:8080/predict
+2025-03-28 22:48:18,073 - stage07_FuturePredictions.py - None - INFO - Generated 6 predictions
+2025-03-28 22:48:18,076 - stage07_FuturePredictions.py - None - INFO - Predictions saved to Artifacts/FuturePredictions/future_predictions.csv
+2025-03-28 22:48:18,076 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 22:48:18,077 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 22:50:24,319 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 22:50:24,320 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 23:00:48,841 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 23:00:48,841 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 23:00:49,207 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 23:00:49,207 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 23:00:49,287 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 23:00:49,288 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 23:01:05,204 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 23:01:05,204 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 23:01:28,944 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 23:01:28,944 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 23:01:29,169 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 23:01:29,173 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Future Predictions ------------------>
+2025-03-28 23:02:20,358 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705641', 'date': '2025-03-29', 'home_team': 'WAS', 'away_team': 'BKN'}: 400 Client Error: Bad Request for url: http://0.0.0.0:8080/predict
+2025-03-28 23:02:20,359 - stage07_FuturePredictions.py - None - INFO - Generated 6 predictions
+2025-03-28 23:02:20,361 - stage07_FuturePredictions.py - None - INFO - Predictions saved to Artifacts/FuturePredictions/future_predictions.csv
+2025-03-28 23:02:20,361 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 23:02:20,361 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 23:04:10,016 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705649', 'date': '2025-03-30', 'home_team': 'MIL', 'away_team': 'ATL'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:04:10,984 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 23:04:10,984 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 23:04:20,021 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705651', 'date': '2025-03-30', 'home_team': 'NOP', 'away_team': 'CHA'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:04:30,023 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705647', 'date': '2025-03-30', 'home_team': 'CLE', 'away_team': 'LAC'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:04:40,028 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705650', 'date': '2025-03-30', 'home_team': 'MIN', 'away_team': 'DET'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:04:50,035 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705652', 'date': '2025-03-30', 'home_team': 'SAS', 'away_team': 'GSW'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:05:00,038 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705654', 'date': '2025-03-30', 'home_team': 'PHX', 'away_team': 'HOU'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:05:10,040 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705648', 'date': '2025-03-30', 'home_team': 'NYK', 'away_team': 'POR'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:05:20,047 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705653', 'date': '2025-03-30', 'home_team': 'PHI', 'away_team': 'TOR'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:06:41,530 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705649', 'date': '2025-03-30', 'home_team': 'MIL', 'away_team': 'ATL'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:06:51,534 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705651', 'date': '2025-03-30', 'home_team': 'NOP', 'away_team': 'CHA'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:07:01,538 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705647', 'date': '2025-03-30', 'home_team': 'CLE', 'away_team': 'LAC'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:07:11,542 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705650', 'date': '2025-03-30', 'home_team': 'MIN', 'away_team': 'DET'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:07:21,549 - stage07_FuturePredictions.py - None - ERROR - Prediction failed for {'game_id': '401705652', 'date': '2025-03-30', 'home_team': 'SAS', 'away_team': 'GSW'}: HTTPConnectionPool(host='0.0.0.0', port=8080): Read timed out. (read timeout=10)
+2025-03-28 23:09:00,264 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 23:09:00,264 - stage01_DataIngestion.py - None - INFO - <------------------- 🚀 Stage01: Started Data Ingestion Pipeline ------------------->
+2025-03-28 23:09:28,337 - pipeline.py - None - INFO - Started WiseSportsAI Pipeline 🫠 
+2025-03-28 23:09:28,337 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-03-28 23:09:28,681 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-03-28 23:09:28,681 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-03-28 23:09:28,758 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-03-28 23:09:28,759 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-03-28 23:09:44,584 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-03-28 23:09:44,585 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-03-28 23:10:08,345 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-03-28 23:10:08,345 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-03-28 23:10:08,589 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-03-28 23:10:08,593 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-03-28 23:10:51,698 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-03-28 23:10:51,699 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 23:12:05,766 - injuriesimpact.py - None - ERROR - Failed to fetch roster for UTA (ESPN: UTA): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/UTA/roster
+2025-03-28 23:12:07,061 - injuriesimpact.py - None - ERROR - Failed to fetch roster for NOP (ESPN: NOP): 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/NOP/roster
+2025-03-28 23:12:29,114 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-28 23:12:29,115 - pipeline.py - None - INFO - WiseSportsAI Pipeline Completed Successfully 😁
+2025-03-28 23:12:48,102 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-03-28 23:15:04,249 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-03-29 00:37:52,062 - stage09_TeamStats.py - None - ERROR - name 'ConfigurationManager' is not defined
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI/pipeline/stage09_TeamStats.py", line 31, in <module>
+    pipeline = TeamStatsPipeline()
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI/pipeline/stage09_TeamStats.py", line 10, in __init__
+    self.config = ConfigurationManager()
+NameError: name 'ConfigurationManager' is not defined
+2025-03-29 00:38:06,363 - stage09_TeamStats.py - None - ERROR - 'TeamStatsPipeline' object has no attribute 'config'
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI/pipeline/stage09_TeamStats.py", line 30, in <module>
+    pipeline = TeamStatsPipeline()
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI/pipeline/stage09_TeamStats.py", line 10, in __init__
+    self.team_stats_config = self.config.get_team_stats_config()
+AttributeError: 'TeamStatsPipeline' object has no attribute 'config'
+2025-03-29 00:44:59,390 - stage09_TeamStats.py - None - INFO - Team Stats Pipeline Started
+2025-03-29 01:02:48,113 - stage09_TeamStats.py - None - INFO - Team Stats Pipeline Completed
