@@ -45,16 +45,6 @@ jobs:
               exit 1
             fi
 
-            echo "🔹 Checking if nginx.conf exists..."
-            if [ ! -f "nginx.conf" ]; then
-              echo "❌ Error: nginx.conf not found!"
-              exit 1
-            fi
-
-            echo "🔹 Setting correct permissions for nginx.conf..."
-            sudo chown ubuntu:ubuntu nginx.conf
-            sudo chmod 644 nginx.conf
-
             echo "🔹 Stopping existing containers..."
             docker-compose down || { echo "⚠️ Warning: No containers to stop"; }
 
