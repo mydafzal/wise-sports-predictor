@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 from typing import List, Dict, Optional
+from datetime import datetime
 from WiseSportsAI.components.modelpredictions import ModelPredictor
 from WiseSportsAI.components.injuriesimpact import InjuriesImpact
 from fastapi.middleware.cors import CORSMiddleware
@@ -22,14 +23,18 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-# Configuration
 BASE_DIR = Path("Artifacts/TeamStats")
-TEAM_MAPPING_FILE = Path("Artifacts/TeamInfo/team_mapping.csv")
+HISTORICAL_PREDICTIONS_FILE = Path("Artifacts/FuturePredictions/historical_injuries_predictions.csv")
 
 class PredictionRequest(BaseModel):
     home_team: str
     away_team: str
     match_date: str
+
+class DateSpecificPredictionRequest(BaseModel):
+    home_team: str
+    away_team: str
+    date: str  # Format: YYYY-MM-DD
 
 class InjuryImpactResponse(BaseModel):
     home_team: str
@@ -53,24 +58,25 @@ class TeamStatsResponse(BaseModel):
     team_id: str
     stats: Dict
 
-TEAM_ABBREVIATIONS = {
-    "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN", "Charlotte Hornets": "CHA",
-    "Chicago Bulls": "CHI", "Cleveland Cavaliers": "CLE", "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN",
-    "Detroit Pistons": "DET", "Golden State Warriors": "GSW", "Houston Rockets": "HOU", "Indiana Pacers": "IND",
-    "LA Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM", "Miami Heat": "MIA",
-    "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK",
-    "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX",
-    "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR",
-    "Utah Jazz": "UTA", "Washington Wizards": "WAS"
-}
+class DateSpecificPredictionResponse(BaseModel):
+    date: str
+    home_team: str
+    away_team: str
+    original_home_score: int
+    original_away_score: int
+    adjusted_home_score: int
+    adjusted_away_score: int
+    home_net_impact: int
+    away_net_impact: int
+    home_injured_players: int
+    away_injured_players: int
+    home_injury_details: List[Dict]
+    away_injury_details: List[Dict]
+    cross_impact_home_boost: float
+    cross_impact_away_boost: float
+    note: Optional[str] = None
 
-ESPN_TO_FASTAPI_MAPPING = {"PHX": "PHO", "CHA": "CHO", "BKN": "BRK"}
 
-# Initialize mappings
-ABBREVIATION_TO_ID = {}
-TEAM_ABBREVIATIONS_REVERSED = {v: k for k, v in TEAM_ABBREVIATIONS.items()}
-
-# Initialize models and data
 model_home_path = "Artifacts/TrainedModels/xgb_home_score_model.pkl"
 model_away_path = "Artifacts/TrainedModels/xgb_away_score_model.pkl"
 label_encoder_home_path = "Artifacts/LabelEncoderhome_team_name.pkl"
@@ -87,36 +93,12 @@ def safe_float_convert(value, default=0.0):
     except (ValueError, TypeError):
         return default
 
-def load_team_mapping() -> Dict[str, str]:
-    """Load team abbreviation to ID mapping"""
-    if not TEAM_MAPPING_FILE.exists():
-        raise FileNotFoundError(f"Team mapping file not found at {TEAM_MAPPING_FILE}")
-    
-    df = pd.read_csv(TEAM_MAPPING_FILE)
-    global ABBREVIATION_TO_ID
-    
-    # Create mapping from abbreviation to team ID
-    for _, row in df.iterrows():
-        team_name = row['team_name']
-        if team_name in TEAM_ABBREVIATIONS:
-            abbrev = TEAM_ABBREVIATIONS[team_name]
-            ABBREVIATION_TO_ID[abbrev] = row['team_id']
-    
-    return ABBREVIATION_TO_ID
+def load_historical_predictions() -> pd.DataFrame:
+    """Load historical predictions data"""
+    if not HISTORICAL_PREDICTIONS_FILE.exists():
+        raise FileNotFoundError(f"Historical predictions file not found at {HISTORICAL_PREDICTIONS_FILE}")
+    return pd.read_csv(HISTORICAL_PREDICTIONS_FILE)
 
-@app.on_event("startup")
-async def startup_event():
-    """Initialize application state"""
-    # Ensure the team stats directory exists
-    BASE_DIR.mkdir(parents=True, exist_ok=True)
-    
-    # Load team mappings
-    try:
-        load_team_mapping()
-    except Exception as e:
-        print(f"Failed to load team mapping: {e}")
-
-# Existing routes
 @app.post("/predict")
 async def predict_scores(request: PredictionRequest):
     try:
@@ -196,46 +178,67 @@ async def get_injuries_predictions():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Team stats routes
-@app.get("/team/{team_abbrev}", response_model=TeamStatsResponse)
-async def get_team_stats_by_abbrev(team_abbrev: str):
-    """Get stats for a team by abbreviation (e.g., GSW, LAL)"""
-    try:
-        # Handle any abbreviation mappings
-        team_abbrev = team_abbrev.upper()
-        team_abbrev = ESPN_TO_FASTAPI_MAPPING.get(team_abbrev, team_abbrev)
-        
-        if team_abbrev not in ABBREVIATION_TO_ID:
-            raise HTTPException(status_code=404, detail="Team abbreviation not found")
-        
-        team_id = ABBREVIATION_TO_ID[team_abbrev]
-        stats_file = BASE_DIR / f"{team_id}.json"
-        
-        if not stats_file.exists():
-            raise HTTPException(status_code=404, detail="Team stats not available")
-        
-        with open(stats_file, 'r') as f:
-            stats_data = json.load(f)
-        
-        return {
-            "team_name": TEAM_ABBREVIATIONS_REVERSED.get(team_abbrev, team_abbrev),
-            "team_abbreviation": team_abbrev,
-            "team_id": team_id,
-            "stats": stats_data
-        }
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/teams/abbreviations", response_class=JSONResponse)
-async def list_team_abbreviations():
-    """List all available team abbreviations"""
+    
+@app.post("/injuries/predictions", response_model=DateSpecificPredictionResponse)
+async def get_date_specific_prediction(request: DateSpecificPredictionRequest):
+    """Get prediction for specific date with injury impact analysis"""
     try:
-        return {
-            "abbreviations": list(ABBREVIATION_TO_ID.keys())
+        # Validate date format
+        datetime.strptime(request.date, "%Y-%m-%d")
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD")
+
+    try:
+        df = load_historical_predictions()
+        df['date_dt'] = pd.to_datetime(df['date'])
+        request_date = pd.to_datetime(request.date)
+        
+        date_diff = (df['date_dt'] - request_date).abs()
+        closest_date = df.loc[date_diff.idxmin(), 'date']
+        
+        prediction = df[
+            (df['date'] == closest_date) & 
+            (df['home_team'] == request.home_team) & 
+            (df['away_team'] == request.away_team)
+        ]
+        
+        if prediction.empty:
+            raise HTTPException(
+                status_code=404, 
+                detail=f"No prediction found for {request.home_team} vs {request.away_team} on or near {request.date}"
+            )
+        
+        result = prediction.iloc[0].to_dict()
+        
+        result.pop('date_dt', None)
+        
+        home_injuries = eval(result['home_injury_details']) if isinstance(result['home_injury_details'], str) else []
+        away_injuries = eval(result['away_injury_details']) if isinstance(result['away_injury_details'], str) else []
+        
+        response_data = {
+            "date": result["date"],
+            "home_team": result["home_team"],
+            "away_team": result["away_team"],
+            "original_home_score": int(result["original_home_score"]),
+            "original_away_score": int(result["original_away_score"]),
+            "adjusted_home_score": int(result["adjusted_home_score"]),
+            "adjusted_away_score": int(result["adjusted_away_score"]),
+            "home_net_impact": int(result["home_net_impact"]),
+            "away_net_impact": int(result["away_net_impact"]),
+            "home_injured_players": len(home_injuries),
+            "away_injured_players": len(away_injuries),
+            "home_injury_details": home_injuries,
+            "away_injury_details": away_injuries,
+            "cross_impact_home_boost": safe_float_convert(result.get("cross_impact_home_boost", 0)),
+            "cross_impact_away_boost": safe_float_convert(result.get("cross_impact_away_boost", 0))
         }
+        
+        if closest_date != request.date:
+            response_data["note"] = f"Using prediction from {closest_date} (no prediction available for {request.date})"
+        
+        return response_data
+        
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
