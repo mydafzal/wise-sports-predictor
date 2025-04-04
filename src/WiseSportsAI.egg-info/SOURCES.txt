@@ -15,6 +15,7 @@ src/WiseSportsAI/components/injuriesimpact.py
 src/WiseSportsAI/components/modelpredictions.py
 src/WiseSportsAI/components/modeltraining.py
 src/WiseSportsAI/components/teamsaddition.py
+src/WiseSportsAI/components/teamstats.py
 src/WiseSportsAI/config/__init__.py
 src/WiseSportsAI/config/configuration.py
 src/WiseSportsAI/constants/__init__.py
@@ -28,6 +29,10 @@ src/WiseSportsAI/pipeline/stage04_DataPreprocessing.py
 src/WiseSportsAI/pipeline/stage05_ModelTraining.py
 src/WiseSportsAI/pipeline/stage06_ModelPredictions.py
 src/WiseSportsAI/pipeline/stage07_FuturePredictions.py
+src/WiseSportsAI/pipeline/stage08_InjuriesImpact.py
+src/WiseSportsAI/pipeline/stage09_TeamStats.py
 src/WiseSportsAI/utils/__init__.py
 src/WiseSportsAI/utils/common.py
+src/WiseSportsAI/utils/teams_mapping.py
+src/WiseSportsAI/utils/teamstats.py
 src/WiseSportsAI/utils/utils.py

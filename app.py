@@ -12,16 +12,19 @@ from datetime import datetime
 from WiseSportsAI.components.modelpredictions import ModelPredictor
 from WiseSportsAI.components.injuriesimpact import InjuriesImpact
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.proxy import ProxyHeadersMiddleware
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"], 
-    allow_headers=["*"],  
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"], 
+#     allow_headers=["*"],  
+# )
+
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts=["*"])
 
 BASE_DIR = Path("Artifacts/TeamStats")
 HISTORICAL_PREDICTIONS_FILE = Path("Artifacts/FuturePredictions/historical_injuries_predictions.csv")
