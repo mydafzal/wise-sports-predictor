@@ -9,51 +9,48 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
       - name: SSH into EC2 and deploy
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          username: ${{ secrets.EC2_USER }} # Ensure this is set to 'ubuntu'
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            echo "👤 Current user: $(whoami)"
             echo "🔹 Setting up project directory..."
-            sudo mkdir -p /home/ubuntu/wisesports
-            sudo chown -R ubuntu:ubuntu /home/ubuntu/wisesports
-            sudo chmod -R 755 /home/ubuntu/wisesports
+            mkdir -p /home/ubuntu/wisesports
             cd /home/ubuntu/wisesports
 
             echo "🔹 Cloning or updating repository..."
             if [ ! -d "WiseSportsAI" ]; then
-              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAI.git || { echo "❌ Failed to clone repository!"; exit 1; }
+              git clone https://${{ secrets.GH_PAT }}@github.com/Hmzkhnswt/WiseSportsAI.git
               cd WiseSportsAI
             else
               cd WiseSportsAI
-              echo "🔹 Resetting any local changes..."
-              git reset --hard HEAD || { echo "⚠️ Could not reset local changes"; exit 1; }
-              echo "🔹 Force cleaning all untracked files and directories..."
-              git clean -fdx || { echo "⚠️ Could not clean repository"; exit 1; }
-              echo "🔹 Fetching all changes..."
-              git fetch --all || { echo "❌ Failed to fetch changes!"; exit 1; }
-              echo "🔹 Resetting to origin/main..."
-              git reset --hard origin/main || { echo "❌ Failed to reset to origin/main!"; exit 1; }
+              git reset --hard HEAD
+              git clean -fdx
+              git fetch --all
+              git reset --hard origin/main
             fi
 
-            echo "🔹 Checking if docker-compose.yml exists..."
+            echo "🔹 Checking for docker-compose.yml..."
             if [ ! -f "docker-compose.yml" ]; then
-              echo "❌ Error: docker-compose.yml not found!"
+              echo "❌ docker-compose.yml not found!"
               exit 1
             fi
 
-            echo "🔹 Stopping existing containers..."
-            docker-compose down || { echo "⚠️ Warning: No containers to stop"; }
+            echo "🔹 Stopping old containers..."
+            docker-compose down || true
 
-            echo "🔹 Building and starting containers..."
-            docker-compose up -d --build || { echo "❌ Failed to start application!"; exit 1; }
+            echo "🔹 Rebuilding and starting containers..."
+            docker-compose up -d --build
 
-            echo "🔹 Cleaning up unused Docker resources..."
+            echo "🔹 Pruning unused Docker resources..."
             docker system prune -af
 
             echo "✅ Deployment completed successfully!"
-
-            
