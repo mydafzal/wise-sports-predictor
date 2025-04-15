@@ -1,0 +1,17 @@
+from WiseSportsAI_NBA.components.datapreparation import DataPreparation
+from WiseSportsAI_NBA.logging import logger
+
+def main():
+    
+    logger.info("< ------------------- 🚀 Stage 02: Started Data Preparation -------------------> ")
+    print("< ------------------- 🚀 Stage 02: Started Data Preparation -------------------> ")
+    
+    data_directory = "Artifacts/DataScraping/Teams"
+    data_prep = DataPreparation(data_directory)
+    data_prep.run()
+    
+    print("<------------------- ✅ Stage 02: Data Preparation Completed ------------------->\n\n")
+    logger.info("<------------------- ✅ Stage 02: Data Preparation Completed ------------------->\n\n")
+
+if __name__ == "__main__":
+    main()

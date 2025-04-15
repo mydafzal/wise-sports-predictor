@@ -1,25 +1,94 @@
-import os
-import sys
+import argparse
 from datetime import datetime
-from WiseSportsAI.pipeline.stage01_DataIngestion import main as stage01_main
-from WiseSportsAI.pipeline.stage02_DataPreparation import main as stage02_main
-from WiseSportsAI.pipeline.stage03_TeamsAddtion import main as stage03_main
-from WiseSportsAI.pipeline.stage04_DataPreprocessing import main as stage04_main
-from WiseSportsAI.pipeline.stage05_ModelTraining import main as stage05_main
-from WiseSportsAI.pipeline.stage06_ModelPredictions import main as stage06_main
-from WiseSportsAI.pipeline.stage07_FuturePredictions import main as stage07_main
-from WiseSportsAI.pipeline.stage08_InjuriesImpact import main as stage08_main
-from WiseSportsAI.logging import logger
 
-def run_pipeline():
-    """Run the entire pipeline from stage 1 to stage 7."""
-    print("Started WiseSportsAI Pipeline 🫠 ")
-    logger.info("Started WiseSportsAI Pipeline 🫠 ")
-
-    start_time = datetime.now()
-
+def run_mlb_pipeline():
     try:
+        from WiseSportsAI_MLB.pipeline.stage01_DataIngestion import DataIngestionTrainingPipeline
+        from WiseSportsAI_MLB.pipeline.stage02_DataProcessing import DataProcessingTrainingPipeline
+        from WiseSportsAI_MLB.pipeline.stage03_ModelTraining import ModelTrainingPipeline
+        from WiseSportsAI_MLB.pipeline.stage04_ModelPrediction import ModelPredictionPipeline
+        from WiseSportsAI_MLB.pipeline.stage05_FutureGames import FutureGamesPredictionPipeline
+        from WiseSportsAI_MLB.logging import logger
+
+        logger.info("============== Starting MLB Pipeline ==============")
+
         # Stage 1: Data Ingestion
+        logger.info("============== Pipeline: Data Ingestion ==============")
+        ingestion_pipeline = DataIngestionTrainingPipeline()
+        ingestion_result = ingestion_pipeline.main()
+        if not ingestion_result.status:
+            logger.error("❌ Data Ingestion Failed!")
+            return
+
+        # Stage 2: Data Processing
+        logger.info("============== Pipeline: Data Processing ==============")
+        processing_pipeline = DataProcessingTrainingPipeline()
+        processing_result = processing_pipeline.main()
+        if not processing_result.status:
+            logger.error("❌ Data Processing Failed!")
+            return
+
+        # Stage 3: Model Training
+        logger.info("============== Pipeline: Model Training ==============")
+        training_pipeline = ModelTrainingPipeline()
+        training_result = training_pipeline.main()
+        if not training_result.status:
+            logger.error("❌ Model Training Failed!")
+            return
+
+        # Stage 4: Model Prediction
+        logger.info("============== Pipeline: Model Prediction ==============")
+        prediction_pipeline = ModelPredictionPipeline()
+        prediction_result = prediction_pipeline.main(
+            prediction_type="single",
+            home_team="NYY",
+            away_team="BOS",
+            game_date="15-05-2025"
+        )
+
+        if prediction_result.status:
+            logger.info("✅ Prediction successful!")
+            print("\n===== Prediction Results =====")
+            print(f"Game: {prediction_result.home_team} vs {prediction_result.away_team} on {prediction_result.game_date}")
+            print(f"Predicted Home Runs: {prediction_result.predicted_home_runs}")
+            print(f"Predicted Away Runs: {prediction_result.predicted_away_runs}")
+            print(f"Predicted Winner: {prediction_result.predicted_winner}")
+        else:
+            logger.error("❌ Model Prediction Failed!")
+
+        # Stage 5: Future Games Predictions
+        logger.info("============== Pipeline: Future Games Predictions ==============")
+        future_games = FutureGamesPredictionPipeline()
+        future_games_result = future_games.main()
+
+        if future_games_result.status:
+            print(f"\nSuccessfully predicted {len(future_games_result.predictions)} games")
+            print(f"Predictions saved to: {future_games_result.output_file}")
+        else:
+            print(f"\nPrediction failed: {future_games_result.error}")
+
+        logger.info("✅ MLB Pipeline Completed Successfully")
+
+    except Exception as e:
+        logger.exception(f"🔥 MLB Pipeline crashed: {str(e)}")
+        raise
+
+def run_nba_pipeline():
+    try:
+        from WiseSportsAI_NBA.logging import logger
+        from WiseSportsAI_NBA.pipeline.stage01_DataIngestion import main as stage01_main
+        from WiseSportsAI_NBA.pipeline.stage02_DataPreparation import main as stage02_main
+        from WiseSportsAI_NBA.pipeline.stage03_TeamsAddtion import main as stage03_main
+        from WiseSportsAI_NBA.pipeline.stage04_DataPreprocessing import main as stage04_main
+        from WiseSportsAI_NBA.pipeline.stage05_ModelTraining import main as stage05_main
+        from WiseSportsAI_NBA.pipeline.stage06_ModelPredictions import main as stage06_main
+        from WiseSportsAI_NBA.pipeline.stage07_FuturePredictions import main as stage07_main
+        from WiseSportsAI_NBA.pipeline.stage08_InjuriesImpact import main as stage08_main
+
+        logger.info("============== Starting NBA Pipeline ==============")
+        start_time = datetime.now()
+
+        # Stage 1: Data Ingestion (commented out in original)
         # stage01_main()
 
         # Stage 2: Data Preparation
@@ -43,17 +112,27 @@ def run_pipeline():
         # Stage 8: Injuries Impact Analysis
         stage08_main()
 
-        print("WiseSportsAI Pipeline Completed Successfully 😁")
-        logger.info("WiseSportsAI Pipeline Completed Successfully 😁")
+        logger.info("✅ NBA Pipeline Completed Successfully")
 
     except Exception as e:
-        print(f"❌ Pipeline failed with error: {e}")
+        logger.error(f"❌ NBA Pipeline failed with error: {e}")
         raise
 
     finally:
         end_time = datetime.now()
         duration = end_time - start_time
-        print(f"\n✅ Pipeline completed in {duration}.")
+        logger.info(f"Pipeline execution time: {duration}")
+
+def main():
+    parser = argparse.ArgumentParser(description='Run WiseSportsAI pipeline for MLB or NBA.')
+    parser.add_argument('--sport', type=str, required=True, 
+                        choices=['MLB', 'NBA'], help='Sport to run pipeline for')
+    args = parser.parse_args()
+
+    if args.sport == 'MLB':
+        run_mlb_pipeline()
+    elif args.sport == 'NBA':
+        run_nba_pipeline()
 
 if __name__ == "__main__":
-    run_pipeline()
+    main()

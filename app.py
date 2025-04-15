@@ -3,14 +3,15 @@ import uvicorn
 import pandas as pd
 import numpy as np
 import json
+from datetime import date
 from pathlib import Path
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 from typing import List, Dict, Optional
 from datetime import datetime
-from WiseSportsAI.components.modelpredictions import ModelPredictor
-from WiseSportsAI.components.injuriesimpact import InjuriesImpact
+from WiseSportsAI_NBA.components.modelpredictions import ModelPredictor
+from WiseSportsAI_NBA.components.injuriesimpact import InjuriesImpact
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -34,7 +35,7 @@ class PredictionRequest(BaseModel):
 class DateSpecificPredictionRequest(BaseModel):
     home_team: str
     away_team: str
-    date: str  # Format: YYYY-MM-DD
+    date: str  
 
 class InjuryImpactResponse(BaseModel):
     home_team: str
@@ -99,7 +100,7 @@ def load_historical_predictions() -> pd.DataFrame:
         raise FileNotFoundError(f"Historical predictions file not found at {HISTORICAL_PREDICTIONS_FILE}")
     return pd.read_csv(HISTORICAL_PREDICTIONS_FILE)
 
-@app.post("/predict")
+@app.post("/nba/predictions")
 async def predict_scores(request: PredictionRequest):
     try:
         home_team = request.home_team
@@ -123,7 +124,7 @@ async def predict_scores(request: PredictionRequest):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.post("/futurepredict")
+@app.post("/nba/futurepredict")
 async def future_predict():
     try:
         predictions_file = "Artifacts/FuturePredictions/future_predictions.csv"
@@ -138,7 +139,7 @@ async def future_predict():
         raise HTTPException(status_code=500, detail=str(e))
     
 
-@app.post("/injuries-predictions", response_model=List[InjuryImpactResponse])
+@app.post("/nba/injuries_predictions", response_model=List[InjuryImpactResponse])
 async def get_injuries_predictions():
     try:
         file_path = "Artifacts/FuturePredictions/future_injuries_predictions.csv"
@@ -180,7 +181,7 @@ async def get_injuries_predictions():
 
 
     
-@app.post("/injuries/predictions", response_model=DateSpecificPredictionResponse)
+@app.post("/nba/injuries/predictions", response_model=DateSpecificPredictionResponse)
 async def get_date_specific_prediction(request: DateSpecificPredictionRequest):
     """Get prediction for specific date with injury impact analysis"""
     try:
@@ -241,6 +242,23 @@ async def get_date_specific_prediction(request: DateSpecificPredictionRequest):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+# +++++++++++++++++++++ MLB Routes +++++++++++++++++++++++
+PREDICTION_DATE = date.today().strftime('%Y-%m-%d')
+PREDICTION_FILE_PATH = Path(f"Artifacts/MLB_Artifacts/Future_Predictions/predictions_{PREDICTION_DATE}.json")
+
+@app.get("/mlb/predictions")
+async def get_mlb_predictions():
+    if not PREDICTION_FILE_PATH.exists():
+        raise HTTPException(status_code=404, detail="Predictions not found for today")
+
+    try:
+        with open(PREDICTION_FILE_PATH, "r") as f:
+            predictions = json.load(f)
+        return JSONResponse(content=predictions)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading prediction file: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)

@@ -1,2 +1,10 @@
 APP_URL:
   fastapi_url: "http://0.0.0.0:8080/predict"
+
+AWS_S3:
+  access_key_id: AKIAXAWZSJNXCRKKRVFN
+  secret_access_key: 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
+  region_name: us-east-1  
+  bucket_name: artifactmlb
+  s3_folder: Artifacts  
+  local_dir: Artifacts/MLB_Artifacts
