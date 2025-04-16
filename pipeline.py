@@ -89,7 +89,7 @@ def run_nba_pipeline():
         start_time = datetime.now()
 
         # Stage 1: Data Ingestion (commented out in original)
-        # stage01_main()
+        stage01_main()
 
         # Stage 2: Data Preparation
         stage02_main()
