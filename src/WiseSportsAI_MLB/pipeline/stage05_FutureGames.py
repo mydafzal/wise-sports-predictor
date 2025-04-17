@@ -57,8 +57,8 @@ class FutureGamesPredictionPipeline:
             logger.info(
                 f"\nGame {idx}: {game['away_abbr']} @ {game['home_abbr']}\n"
                 f"Time: {game['game_time']}\n"
-                f"Predicted Score: {game['home_abbr']} {pred['predicted_home_runs']:.1f} - "
-                f"{game['away_abbr']} {pred['predicted_away_runs']:.1f}\n"
+                f"Predicted Score: {game['home_abbr']} {pred['predicted_home_runs']:.2f} - "
+                f"{game['away_abbr']} {pred['predicted_away_runs']:.2f}\n"
                 f"Predicted Winner: {pred['predicted_winner']}\n"
                 f"Historical Matchup: {pred['historical_matchup']['games_played']} games, "
                 f"{pred['historical_matchup']['home_win_pct']:.1f}% home win rate"

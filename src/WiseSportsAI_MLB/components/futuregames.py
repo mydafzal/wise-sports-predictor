@@ -19,9 +19,47 @@ class MLBFutureGamesPredictor:
         self.team_abbr_map = {}
 
     def fetch_team_data(self) -> bool:
-        """Fetch MLB team data and map to abbreviations"""
+        """Fetch MLB team data and map to correct abbreviations"""
         url = "https://statsapi.mlb.com/api/v1/teams?season=2025&sportId=1"
         
+        TEAM_NAME_MAPPING = {
+            "Arizona Diamondbacks": "ARI",
+            "Atlanta Braves": "ATL",
+            "Baltimore Orioles": "BAL",
+            "Boston Red Sox": "BOS",
+            "Chicago Cubs": "CHC",
+            "Chicago White Sox": "CHW",  
+            "Cincinnati Reds": "CIN",
+            "Cleveland Guardians": "CLE",
+            "Colorado Rockies": "COL",
+            "Detroit Tigers": "DET",
+            "Houston Astros": "HOU",
+            "Kansas City Royals": "KCR",  
+            "Los Angeles Angels": "LAA",
+            "Los Angeles Dodgers": "LAD",
+            "Miami Marlins": "MIA",
+            "Milwaukee Brewers": "MIL",
+            "Minnesota Twins": "MIN",
+            "New York Mets": "NYM",
+            "New York Yankees": "NYY",
+            "Oakland Athletics": "OAK",
+            "Athletics": "OAK",        
+            "Oakland A's": "OAK",        
+            "Philadelphia Phillies": "PHI",
+            "Pittsburgh Pirates": "PIT",
+            "San Diego Padres": "SDP",
+            "Seattle Mariners": "SEA",
+            "San Francisco Giants": "SFG",  
+            "St. Louis Cardinals": "STL",
+            "Tampa Bay Rays": "TBR",
+            "Texas Rangers": "TEX",
+            "Toronto Blue Jays": "TOR",
+            "Washington Nationals": "WSN",  
+            "Montreal Expos": "WSN",         
+            "Anaheim Angels": "LAA",       
+            "Florida Marlins": "MIA"         
+        }
+
         try:
             response = requests.get(url, timeout=10)
             if response.status_code != 200:
@@ -33,9 +71,15 @@ class MLBFutureGamesPredictor:
             self.team_id_map = {}
 
             for team in data['teams']:
-                if 'abbreviation' in team and team['abbreviation']:
-                    self.team_abbr_map[team['name']] = team['abbreviation']
-                    self.team_id_map[team['id']] = team['abbreviation']
+                team_name = team['name']
+                abbr = TEAM_NAME_MAPPING.get(team_name)
+                
+                if not abbr:
+                    abbr = team.get('abbreviation', team_name[:3])
+                    logger.warning(f"No mapping for {team_name}, using {abbr}")
+                    
+                self.team_abbr_map[team_name] = abbr
+                self.team_id_map[team['id']] = abbr
 
             logger.info(f"Loaded data for {len(self.team_abbr_map)} MLB teams")
             return True
@@ -106,29 +150,27 @@ class MLBFutureGamesPredictor:
             return result
 
     def _process_game(self, game: Dict) -> Optional[Dict]:
-        """Process individual game and return prediction"""
         try:
             home_team = game['teams']['home']['team']
             away_team = game['teams']['away']['team']
             
-            # Get team abbreviations
-            home_abbr = self.team_id_map.get(home_team['id'], home_team.get('abbreviation', home_team['name'][:3]))
-            away_abbr = self.team_id_map.get(away_team['id'], away_team.get('abbreviation', away_team['name'][:3]))
+            home_team_name = home_team['name']
+            away_team_name = away_team['name']
+            
+            home_abbr = self.team_abbr_map.get(home_team_name)
+            away_abbr = self.team_abbr_map.get(away_team_name)
 
-            # Validate teams exist in model
-            if home_abbr not in self.predictor.original_home_teams:
-                raise ValueError(f"Home team {home_abbr} not in training data")
-            if away_abbr not in self.predictor.original_away_teams:
-                raise ValueError(f"Away team {away_abbr} not in training data")
+            if not home_abbr:
+                raise ValueError(f"Home team {home_team_name} not in mapping")
+            if not away_abbr:
+                raise ValueError(f"Away team {away_team_name} not in mapping")
 
-            # Make prediction with current ET date
             game_date = datetime.now(self.et).strftime("%d-%m-%Y")
             prediction = self.predictor.predict_runs(home_abbr, away_abbr, game_date)
             
             if not prediction.status:
                 raise ValueError(prediction.error)
 
-            # Convert game time to Eastern Time
             game_time = datetime.strptime(game['gameDate'], "%Y-%m-%dT%H:%M:%SZ")
             game_time = game_time.astimezone(self.et)
 
