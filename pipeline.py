@@ -8,6 +8,7 @@ def run_mlb_pipeline():
         from WiseSportsAI_MLB.pipeline.stage03_ModelTraining import ModelTrainingPipeline
         from WiseSportsAI_MLB.pipeline.stage04_ModelPrediction import ModelPredictionPipeline
         from WiseSportsAI_MLB.pipeline.stage05_FutureGames import FutureGamesPredictionPipeline
+        from WiseSportsAI_MLB.pipeline.stage06_StartingPitching import StartingPitchingAdjustmentPipeline
         from WiseSportsAI_MLB.logging import logger
 
         logger.info("============== Starting MLB Pipeline ==============")
@@ -61,17 +62,37 @@ def run_mlb_pipeline():
         future_games = FutureGamesPredictionPipeline()
         future_games_result = future_games.main()
 
-        if future_games_result.status:
-            print(f"\nSuccessfully predicted {len(future_games_result.predictions)} games")
-            print(f"Predictions saved to: {future_games_result.output_file}")
+        if not future_games_result.status:
+            logger.error("❌ Future games prediction failed!")
+            return
+
+        # Stage 6: Starting Pitching Adjustments
+        logger.info("============== Pipeline: Starting Pitching Adjustments ==============")
+        pitching_adjustments = StartingPitchingAdjustmentPipeline()
+        adjustment_result = pitching_adjustments.main(future_games_result)
+
+        if adjustment_result.status:
+            logger.info(f"✅ Adjusted {len(adjustment_result.adjusted_games)} games")
+            logger.info(f"📁 Adjusted predictions saved to: {adjustment_result.output_file}")
+            logger.info("\n===== Final Adjusted Predictions =====")
+            for game in adjustment_result.adjusted_games:
+                pred = game['prediction']
+                logger.info(
+                    f"{game['away_abbr']} @ {game['home_abbr']}: "
+                    f"{pred['predicted_home_runs']:.2f} - {pred['predicted_away_runs']:.2f} "
+                    f"(Adj: {pred['pitching_adjustment']['home_adjustment']:+.2f}/"
+                    f"{pred['pitching_adjustment']['away_adjustment']:+.2f})"
+                )
         else:
-            print(f"\nPrediction failed: {future_games_result.error}")
+            logger.error(f"❌ Pitching adjustments failed: {adjustment_result.error}")
 
         logger.info("✅ MLB Pipeline Completed Successfully")
 
     except Exception as e:
-        logger.exception(f"🔥 MLB Pipeline crashed: {str(e)}")
+        logger.exception(f"🔥 Pipeline execution failed: {str(e)}")
         raise
+       
+
 
 def run_nba_pipeline():
     try:
