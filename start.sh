@@ -7,6 +7,6 @@ sleep 5
 
 echo "Running the prediction pipeline..."
 python pipeline.py --sport NBA
-python pipeline.py --sport MLB
+# python pipeline.py --sport MLB
 
 wait

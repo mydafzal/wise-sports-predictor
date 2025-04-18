@@ -5,7 +5,7 @@ from WiseSportsAI_NBA.components.futurepredictions import FuturePredictions
 from WiseSportsAI_NBA.logging import logger
 from datetime import datetime
 
-FASTAPI_URL = "http://0.0.0.0:8080/predict"
+FASTAPI_URL = "http://0.0.0.0:8080/nba/predictions"
 PREDICTIONS_FILE = "Artifacts/FuturePredictions/future_predictions.csv"
 
 def main():

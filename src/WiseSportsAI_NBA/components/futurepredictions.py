@@ -39,7 +39,7 @@ class FuturePredictions:
         now_utc = datetime.now(self.utc_tz)
         now_et = now_utc.astimezone(self.eastern_tz)
 
-        self.target_date = (now_et + timedelta(days=1)).date()
+        self.target_date = (now_et + timedelta(days=0)).date()
         print(f"\nTarget date (ET): {self.target_date}")
         
         self.teams = get_nba_teams()
