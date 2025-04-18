@@ -21,20 +21,18 @@ jobs:
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_rsa
 
-
-      - name: Test SSH Connection
+      - name: Test SSH Connection (Optional)
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo 'SSH connection successful'"
-
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo '✅ SSH connection successful'"
 
       - name: Deploy to EC2
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} <<EOF
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             export GH_PAT=${GH_PAT}
             if [ ! -d WiseSportsAI ]; then
-              git clone https://$GH_PAT@github.com/hamzaatccript/WiseSportsAI.git
+              git clone https://${GH_PAT}@github.com/hamzaatccript/WiseSportsAI.git
               cd WiseSportsAI
             else
               cd WiseSportsAI
