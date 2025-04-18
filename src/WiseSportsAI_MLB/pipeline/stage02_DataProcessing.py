@@ -26,9 +26,9 @@ class DataProcessingTrainingPipeline:
             
             data_processor = DataProcessing(artifacts_dir=self.artifacts_dir)
             
-            df23, df24 = data_processor.load_raw_data()
+            df23, df24, df25 = data_processor.load_raw_data()
             
-            processing_result = data_processor.prepare_data(df23, df24)
+            processing_result = data_processor.prepare_data(df23, df24, df25)
             if not processing_result.status:
                 raise Exception(processing_result.message)
             

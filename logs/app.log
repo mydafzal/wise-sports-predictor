@@ -7035,3 +7035,259 @@ New Score: 4.35 - 4.67
 2025-04-18 14:40:54,572 - pipeline.py - None - INFO - SFG @ LAA: 4.35 - 4.67 (Adj: +0.36/-0.36)
 2025-04-18 14:40:54,572 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully
 2025-04-18 14:40:54,572 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully
+2025-04-19 00:40:02,698 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:40:02,698 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:40:02,699 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:40:02,699 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:40:02,703 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:40:02,703 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:40:02,703 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:40:02,703 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:40:02,824 - stage02_DataProcessing.py - None - ERROR - Error in Data Processing Stage: 'DataProcessing' object has no attribute 'data_2025_path'
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/pipeline/stage02_DataProcessing.py", line 29, in main
+    df23, df24 = data_processor.load_raw_data()
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/components/dataprocessing.py", line 31, in load_raw_data
+    df25 = pd.read_csv(self.data_2025_path)
+AttributeError: 'DataProcessing' object has no attribute 'data_2025_path'
+2025-04-19 00:40:02,824 - stage02_DataProcessing.py - None - ERROR - Error in Data Processing Stage: 'DataProcessing' object has no attribute 'data_2025_path'
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/pipeline/stage02_DataProcessing.py", line 29, in main
+    df23, df24 = data_processor.load_raw_data()
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/components/dataprocessing.py", line 31, in load_raw_data
+    df25 = pd.read_csv(self.data_2025_path)
+AttributeError: 'DataProcessing' object has no attribute 'data_2025_path'
+2025-04-19 00:40:02,827 - pipeline.py - None - ERROR - ❌ Data Processing Failed!
+2025-04-19 00:40:02,827 - pipeline.py - None - ERROR - ❌ Data Processing Failed!
+2025-04-19 00:40:46,161 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:40:46,161 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:40:46,162 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:40:46,162 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:40:46,166 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:40:46,166 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:40:46,166 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:40:46,166 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:40:46,358 - stage02_DataProcessing.py - None - ERROR - Error in Data Processing Stage: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/pipeline/stage02_DataProcessing.py", line 29, in main
+    df23, df24 = data_processor.load_raw_data()
+ValueError: too many values to unpack (expected 2)
+2025-04-19 00:40:46,358 - stage02_DataProcessing.py - None - ERROR - Error in Data Processing Stage: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/WiseSports/src/WiseSportsAI_MLB/pipeline/stage02_DataProcessing.py", line 29, in main
+    df23, df24 = data_processor.load_raw_data()
+ValueError: too many values to unpack (expected 2)
+2025-04-19 00:40:46,360 - pipeline.py - None - ERROR - ❌ Data Processing Failed!
+2025-04-19 00:40:46,360 - pipeline.py - None - ERROR - ❌ Data Processing Failed!
+2025-04-19 00:42:48,637 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:42:48,637 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:42:48,638 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:42:48,638 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:42:48,641 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:42:48,641 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:42:48,642 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:42:48,642 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:42:48,799 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-19 00:42:48,799 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-19 00:42:48,909 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-19 00:42:48,909 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-19 00:42:49,267 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-19 00:42:49,267 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-19 00:42:49,272 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-19 00:42:49,272 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-19 00:42:49,274 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-19 00:42:49,274 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-19 00:42:49,275 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-19 00:42:49,275 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-19 00:42:49,276 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-19 00:42:49,276 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-19 00:42:49,276 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-19 00:42:49,276 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-19 00:42:49,278 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-19 00:42:49,278 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-19 00:42:49,279 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:42:49,279 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:42:49,281 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:42:49,281 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:42:49,282 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:42:49,282 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:42:49,282 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:42:49,282 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:42:49,283 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-19 00:42:49,283 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-19 00:42:49,283 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-19 00:42:49,283 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-19 00:42:49,284 - pipeline.py - None - INFO - ============== Pipeline: Model Training ==============
+2025-04-19 00:42:49,284 - pipeline.py - None - INFO - ============== Pipeline: Model Training ==============
+2025-04-19 00:42:49,284 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-19 00:42:49,284 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-19 00:42:49,284 - modeltraining.py - None - INFO - Loading processed data
+2025-04-19 00:42:49,284 - modeltraining.py - None - INFO - Loading processed data
+2025-04-19 00:42:49,422 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-19 00:42:49,422 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-19 00:42:49,457 - modeltraining.py - None - INFO - Scaling features
+2025-04-19 00:42:49,457 - modeltraining.py - None - INFO - Scaling features
+2025-04-19 00:42:49,503 - modeltraining.py - None - INFO - Training models
+2025-04-19 00:42:49,503 - modeltraining.py - None - INFO - Training models
+2025-04-19 00:42:50,181 - modeltraining.py - None - INFO - Evaluating models
+2025-04-19 00:42:50,181 - modeltraining.py - None - INFO - Evaluating models
+2025-04-19 00:42:50,200 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-19 00:42:50,200 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-19 00:42:50,202 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-19 00:42:50,202 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-19 00:42:50,203 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-19 00:42:50,203 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-19 00:42:50,204 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-19 00:42:50,204 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-19 00:42:50,204 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-19 00:42:50,207 - pipeline.py - None - INFO - ============== Pipeline: Model Prediction ==============
+2025-04-19 00:42:50,207 - pipeline.py - None - INFO - ============== Pipeline: Model Prediction ==============
+2025-04-19 00:42:50,253 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:42:50,253 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:42:50,253 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-19 00:42:50,253 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-19 00:42:50,254 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-19 00:42:50,254 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-19 00:42:50,368 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-19 00:42:50,368 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-19 00:42:50,369 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-19 00:42:50,369 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-19 00:42:50,369 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-19 00:42:50,369 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-19 00:42:50,369 - pipeline.py - None - INFO - ============== Pipeline: Future Games Predictions ==============
+2025-04-19 00:42:50,369 - pipeline.py - None - INFO - ============== Pipeline: Future Games Predictions ==============
+2025-04-19 00:42:50,423 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-19 00:42:50,423 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-19 00:42:50,443 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:42:50,443 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:42:50,518 - futuregames.py - None - ERROR - Error fetching team data: HTTPSConnectionPool(host='statsapi.mlb.com', port=443): Max retries exceeded with url: /api/v1/teams?season=2025&sportId=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12132e9e0>: Failed to resolve 'statsapi.mlb.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-04-19 00:42:50,518 - futuregames.py - None - ERROR - Error fetching team data: HTTPSConnectionPool(host='statsapi.mlb.com', port=443): Max retries exceeded with url: /api/v1/teams?season=2025&sportId=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12132e9e0>: Failed to resolve 'statsapi.mlb.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-04-19 00:42:50,518 - futuregames.py - None - ERROR - Prediction failed: Could not fetch team data
+2025-04-19 00:42:50,518 - futuregames.py - None - ERROR - Prediction failed: Could not fetch team data
+2025-04-19 00:42:50,519 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-18 03:42 PM ET <<<<<<
+2025-04-19 00:42:50,519 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-18 03:42 PM ET <<<<<<
+2025-04-19 00:42:50,520 - pipeline.py - None - ERROR - ❌ Future games prediction failed!
+2025-04-19 00:42:50,520 - pipeline.py - None - ERROR - ❌ Future games prediction failed!
+2025-04-19 00:43:56,292 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:43:56,292 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-19 00:43:56,293 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:43:56,293 - pipeline.py - None - INFO - ============== Pipeline: Data Processing ==============
+2025-04-19 00:43:56,295 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:43:56,295 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-19 00:43:56,295 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:43:56,295 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-19 00:43:56,523 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-19 00:43:56,523 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-19 00:43:56,638 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-19 00:43:56,638 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-19 00:43:57,038 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-19 00:43:57,038 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-19 00:43:57,039 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-19 00:43:57,041 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-19 00:43:57,041 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-19 00:43:57,042 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-19 00:43:57,042 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-19 00:43:57,043 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-19 00:43:57,043 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-19 00:43:57,044 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:43:57,044 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:43:57,045 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:43:57,045 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:43:57,046 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:43:57,046 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-19 00:43:57,046 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:43:57,046 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-19 00:43:57,047 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-19 00:43:57,047 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-19 00:43:57,047 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-19 00:43:57,047 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-19 00:43:57,048 - pipeline.py - None - INFO - ============== Pipeline: Model Training ==============
+2025-04-19 00:43:57,048 - pipeline.py - None - INFO - ============== Pipeline: Model Training ==============
+2025-04-19 00:43:57,048 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-19 00:43:57,048 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-19 00:43:57,048 - modeltraining.py - None - INFO - Loading processed data
+2025-04-19 00:43:57,048 - modeltraining.py - None - INFO - Loading processed data
+2025-04-19 00:43:57,186 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-19 00:43:57,186 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-19 00:43:57,218 - modeltraining.py - None - INFO - Scaling features
+2025-04-19 00:43:57,218 - modeltraining.py - None - INFO - Scaling features
+2025-04-19 00:43:57,263 - modeltraining.py - None - INFO - Training models
+2025-04-19 00:43:57,263 - modeltraining.py - None - INFO - Training models
+2025-04-19 00:43:58,164 - modeltraining.py - None - INFO - Evaluating models
+2025-04-19 00:43:58,164 - modeltraining.py - None - INFO - Evaluating models
+2025-04-19 00:43:58,178 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-19 00:43:58,178 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-19 00:43:58,181 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-19 00:43:58,181 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-19 00:43:58,181 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-19 00:43:58,181 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-19 00:43:58,182 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-19 00:43:58,182 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-19 00:43:58,182 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-19 00:43:58,187 - pipeline.py - None - INFO - ============== Pipeline: Model Prediction ==============
+2025-04-19 00:43:58,187 - pipeline.py - None - INFO - ============== Pipeline: Model Prediction ==============
+2025-04-19 00:43:58,208 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:43:58,208 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:43:58,208 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-19 00:43:58,208 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-19 00:43:58,208 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-19 00:43:58,208 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-19 00:43:58,278 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-19 00:43:58,278 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-19 00:43:58,279 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-19 00:43:58,279 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-19 00:43:58,279 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-19 00:43:58,279 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-19 00:43:58,279 - pipeline.py - None - INFO - ============== Pipeline: Future Games Predictions ==============
+2025-04-19 00:43:58,279 - pipeline.py - None - INFO - ============== Pipeline: Future Games Predictions ==============
+2025-04-19 00:43:58,342 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-19 00:43:58,342 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-19 00:43:58,360 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:43:58,360 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-19 00:43:58,599 - futuregames.py - None - ERROR - Error fetching team data: HTTPSConnectionPool(host='statsapi.mlb.com', port=443): Max retries exceeded with url: /api/v1/teams?season=2025&sportId=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11e922a40>: Failed to resolve 'statsapi.mlb.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-04-19 00:43:58,599 - futuregames.py - None - ERROR - Error fetching team data: HTTPSConnectionPool(host='statsapi.mlb.com', port=443): Max retries exceeded with url: /api/v1/teams?season=2025&sportId=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11e922a40>: Failed to resolve 'statsapi.mlb.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-04-19 00:43:58,600 - futuregames.py - None - ERROR - Prediction failed: Could not fetch team data
+2025-04-19 00:43:58,600 - futuregames.py - None - ERROR - Prediction failed: Could not fetch team data
+2025-04-19 00:43:58,601 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-18 03:43 PM ET <<<<<<
+2025-04-19 00:43:58,601 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-18 03:43 PM ET <<<<<<
+2025-04-19 00:43:58,601 - pipeline.py - None - ERROR - ❌ Future games prediction failed!
+2025-04-19 00:43:58,601 - pipeline.py - None - ERROR - ❌ Future games prediction failed!

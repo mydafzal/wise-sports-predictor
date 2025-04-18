@@ -1,5 +1,5 @@
 APP_URL:
-  fastapi_url: "http://0.0.0.0:8080/predict"
+  fastapi_url: "http://0.0.0.0:8080/nba/predictions"
 
 AWS_S3:
   access_key_id: AKIAXAWZSJNXCRKKRVFN
