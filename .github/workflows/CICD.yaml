@@ -13,11 +13,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up SSH
+    - name: Install SSH key
       run: |
-        # Decode base64 encoded key and set strict permissions
-        echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > key.pem
-        chmod 600 key.pem
+        mkdir -p ~/.ssh
+        echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
 
     - name: Connect to EC2 and deploy
       env:
