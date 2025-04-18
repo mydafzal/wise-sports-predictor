@@ -248,7 +248,7 @@ async def get_date_specific_prediction(request: DateSpecificPredictionRequest):
 PREDICTION_DATE = date.today().strftime('%Y-%m-%d')
 PREDICTION_FILE_PATH = Path(f"Artifacts/MLB_Artifacts/Future_Predictions/predictions_{PREDICTION_DATE}.json")
 
-@app.get("/mlb/predictions")
+@app.get("/mlb/modelpredictions")
 async def get_mlb_predictions():
     if not PREDICTION_FILE_PATH.exists():
         raise HTTPException(status_code=404, detail="Predictions not found for today")
@@ -259,6 +259,20 @@ async def get_mlb_predictions():
         return JSONResponse(content=predictions)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error reading prediction file: {str(e)}")
+    
+@app.get("/mlb/adjustedpredictions")
+async def get_mlb_adjusted_predictions():
+    adjusted_file_path = Path("Artifacts/MLB_Artifacts/Future_Predictions/adjusted_predictions.json")
+    if not adjusted_file_path.exists():
+        raise HTTPException(status_code=404, detail="Adjusted predictions not found")
 
+    try:
+        with open(adjusted_file_path, "r") as f:
+            adjusted_predictions = json.load(f)
+        return JSONResponse(content=adjusted_predictions)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading adjusted prediction file: {str(e)}")
+    
+    
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)
