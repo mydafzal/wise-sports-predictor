@@ -1,4 +1,5 @@
 import os
+import re
 import uvicorn
 import pandas as pd
 import numpy as np
@@ -262,17 +263,64 @@ async def get_mlb_predictions():
     
 @app.get("/mlb/adjustedpredictions")
 async def get_mlb_adjusted_predictions():
-    adjusted_file_path = Path("Artifacts/MLB_Artifacts/Future_Predictions/adjusted_predictions.json")
-    if not adjusted_file_path.exists():
-        raise HTTPException(status_code=404, detail="Adjusted predictions not found")
-
-    try:
-        with open(adjusted_file_path, "r") as f:
-            adjusted_predictions = json.load(f)
-        return JSONResponse(content=adjusted_predictions)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error reading adjusted prediction file: {str(e)}")
+    adjusted_dir = Path("Artifacts/MLB_Artifacts/Adjusted_Predictions")
+    prediction_files = list(adjusted_dir.glob("adjusted_predictions_*.json"))
     
+    if not prediction_files:
+        raise HTTPException(status_code=404, detail="No adjusted predictions found")
+
+    file_data = []
+    for file in prediction_files:
+        match = re.search(r"adjusted_predictions_(\d{8})_(\d{4})\.json", file.name)
+        if match:
+            date_str = match.group(1)
+            time_str = match.group(2)
+            dt = datetime.strptime(f"{date_str}_{time_str}", "%Y%m%d_%H%M")
+            file_data.append((dt, file))
+
+    if not file_data:
+        raise HTTPException(status_code=404, detail="No valid prediction files found")
+
+    sorted_files = sorted(file_data, key=lambda x: x[0], reverse=True)
+    
+    try:
+        latest_file = sorted_files[0][1]
+        with open(latest_file, "r") as f:
+            predictions = json.load(f)
+
+        processed_predictions = []
+        for game in predictions:
+            try:
+                pred = game["prediction"]
+                
+                adj_home = round(pred["predicted_home_runs"] + pred["pitching_adjustment"]["home_adjustment"], 2)
+                adj_away = round(pred["predicted_away_runs"] + pred["pitching_adjustment"]["away_adjustment"], 2)
+                
+                adj_winner = game["home_abbr"] if adj_home > adj_away else game["away_abbr"]
+                
+                pred["adjusted_scores"] = {
+                    "adjusted_home_runs": adj_home,
+                    "adjusted_away_runs": adj_away,
+                    "adjusted_winner": adj_winner
+                }
+                
+                processed_predictions.append(game)
+                
+            except KeyError as e:
+                continue
+
+        return JSONResponse(content={
+            "metadata": {
+                "file_date": sorted_files[0][0].isoformat(),
+                "filename": latest_file.name,
+                "total_games": len(processed_predictions)
+            },
+            "predictions": processed_predictions
+        })
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, 
+                          detail=f"Error processing predictions: {str(e)}")
     
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)
