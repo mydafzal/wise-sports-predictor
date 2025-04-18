@@ -3,44 +3,34 @@ name: Deploy to EC2 via SSH
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Install SSH key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        echo ~/.ssh/id_rsa
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
-      
-
-    # - name: Connect to EC2 and deploy
-    #   env:
-    #     GH_PAT: ${{ secrets.GH_PAT }}
-    #     EC2_HOST: ${{ secrets.EC2_HOST }}
-    #     EC2_USER: ${{ secrets.EC2_USER }}
-    #   run: |
-    #     ssh -o StrictHostKeyChecking=no \
-    #         -o UserKnownHostsFile=/dev/null \
-    #         ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
-    #       export GH_PAT=${GH_PAT}
-    #       REPO_URL="https://${GH_PAT}@github.com/hamzaatccript/WiseSportsAI.git"
-          
-    #       if [ -d WiseSportsAI ]; then
-    #         cd WiseSportsAI
-    #         git pull origin main
-    #       else
-    #         git clone $REPO_URL
-    #         cd WiseSportsAI
-    #       fi
-          
-    #       docker-compose up --build -d
-    #     EOF
+      - name: Deploy to EC2
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            export GH_PAT=${GH_PAT}
+            if [ ! -d WiseSportsAI ]; then
+              git clone https://${GH_PAT}@github.com/hamzaatccript/WiseSportsAI.git
+              cd WiseSportsAI
+            else
+              cd WiseSportsAI
+              git pull origin main
+            fi
+            docker-compose up --build -d
+          EOF
