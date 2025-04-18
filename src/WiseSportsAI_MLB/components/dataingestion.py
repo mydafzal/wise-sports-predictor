@@ -8,10 +8,10 @@ from box import ConfigBox
 
 class DataIngestion:
     def __init__(self, config_path: str = "config/config.yaml"):
+
         self.config = read_yaml(config_path)
         self.aws_config = self.config.AWS_S3  
         self._validate_config()
-        
         self.s3_client = boto3.client(
             's3',
             aws_access_key_id=self.aws_config.access_key_id,

@@ -12,6 +12,8 @@ class DataProcessing:
         self.artifacts_dir = artifacts_dir
         self.data_2023_path = os.path.join(artifacts_dir, "MLB_2023_Data.csv")
         self.data_2024_path = os.path.join(artifacts_dir, "MLB_2024_Data.csv")
+        self.data_2025_path = os.path.join(artifacts_dir, "MLB_2025_Data.csv")
+
         self._validate_paths()
 
     def _validate_paths(self):
@@ -19,18 +21,21 @@ class DataProcessing:
             raise FileNotFoundError(f"2023 data file not found at {self.data_2023_path}")
         if not os.path.exists(self.data_2024_path):
             raise FileNotFoundError(f"2024 data file not found at {self.data_2024_path}")
+        if not os.path.exists(self.data_2024_path):
+            raise FileNotFoundError(f"2024 data file not found at {self.data_2025_path}")
 
     def load_raw_data(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
         logger.info("Loading raw data files")
         df23 = pd.read_csv(self.data_2023_path)
         df24 = pd.read_csv(self.data_2024_path)
-        return df23, df24
+        df25 = pd.read_csv(self.data_2025_path)
+        return df23, df24, df25
 
-    def prepare_data(self, df23: pd.DataFrame, df24: pd.DataFrame) -> ConfigBox:
+    def prepare_data(self, df23: pd.DataFrame, df24: pd.DataFrame, df25: pd.DataFrame) -> ConfigBox:
 
         try:
             logger.info("Starting data preparation")
-            df = pd.concat([df23, df24], ignore_index=True)
+            df = pd.concat([df23, df24, df25], ignore_index=True)
             
             df.drop(columns=[
                 "HomeTeamBatting_Batting", "AwayTeamPitching_Pitching",
