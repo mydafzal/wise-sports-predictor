@@ -1,5 +1,5 @@
 import argparse
-from WiseSportsAI_MLB.pipeline.stage06_StartingPitching import StartingPitchingAdjustmentPipeline
+from WiseSportsAI_MLB.pipeline.stage06_StartingPitchingTeans import StartingPitchingAdjustmentPipeline
 from WiseSportsAI_MLB.logging import logger
 from box import ConfigBox
 import json
