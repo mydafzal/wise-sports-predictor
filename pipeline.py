@@ -8,13 +8,14 @@ def run_mlb_pipeline():
         from WiseSportsAI_MLB.pipeline.stage03_ModelTraining import ModelTrainingPipeline
         from WiseSportsAI_MLB.pipeline.stage04_ModelPrediction import ModelPredictionPipeline
         from WiseSportsAI_MLB.pipeline.stage05_FutureGames import FutureGamesPredictionPipeline
-        from WiseSportsAI_MLB.pipeline.stage06_StartingPitching import StartingPitchingAdjustmentPipeline
+        from WiseSportsAI_MLB.pipeline.stage06_StartingPitchingTeans import StartingPitchingAdjustmentPipeline
+        from WiseSportsAI_MLB.pipeline.stage07_StartingPitchingPlayers import StartingPitchingAdjustor
         from WiseSportsAI_MLB.logging import logger
 
         logger.info("============== Starting MLB Pipeline ==============")
 
         # Stage 1: Data Ingestion
-        logger.info("============== Pipeline: Data Ingestion ==============")
+        logger.info("============== Stage01 Data Ingestion ==============")
         ingestion_pipeline = DataIngestionTrainingPipeline()
         ingestion_result = ingestion_pipeline.main()
         if not ingestion_result.status:
@@ -22,7 +23,7 @@ def run_mlb_pipeline():
             return
 
         # Stage 2: Data Processing
-        logger.info("============== Pipeline: Data Processing ==============")
+        logger.info("============== Stage02 Data Processing ==============")
         processing_pipeline = DataProcessingTrainingPipeline()
         processing_result = processing_pipeline.main()
         if not processing_result.status:
@@ -30,7 +31,7 @@ def run_mlb_pipeline():
             return
 
         # Stage 3: Model Training
-        logger.info("============== Pipeline: Model Training ==============")
+        logger.info("============== Stage03 Model Training ==============")
         training_pipeline = ModelTrainingPipeline()
         training_result = training_pipeline.main()
         if not training_result.status:
@@ -38,7 +39,7 @@ def run_mlb_pipeline():
             return
 
         # Stage 4: Model Prediction
-        logger.info("============== Pipeline: Model Prediction ==============")
+        logger.info("============== Stage04 Model Prediction ==============")
         prediction_pipeline = ModelPredictionPipeline()
         prediction_result = prediction_pipeline.main(
             prediction_type="single",
@@ -58,7 +59,7 @@ def run_mlb_pipeline():
             logger.error("❌ Model Prediction Failed!")
 
         # Stage 5: Future Games Predictions
-        logger.info("============== Pipeline: Future Games Predictions ==============")
+        logger.info("============== Stage05 Future Games Predictions ==============")
         future_games = FutureGamesPredictionPipeline()
         future_games_result = future_games.main()
 
@@ -67,7 +68,7 @@ def run_mlb_pipeline():
             return
 
         # Stage 6: Starting Pitching Adjustments
-        logger.info("============== Pipeline: Starting Pitching Adjustments ==============")
+        logger.info("============== Stage06 Teams Starting Pitching Adjustments ==============")
         pitching_adjustments = StartingPitchingAdjustmentPipeline()
         adjustment_result = pitching_adjustments.main(future_games_result)
 
@@ -86,13 +87,17 @@ def run_mlb_pipeline():
         else:
             logger.error(f"❌ Pitching adjustments failed: {adjustment_result.error}")
 
+        # Stage 7: Starting Pitching Players Adjustments
+        logger.info("============== Stage07 Players Starting Pitching Adjustments ==============")
+        playeradjustment = StartingPitchingAdjustor()
+        playeradjustment.process_predictions()
+
         logger.info("✅ MLB Pipeline Completed Successfully")
 
     except Exception as e:
         logger.exception(f"🔥 Pipeline execution failed: {str(e)}")
         raise
        
-
 
 def run_nba_pipeline():
     try:

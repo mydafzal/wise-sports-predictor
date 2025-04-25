@@ -2,13 +2,14 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from box import ConfigBox
+from datetime import datetime
 from typing import List, Dict
 from WiseSportsAI_MLB.logging import logger
 
 class StartingPitchingAdjuster:
     def __init__(self, pitching_data_path: str):
         self.pitching_data = self._prepare_data(pitching_data_path)
-        self.feature_weights = np.array([1.80, 1.50, 0.80, 0.50, 0.60, 0.40, 0.15])
+        self.feature_weights = np.array([1.00, 0.80, 0.50, 0.30, 0.30, 0.30, 0.15])
         self._initialize_mappings()
         self._normalize_features()
 
@@ -124,36 +125,49 @@ class StartingPitchingAdjuster:
         adjusted_games = []
         for game in predictions:
             try:
+                original_pred = game['prediction']
                 adj = self.calculate_adjustments(game['home_abbr'], game['away_abbr'])
                 
-                home_runs = max(
-                    float(game['prediction']['predicted_home_runs']) + float(adj.home_adj), 
-                    0.0
-                )
-                away_runs = max(
-                    float(game['prediction']['predicted_away_runs']) + float(adj.away_adj), 
-                    0.0
-                )
+                # Calculate adjusted scores
+                original_home = float(original_pred['predicted_home_runs'])
+                original_away = float(original_pred['predicted_away_runs'])
                 
-                # Update prediction data
-                updated_pred = game['prediction'].copy()
-                updated_pred.update({
-                    'predicted_home_runs': round(home_runs, 2),
-                    'predicted_away_runs': round(away_runs, 2),
-                    'predicted_winner': game['home_abbr'] if home_runs > away_runs else game['away_abbr'],
+                adjusted_home = max(original_home + adj.home_adj, 0.0)
+                adjusted_away = max(original_away + adj.away_adj, 0.0)
+                adjusted_winner = game['home_abbr'] if adjusted_home > adjusted_away else game['away_abbr']
+
+                # Create updated prediction
+                updated_pred = {
+                    **original_pred,
                     'pitching_adjustment': {
                         'home_adjustment': round(float(adj.home_adj), 2),
                         'away_adjustment': round(float(adj.away_adj), 2),
-                        'adjusted_total': round(home_runs + away_runs, 2),
-                        'spread': round(home_runs - away_runs, 2)
+                        'adjusted_total': round(adjusted_home + adjusted_away, 2),
+                        'spread': round(adjusted_home - adjusted_away, 2),
+                        'adjusted_scores': {
+                            'adjusted_home_runs': round(adjusted_home, 2),
+                            'adjusted_away_runs': round(adjusted_away, 2),
+                            'adjusted_winner': adjusted_winner
+                        }
                     }
-                })
-                
-                adjusted_game = game.copy()
-                adjusted_game['prediction'] = updated_pred
+                }
+
+                # Preserve original predictions while adding adjustments
+                adjusted_game = {
+                    **game,
+                    'prediction': updated_pred,
+                    'adjustment_timestamp': datetime.now().isoformat()
+                }
                 adjusted_games.append(adjusted_game)
                 
             except Exception as e:
                 logger.error(f"Failed to adjust {game['home_abbr']} vs {game['away_abbr']}: {str(e)}")
+                adjusted_games.append({
+                    **game,
+                    'prediction': {
+                        **game['prediction'],
+                        'error': f"Adjustment failed: {str(e)}"
+                    }
+                })
         
         return adjusted_games

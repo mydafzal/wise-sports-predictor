@@ -1,4 +1,4 @@
-from WiseSportsAI_MLB.components.startingpitchingadjustments import StartingPitchingAdjuster
+from WiseSportsAI_MLB.components.startingpitchingteams import StartingPitchingAdjuster
 from WiseSportsAI_MLB.logging import logger
 from box import ConfigBox
 from datetime import datetime
@@ -75,14 +75,16 @@ class StartingPitchingAdjustmentPipeline:
         logger.info("\n===== Pitching Adjustments =====")
         for game in games:
             pred = game['prediction']
-            adj = pred['pitching_adjustment']
+            adj = pred.get('pitching_adjustment', {})
+            scores = adj.get('adjusted_scores', {})
             
-            logger.info(
-                f"\nGame: {game['away_abbr']} @ {game['home_abbr']}\n"
-                f"Original: {game['home_abbr']} {float(pred['predicted_home_runs']) - adj['home_adjustment']:.2f} - "
-                f"{game['away_abbr']} {float(pred['predicted_away_runs']) - adj['away_adjustment']:.2f}\n"
-                f"Adjustments: Home {adj['home_adjustment']:+.2f}, Away {adj['away_adjustment']:+.2f}\n"
-                f"New Score: {pred['predicted_home_runs']} - {pred['predicted_away_runs']}\n"
-                # f"Spread: {adj['spread']:+.2f} | Total: {adj['adjusted_total']:.2f}"
-            )
+            log_message = [
+                f"\nGame: {game['away_abbr']} @ {game['home_abbr']}",
+                f"Original: {pred['predicted_home_runs']} - {pred['predicted_away_runs']}",
+                f"Adjusted: {scores.get('adjusted_home_runs', 'N/A')} - {scores.get('adjusted_away_runs', 'N/A')}",
+                f"Winner: {scores.get('adjusted_winner', 'N/A')} (Original: {pred.get('predicted_winner', 'N/A')})",
+                # f"Spread: {adj.get('spread', 'N/A'):+.2f} | Total: {adj.get('adjusted_total', 'N/A'):.2f}"
+            ]
+            
+            logger.info("\n".join(log_message))
 
