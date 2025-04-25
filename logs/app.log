@@ -7291,3 +7291,162 @@ ValueError: too many values to unpack (expected 2)
 2025-04-19 00:43:58,601 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-18 03:43 PM ET <<<<<<
 2025-04-19 00:43:58,601 - pipeline.py - None - ERROR - ❌ Future games prediction failed!
 2025-04-19 00:43:58,601 - pipeline.py - None - ERROR - ❌ Future games prediction failed!
+2025-04-19 20:11:42,692 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-19 20:11:42,692 - stage01_DataIngestion.py - None - INFO - <------------------- 🚀 Stage01: Started Data Ingestion Pipeline ------------------->
+2025-04-19 20:11:47,136 - pipeline.py - None - INFO - Pipeline execution time: 0:00:04.443934
+2025-04-19 20:12:04,676 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-19 20:12:04,676 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-19 20:12:05,190 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-19 20:12:05,190 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-19 20:12:05,294 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-19 20:12:05,295 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-19 20:12:33,596 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-19 20:12:33,597 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-19 20:13:03,268 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-19 20:13:03,268 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-19 20:13:03,480 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-19 20:13:03,489 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-19 20:13:47,799 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-04-19 20:13:47,799 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-04-19 20:13:52,892 - pipeline.py - None - INFO - Pipeline execution time: 0:01:48.215999
+2025-04-19 20:14:12,115 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-19 20:14:12,115 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-19 20:14:12,562 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-19 20:14:12,562 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-19 20:14:12,654 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-19 20:14:12,655 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-19 20:14:32,724 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-19 20:14:32,725 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-19 20:14:50,041 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-19 20:14:50,041 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-19 20:14:50,237 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-19 20:14:50,242 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-19 20:14:57,578 - pipeline.py - None - INFO - Pipeline execution time: 0:00:45.462500
+2025-04-19 20:15:07,129 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-19 20:15:07,129 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-19 20:15:07,466 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-19 20:15:07,466 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-19 20:15:07,549 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-19 20:15:07,549 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-19 20:15:26,239 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-19 20:15:26,239 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-19 20:15:50,658 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-19 20:15:50,658 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-19 20:15:50,856 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-19 20:15:50,861 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-19 20:16:31,733 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-04-19 20:16:31,734 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-04-19 20:17:21,407 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-04-19 20:17:21,408 - pipeline.py - None - INFO - ✅ NBA Pipeline Completed Successfully
+2025-04-19 20:17:21,408 - pipeline.py - None - INFO - Pipeline execution time: 0:02:14.278276
+2025-04-20 22:27:48,668 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-20 22:27:48,671 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-20 22:27:49,110 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-20 22:27:49,110 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-20 22:27:49,213 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-20 22:27:49,214 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-20 22:28:15,754 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-20 22:28:15,755 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-20 22:28:54,763 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-20 22:28:54,764 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-20 22:28:54,969 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-20 22:28:54,974 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-20 22:29:41,450 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-04-20 22:29:41,451 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-04-20 22:30:42,273 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-04-20 22:30:42,274 - pipeline.py - None - INFO - ✅ NBA Pipeline Completed Successfully
+2025-04-20 22:30:42,274 - pipeline.py - None - INFO - Pipeline execution time: 0:02:53.603506
+2025-04-23 22:28:18,245 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-23 22:28:18,245 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-23 22:28:18,791 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-23 22:28:18,794 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-23 22:28:18,894 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-23 22:28:18,895 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-23 22:28:40,407 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-23 22:28:40,408 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-23 22:29:13,286 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-23 22:29:13,287 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-23 22:29:13,560 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-23 22:29:13,569 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-23 22:29:47,847 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-04-23 22:29:47,848 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-04-23 22:30:12,542 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-04-23 22:30:12,542 - pipeline.py - None - INFO - ✅ NBA Pipeline Completed Successfully
+2025-04-23 22:30:12,542 - pipeline.py - None - INFO - Pipeline execution time: 0:01:54.297018
+2025-04-23 22:53:51,671 - pipeline.py - None - INFO - ============== Starting NBA Pipeline ==============
+2025-04-23 22:53:51,671 - stage02_DataPreparation.py - None - INFO - < ------------------- 🚀 Stage 02: Started Data Preparation -------------------> 
+2025-04-23 22:53:52,045 - stage02_DataPreparation.py - None - INFO - <------------------- ✅ Stage 02: Data Preparation Completed ------------------->
+
+
+2025-04-23 22:53:52,045 - stage03_TeamsAddtion.py - None - INFO - <------------------- 🚀 Stage03: tarted the Teams Data Addition Pipeline ------------------->
+2025-04-23 22:53:52,130 - stage03_TeamsAddtion.py - None - INFO - <------------------- ✅ Teams Data Addition Pipeline completed successfully ------------------->
+
+
+2025-04-23 22:53:52,130 - stage04_DataPreprocessing.py - None - INFO - <------------------ 🚀 Stage04: Started Data Preprocessing ------------------>
+2025-04-23 22:54:09,399 - stage04_DataPreprocessing.py - None - INFO - <------------------ ✅ Data Preprocessing Completed ------------------>
+
+
+2025-04-23 22:54:09,399 - stage05_ModelTraining.py - None - INFO - <------------------ 🚀 Stage05: Started Model Training ------------------>
+2025-04-23 22:54:35,732 - stage05_ModelTraining.py - None - INFO - <------------------ ✅ Model Training Completed ------------------>
+
+
+2025-04-23 22:54:35,732 - stage06_ModelPredictions.py - None - INFO - <------------------ 🚀 Stage06: Started Model Predictions ------------------>
+2025-04-23 22:54:35,990 - stage06_ModelPredictions.py - None - INFO - <------------------ ✅ Model Predictions Completed ------------------>
+
+
+2025-04-23 22:54:35,995 - stage07_FuturePredictions.py - None - INFO - <------------------ 🚀 Stage07: Started Future Predictions ------------------>
+2025-04-23 22:55:08,796 - stage07_FuturePredictions.py - None - INFO - <------------------ ✅ Future Predictions Completed ------------------>
+2025-04-23 22:55:08,796 - stage08_InjuriesImpact.py - None - INFO - <------------------ 🚀 Stage08: Started Injuries Impact Analysis ------------------>
+2025-04-23 22:55:32,031 - stage08_InjuriesImpact.py - None - INFO - <------------------ ✅ Injuries Impact Analysis Completed ------------------>
+2025-04-23 22:55:32,031 - pipeline.py - None - INFO - ✅ NBA Pipeline Completed Successfully
+2025-04-23 22:55:32,031 - pipeline.py - None - INFO - Pipeline execution time: 0:01:40.360044

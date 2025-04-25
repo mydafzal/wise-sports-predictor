@@ -38,8 +38,8 @@ class DataIngestion:
         self.driver.set_page_load_timeout(60)  
     
     def scrape_team_data(self, team_abbr, filename):
-        max_retries = 3
-        retry_delay = 10 
+        max_retries = 5
+        retry_delay = 30 
         url = f"https://www.basketball-reference.com/teams/{team_abbr}/2025/gamelog/"
         
         for attempt in range(max_retries):
@@ -47,7 +47,6 @@ class DataIngestion:
                 print(f"Attempt {attempt+1}/{max_retries} for {team_abbr}")
                 self.driver.get(url)
                 
-                # Wait for table to load with extended timeout
                 table = WebDriverWait(self.driver, 45).until(
                     EC.presence_of_element_located((By.ID, "team_game_log_reg"))
                 )
@@ -81,7 +80,7 @@ class DataIngestion:
     def run(self):
         for team_abbr, filename in self.team_mapping.items():
             self.scrape_team_data(team_abbr, filename)
-            time.sleep(10)  
+            time.sleep(30)  
         self.driver.quit()
         print("Data ingestion process completed.")
 
