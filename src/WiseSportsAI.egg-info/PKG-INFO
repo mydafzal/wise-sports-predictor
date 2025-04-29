@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: WiseSportsAI
 Version: 0.0.1
 Summary: WiseSportsAI
@@ -8,5 +8,13 @@ Author-email: hamzaali@ccript.com
 Project-URL: Bug Tracker, https://github.com/HamzaALi/WiseSportsAI/issues
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
 
 ### WiseSportsAI

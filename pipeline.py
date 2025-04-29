@@ -10,11 +10,12 @@ def run_mlb_pipeline():
         from WiseSportsAI_MLB.pipeline.stage05_FutureGames import FutureGamesPredictionPipeline
         from WiseSportsAI_MLB.pipeline.stage06_StartingPitchingTeans import StartingPitchingAdjustmentPipeline
         from WiseSportsAI_MLB.pipeline.stage07_StartingPitchingPlayers import StartingPitchingAdjustor
+        from WiseSportsAI_MLB.pipeline.stage08_WeatherImpact import WeatherImpactPipeline
         from WiseSportsAI_MLB.logging import logger
 
         logger.info("============== Starting MLB Pipeline ==============")
 
-        # Stage 1: Data Ingestion
+        # # Stage 1: Data Ingestion
         logger.info("============== Stage01 Data Ingestion ==============")
         ingestion_pipeline = DataIngestionTrainingPipeline()
         ingestion_result = ingestion_pipeline.main()
@@ -92,11 +93,17 @@ def run_mlb_pipeline():
         playeradjustment = StartingPitchingAdjustor()
         playeradjustment.process_predictions()
 
+        logger.info("============== Stage08 Weather Impact ==============")
+        weather_impact = WeatherImpactPipeline()
+        weather_impact.run_pipeline()
+
+
         logger.info("✅ MLB Pipeline Completed Successfully")
 
     except Exception as e:
         logger.exception(f"🔥 Pipeline execution failed: {str(e)}")
         raise
+        
        
 
 def run_nba_pipeline():
