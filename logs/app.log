@@ -13078,3 +13078,529 @@ Winner: TEX (Original: TEX)
 2025-04-25 23:42:12,954 - pipeline.py - None - INFO - ============== Stage07 Players Starting Pitching Adjustments ==============
 2025-04-25 23:42:30,842 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully
 2025-04-25 23:42:30,842 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully
+2025-04-30 00:33:55,434 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-30 00:33:55,434 - pipeline.py - None - INFO - ============== Starting MLB Pipeline ==============
+2025-04-30 00:33:55,435 - pipeline.py - None - INFO - ============== Stage02 Data Processing ==============
+2025-04-30 00:33:55,435 - pipeline.py - None - INFO - ============== Stage02 Data Processing ==============
+2025-04-30 00:33:55,435 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-30 00:33:55,435 - stage02_DataProcessing.py - None - INFO - >>>>>>>>>> Stage Data Processing Stage started <<<<<<<<<<
+2025-04-30 00:33:55,435 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-30 00:33:55,435 - dataprocessing.py - None - INFO - Loading raw data files
+2025-04-30 00:33:55,574 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-30 00:33:55,574 - dataprocessing.py - None - INFO - Starting data preparation
+2025-04-30 00:33:55,669 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-30 00:33:55,669 - dataprocessing.py - None - INFO - Data processing completed successfully
+2025-04-30 00:33:56,068 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-30 00:33:56,068 - dataprocessing.py - None - INFO - Processed data saved to Artifacts/MLB_Artifacts/MLB_Processed_Data.csv
+2025-04-30 00:33:56,073 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-30 00:33:56,073 - dataprocessing.py - None - INFO - Saved HomeTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeam_encoder.pkl
+2025-04-30 00:33:56,075 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-30 00:33:56,075 - dataprocessing.py - None - INFO - Saved AwayTeam encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeam_encoder.pkl
+2025-04-30 00:33:56,077 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-30 00:33:56,077 - dataprocessing.py - None - INFO - Saved Result encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Result_encoder.pkl
+2025-04-30 00:33:56,078 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-30 00:33:56,078 - dataprocessing.py - None - INFO - Saved GB encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/GB_encoder.pkl
+2025-04-30 00:33:56,079 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-30 00:33:56,079 - dataprocessing.py - None - INFO - Saved D/N encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/D_N_encoder.pkl
+2025-04-30 00:33:56,082 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-30 00:33:56,082 - dataprocessing.py - None - INFO - Saved Attendance encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/Attendance_encoder.pkl
+2025-04-30 00:33:56,084 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-30 00:33:56,084 - dataprocessing.py - None - INFO - Saved HomeTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamBatting_cWPA_encoder.pkl
+2025-04-30 00:33:56,085 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-30 00:33:56,085 - dataprocessing.py - None - INFO - Saved HomeTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/HomeTeamPitching_cWPA_encoder.pkl
+2025-04-30 00:33:56,086 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-30 00:33:56,086 - dataprocessing.py - None - INFO - Saved AwayTeamBatting_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamBatting_cWPA_encoder.pkl
+2025-04-30 00:33:56,087 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-30 00:33:56,087 - dataprocessing.py - None - INFO - Saved AwayTeamPitching_cWPA encoder to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/AwayTeamPitching_cWPA_encoder.pkl
+2025-04-30 00:33:56,088 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-30 00:33:56,088 - dataprocessing.py - None - INFO - Saved processing artifacts to Artifacts/MLB_Artifacts/MLBProcessed_Artifacts/processing_artifacts.pkl
+2025-04-30 00:33:56,089 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-30 00:33:56,089 - stage02_DataProcessing.py - None - INFO - >>>>>> Stage Data Processing Stage completed <<<<<<
+
+
+2025-04-30 00:33:56,089 - pipeline.py - None - INFO - ============== Stage03 Model Training ==============
+2025-04-30 00:33:56,089 - pipeline.py - None - INFO - ============== Stage03 Model Training ==============
+2025-04-30 00:33:56,090 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-30 00:33:56,090 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>>> Stage Model Training Stage started <<<<<<<<<<<<<
+2025-04-30 00:33:56,090 - modeltraining.py - None - INFO - Loading processed data
+2025-04-30 00:33:56,090 - modeltraining.py - None - INFO - Loading processed data
+2025-04-30 00:33:56,234 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-30 00:33:56,234 - modeltraining.py - None - INFO - Splitting data into features and targets
+2025-04-30 00:33:56,264 - modeltraining.py - None - INFO - Scaling features
+2025-04-30 00:33:56,264 - modeltraining.py - None - INFO - Scaling features
+2025-04-30 00:33:56,308 - modeltraining.py - None - INFO - Training models
+2025-04-30 00:33:56,308 - modeltraining.py - None - INFO - Training models
+2025-04-30 00:33:57,026 - modeltraining.py - None - INFO - Evaluating models
+2025-04-30 00:33:57,026 - modeltraining.py - None - INFO - Evaluating models
+2025-04-30 00:33:57,040 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-30 00:33:57,040 - modeltraining.py - None - INFO - Saved home runs model to Artifacts/MLB_Artifacts/Model_Artifacts/home_runs_model.pkl
+2025-04-30 00:33:57,044 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-30 00:33:57,044 - modeltraining.py - None - INFO - Saved away runs model to Artifacts/MLB_Artifacts/Model_Artifacts/away_runs_model.pkl
+2025-04-30 00:33:57,045 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-30 00:33:57,045 - modeltraining.py - None - INFO - Saved scaler to Artifacts/MLB_Artifacts/Model_Artifacts/scaler.pkl
+2025-04-30 00:33:57,046 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-30 00:33:57,046 - modeltraining.py - None - INFO - Saved feature names to Artifacts/MLB_Artifacts/Model_Artifacts/feature_names.pkl
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - Home Model Metrics - MSE: 0.15, R2: 0.99
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - Away Model Metrics - MSE: 0.35, R2: 0.97
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-30 00:33:57,046 - stage03_ModelTraining.py - None - INFO - >>>>>>>>>>> Stage Model Training Stage completed <<<<<<<<<<<
+
+
+2025-04-30 00:33:57,049 - pipeline.py - None - INFO - ============== Stage04 Model Prediction ==============
+2025-04-30 00:33:57,049 - pipeline.py - None - INFO - ============== Stage04 Model Prediction ==============
+2025-04-30 00:33:57,070 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-30 00:33:57,070 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-30 00:33:57,070 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-30 00:33:57,070 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>>>> Stage Model Prediction Stage started <<<<<<<<<<<<
+2025-04-30 00:33:57,070 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-30 00:33:57,070 - stage04_ModelPrediction.py - None - INFO - Predicting game: NYY vs BOS on 15-05-2025
+2025-04-30 00:33:57,123 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-30 00:33:57,123 - modelprediction.py - None - INFO - Prediction successful for NYY vs BOS on 15-05-2025
+2025-04-30 00:33:57,123 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-30 00:33:57,123 - stage04_ModelPrediction.py - None - INFO - >>>>>>>>>>>> Stage Model Prediction Stage completed <<<<<<<<<<<<
+
+
+2025-04-30 00:33:57,123 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-30 00:33:57,123 - pipeline.py - None - INFO - ✅ Prediction successful!
+2025-04-30 00:33:57,123 - pipeline.py - None - INFO - ============== Stage05 Future Games Predictions ==============
+2025-04-30 00:33:57,123 - pipeline.py - None - INFO - ============== Stage05 Future Games Predictions ==============
+2025-04-30 00:33:57,203 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-30 00:33:57,203 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage started <<<<<<
+2025-04-30 00:33:57,219 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-30 00:33:57,219 - modelprediction.py - None - INFO - All artifacts loaded successfully
+2025-04-30 00:33:58,796 - futuregames.py - None - INFO - Loaded data for 30 MLB teams
+2025-04-30 00:33:58,796 - futuregames.py - None - INFO - Loaded data for 30 MLB teams
+2025-04-30 00:34:00,058 - modelprediction.py - None - INFO - Prediction successful for CLE vs MIN on 29-04-2025
+2025-04-30 00:34:00,058 - modelprediction.py - None - INFO - Prediction successful for CLE vs MIN on 29-04-2025
+2025-04-30 00:34:00,299 - modelprediction.py - None - INFO - Prediction successful for BAL vs NYY on 29-04-2025
+2025-04-30 00:34:00,299 - modelprediction.py - None - INFO - Prediction successful for BAL vs NYY on 29-04-2025
+2025-04-30 00:34:00,535 - modelprediction.py - None - INFO - Prediction successful for PIT vs CHC on 29-04-2025
+2025-04-30 00:34:00,535 - modelprediction.py - None - INFO - Prediction successful for PIT vs CHC on 29-04-2025
+2025-04-30 00:34:00,773 - modelprediction.py - None - INFO - Prediction successful for CIN vs STL on 29-04-2025
+2025-04-30 00:34:00,773 - modelprediction.py - None - INFO - Prediction successful for CIN vs STL on 29-04-2025
+2025-04-30 00:34:01,011 - modelprediction.py - None - INFO - Prediction successful for PHI vs WSN on 29-04-2025
+2025-04-30 00:34:01,011 - modelprediction.py - None - INFO - Prediction successful for PHI vs WSN on 29-04-2025
+2025-04-30 00:34:01,247 - modelprediction.py - None - INFO - Prediction successful for TBR vs KCR on 29-04-2025
+2025-04-30 00:34:01,247 - modelprediction.py - None - INFO - Prediction successful for TBR vs KCR on 29-04-2025
+2025-04-30 00:34:01,486 - modelprediction.py - None - INFO - Prediction successful for TOR vs BOS on 29-04-2025
+2025-04-30 00:34:01,486 - modelprediction.py - None - INFO - Prediction successful for TOR vs BOS on 29-04-2025
+2025-04-30 00:34:01,723 - modelprediction.py - None - INFO - Prediction successful for NYM vs ARI on 29-04-2025
+2025-04-30 00:34:01,723 - modelprediction.py - None - INFO - Prediction successful for NYM vs ARI on 29-04-2025
+2025-04-30 00:34:01,961 - modelprediction.py - None - INFO - Prediction successful for CHW vs MIL on 29-04-2025
+2025-04-30 00:34:01,961 - modelprediction.py - None - INFO - Prediction successful for CHW vs MIL on 29-04-2025
+2025-04-30 00:34:02,200 - modelprediction.py - None - INFO - Prediction successful for TEX vs OAK on 29-04-2025
+2025-04-30 00:34:02,200 - modelprediction.py - None - INFO - Prediction successful for TEX vs OAK on 29-04-2025
+2025-04-30 00:34:02,437 - modelprediction.py - None - INFO - Prediction successful for HOU vs DET on 29-04-2025
+2025-04-30 00:34:02,437 - modelprediction.py - None - INFO - Prediction successful for HOU vs DET on 29-04-2025
+2025-04-30 00:34:02,684 - modelprediction.py - None - INFO - Prediction successful for COL vs ATL on 29-04-2025
+2025-04-30 00:34:02,684 - modelprediction.py - None - INFO - Prediction successful for COL vs ATL on 29-04-2025
+2025-04-30 00:34:02,937 - modelprediction.py - None - INFO - Prediction successful for SEA vs LAA on 29-04-2025
+2025-04-30 00:34:02,937 - modelprediction.py - None - INFO - Prediction successful for SEA vs LAA on 29-04-2025
+2025-04-30 00:34:03,184 - modelprediction.py - None - INFO - Prediction successful for SDP vs SFG on 29-04-2025
+2025-04-30 00:34:03,184 - modelprediction.py - None - INFO - Prediction successful for SDP vs SFG on 29-04-2025
+2025-04-30 00:34:03,430 - modelprediction.py - None - INFO - Prediction successful for LAD vs MIA on 29-04-2025
+2025-04-30 00:34:03,430 - modelprediction.py - None - INFO - Prediction successful for LAD vs MIA on 29-04-2025
+2025-04-30 00:34:03,632 - futuregames.py - None - INFO - Saved 15 predictions to Artifacts/MLB_Artifacts/Future_Predictions/predictions_2025-04-29.json
+2025-04-30 00:34:03,632 - futuregames.py - None - INFO - Saved 15 predictions to Artifacts/MLB_Artifacts/Future_Predictions/predictions_2025-04-29.json
+2025-04-30 00:34:03,633 - stage05_FutureGames.py - None - INFO - 
+===== Today's Predictions =====
+2025-04-30 00:34:03,633 - stage05_FutureGames.py - None - INFO - 
+===== Today's Predictions =====
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 1: MIN @ CLE
+Time: 01:10 PM ET
+Predicted Score: CLE 3.98 - MIN 4.46
+Predicted Winner: MIN
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 1: MIN @ CLE
+Time: 01:10 PM ET
+Predicted Score: CLE 3.98 - MIN 4.46
+Predicted Winner: MIN
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 2: NYY @ BAL
+Time: 01:35 PM ET
+Predicted Score: BAL 3.99 - NYY 4.81
+Predicted Winner: NYY
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 2: NYY @ BAL
+Time: 01:35 PM ET
+Predicted Score: BAL 3.99 - NYY 4.81
+Predicted Winner: NYY
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 3: CHC @ PIT
+Time: 01:40 PM ET
+Predicted Score: PIT 3.99 - CHC 4.45
+Predicted Winner: CHC
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 3: CHC @ PIT
+Time: 01:40 PM ET
+Predicted Score: PIT 3.99 - CHC 4.45
+Predicted Winner: CHC
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 4: STL @ CIN
+Time: 01:40 PM ET
+Predicted Score: CIN 3.99 - STL 4.51
+Predicted Winner: STL
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 4: STL @ CIN
+Time: 01:40 PM ET
+Predicted Score: CIN 3.99 - STL 4.51
+Predicted Winner: STL
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 5: WSN @ PHI
+Time: 01:45 PM ET
+Predicted Score: PHI 4.00 - WSN 4.49
+Predicted Winner: WSN
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 5: WSN @ PHI
+Time: 01:45 PM ET
+Predicted Score: PHI 4.00 - WSN 4.49
+Predicted Winner: WSN
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 6: KCR @ TBR
+Time: 02:05 PM ET
+Predicted Score: TBR 3.99 - KCR 4.47
+Predicted Winner: KCR
+Historical Matchup: 12 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 6: KCR @ TBR
+Time: 02:05 PM ET
+Predicted Score: TBR 3.99 - KCR 4.47
+Predicted Winner: KCR
+Historical Matchup: 12 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 7: BOS @ TOR
+Time: 02:07 PM ET
+Predicted Score: TOR 3.99 - BOS 4.50
+Predicted Winner: BOS
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 7: BOS @ TOR
+Time: 02:07 PM ET
+Predicted Score: TOR 3.99 - BOS 4.50
+Predicted Winner: BOS
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 8: ARI @ NYM
+Time: 02:10 PM ET
+Predicted Score: NYM 3.99 - ARI 5.23
+Predicted Winner: ARI
+Historical Matchup: 14 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 8: ARI @ NYM
+Time: 02:10 PM ET
+Predicted Score: NYM 3.99 - ARI 5.23
+Predicted Winner: ARI
+Historical Matchup: 14 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 9: MIL @ CHW
+Time: 02:40 PM ET
+Predicted Score: CHW 2.99 - MIL 4.23
+Predicted Winner: MIL
+Historical Matchup: 6 games, 50.0% home win rate
+2025-04-30 00:34:03,634 - stage05_FutureGames.py - None - INFO - 
+Game 9: MIL @ CHW
+Time: 02:40 PM ET
+Predicted Score: CHW 2.99 - MIL 4.23
+Predicted Winner: MIL
+Historical Matchup: 6 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 10: OAK @ TEX
+Time: 03:05 PM ET
+Predicted Score: TEX 4.98 - OAK 3.50
+Predicted Winner: TEX
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 10: OAK @ TEX
+Time: 03:05 PM ET
+Predicted Score: TEX 4.98 - OAK 3.50
+Predicted Winner: TEX
+Historical Matchup: 25 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 11: DET @ HOU
+Time: 03:10 PM ET
+Predicted Score: HOU 3.99 - DET 4.44
+Predicted Winner: DET
+Historical Matchup: 12 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 11: DET @ HOU
+Time: 03:10 PM ET
+Predicted Score: HOU 3.99 - DET 4.44
+Predicted Winner: DET
+Historical Matchup: 12 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 12: ATL @ COL
+Time: 03:40 PM ET
+Predicted Score: COL 3.98 - ATL 5.20
+Predicted Winner: ATL
+Historical Matchup: 13 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 12: ATL @ COL
+Time: 03:40 PM ET
+Predicted Score: COL 3.98 - ATL 5.20
+Predicted Winner: ATL
+Historical Matchup: 13 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 13: LAA @ SEA
+Time: 04:40 PM ET
+Predicted Score: SEA 4.98 - LAA 4.50
+Predicted Winner: SEA
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 13: LAA @ SEA
+Time: 04:40 PM ET
+Predicted Score: SEA 4.98 - LAA 4.50
+Predicted Winner: SEA
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 14: SFG @ SDP
+Time: 04:40 PM ET
+Predicted Score: SDP 3.99 - SFG 4.50
+Predicted Winner: SFG
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 14: SFG @ SDP
+Time: 04:40 PM ET
+Predicted Score: SDP 3.99 - SFG 4.50
+Predicted Winner: SFG
+Historical Matchup: 26 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 15: MIA @ LAD
+Time: 05:10 PM ET
+Predicted Score: LAD 3.99 - MIA 4.46
+Predicted Winner: MIA
+Historical Matchup: 11 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - 
+Game 15: MIA @ LAD
+Time: 05:10 PM ET
+Predicted Score: LAD 3.99 - MIA 4.46
+Predicted Winner: MIA
+Historical Matchup: 11 games, 50.0% home win rate
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-29 03:34 PM ET <<<<<<
+2025-04-30 00:34:03,635 - stage05_FutureGames.py - None - INFO - >>>>>> Future Games Prediction Stage completed at 2025-04-29 03:34 PM ET <<<<<<
+2025-04-30 00:34:03,636 - pipeline.py - None - INFO - ============== Stage06 Teams Starting Pitching Adjustments ==============
+2025-04-30 00:34:03,636 - pipeline.py - None - INFO - ============== Stage06 Teams Starting Pitching Adjustments ==============
+2025-04-30 00:34:03,637 - stage06_StartingPitchingTeans.py - None - INFO - >>>>>> Starting Pitching Adjustment Stage started <<<<<<
+2025-04-30 00:34:03,637 - stage06_StartingPitchingTeans.py - None - INFO - >>>>>> Starting Pitching Adjustment Stage started <<<<<<
+2025-04-30 00:34:03,674 - startingpitchingteams.py - None - WARNING - No pitching data for Oakland Athletics
+2025-04-30 00:34:03,674 - startingpitchingteams.py - None - WARNING - No pitching data for Oakland Athletics
+2025-04-30 00:34:03,676 - stage06_StartingPitchingTeans.py - None - INFO - Saved 15 adjusted predictions to Artifacts/MLB_Artifacts/Adjusted_Predictions/adjusted_predictions_20250429_1534.json
+2025-04-30 00:34:03,676 - stage06_StartingPitchingTeans.py - None - INFO - Saved 15 adjusted predictions to Artifacts/MLB_Artifacts/Adjusted_Predictions/adjusted_predictions_20250429_1534.json
+2025-04-30 00:34:03,678 - stage06_StartingPitchingTeans.py - None - INFO - 
+===== Pitching Adjustments =====
+2025-04-30 00:34:03,678 - stage06_StartingPitchingTeans.py - None - INFO - 
+===== Pitching Adjustments =====
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIN @ CLE
+Original: 3.9800000190734863 - 4.460000038146973
+Adjusted: 3.86 - 4.58
+Winner: MIN (Original: MIN)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIN @ CLE
+Original: 3.9800000190734863 - 4.460000038146973
+Adjusted: 3.86 - 4.58
+Winner: MIN (Original: MIN)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: NYY @ BAL
+Original: 3.990000009536743 - 4.809999942779541
+Adjusted: 4.06 - 4.74
+Winner: NYY (Original: NYY)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: NYY @ BAL
+Original: 3.990000009536743 - 4.809999942779541
+Adjusted: 4.06 - 4.74
+Winner: NYY (Original: NYY)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: CHC @ PIT
+Original: 3.990000009536743 - 4.449999809265137
+Adjusted: 3.85 - 4.59
+Winner: CHC (Original: CHC)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: CHC @ PIT
+Original: 3.990000009536743 - 4.449999809265137
+Adjusted: 3.85 - 4.59
+Winner: CHC (Original: CHC)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: STL @ CIN
+Original: 3.990000009536743 - 4.510000228881836
+Adjusted: 4.32 - 4.18
+Winner: CIN (Original: STL)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: STL @ CIN
+Original: 3.990000009536743 - 4.510000228881836
+Adjusted: 4.32 - 4.18
+Winner: CIN (Original: STL)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: WSN @ PHI
+Original: 4.0 - 4.489999771118164
+Adjusted: 4.38 - 4.11
+Winner: PHI (Original: WSN)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: WSN @ PHI
+Original: 4.0 - 4.489999771118164
+Adjusted: 4.38 - 4.11
+Winner: PHI (Original: WSN)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: KCR @ TBR
+Original: 3.990000009536743 - 4.46999979019165
+Adjusted: 4.09 - 4.37
+Winner: KCR (Original: KCR)
+2025-04-30 00:34:03,679 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: KCR @ TBR
+Original: 3.990000009536743 - 4.46999979019165
+Adjusted: 4.09 - 4.37
+Winner: KCR (Original: KCR)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: BOS @ TOR
+Original: 3.990000009536743 - 4.5
+Adjusted: 4.28 - 4.21
+Winner: TOR (Original: BOS)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: BOS @ TOR
+Original: 3.990000009536743 - 4.5
+Adjusted: 4.28 - 4.21
+Winner: TOR (Original: BOS)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: ARI @ NYM
+Original: 3.990000009536743 - 5.230000019073486
+Adjusted: 3.94 - 5.28
+Winner: ARI (Original: ARI)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: ARI @ NYM
+Original: 3.990000009536743 - 5.230000019073486
+Adjusted: 3.94 - 5.28
+Winner: ARI (Original: ARI)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIL @ CHW
+Original: 2.990000009536743 - 4.230000019073486
+Adjusted: 3.31 - 3.91
+Winner: MIL (Original: MIL)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIL @ CHW
+Original: 2.990000009536743 - 4.230000019073486
+Adjusted: 3.31 - 3.91
+Winner: MIL (Original: MIL)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: OAK @ TEX
+Original: 4.980000019073486 - 3.5
+Adjusted: 4.98 - 3.5
+Winner: TEX (Original: TEX)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: OAK @ TEX
+Original: 4.980000019073486 - 3.5
+Adjusted: 4.98 - 3.5
+Winner: TEX (Original: TEX)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: DET @ HOU
+Original: 3.990000009536743 - 4.440000057220459
+Adjusted: 3.98 - 4.45
+Winner: DET (Original: DET)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: DET @ HOU
+Original: 3.990000009536743 - 4.440000057220459
+Adjusted: 3.98 - 4.45
+Winner: DET (Original: DET)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: ATL @ COL
+Original: 3.9800000190734863 - 5.199999809265137
+Adjusted: 3.93 - 5.25
+Winner: ATL (Original: ATL)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: ATL @ COL
+Original: 3.9800000190734863 - 5.199999809265137
+Adjusted: 3.93 - 5.25
+Winner: ATL (Original: ATL)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: LAA @ SEA
+Original: 4.980000019073486 - 4.5
+Adjusted: 4.79 - 4.69
+Winner: SEA (Original: SEA)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: LAA @ SEA
+Original: 4.980000019073486 - 4.5
+Adjusted: 4.79 - 4.69
+Winner: SEA (Original: SEA)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: SFG @ SDP
+Original: 3.990000009536743 - 4.5
+Adjusted: 4.25 - 4.24
+Winner: SDP (Original: SFG)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: SFG @ SDP
+Original: 3.990000009536743 - 4.5
+Adjusted: 4.25 - 4.24
+Winner: SDP (Original: SFG)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIA @ LAD
+Original: 3.990000009536743 - 4.460000038146973
+Adjusted: 4.07 - 4.38
+Winner: MIA (Original: MIA)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - 
+Game: MIA @ LAD
+Original: 3.990000009536743 - 4.460000038146973
+Adjusted: 4.07 - 4.38
+Winner: MIA (Original: MIA)
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - >>>>>> Starting Pitching Adjustment Stage completed <<<<<<
+2025-04-30 00:34:03,680 - stage06_StartingPitchingTeans.py - None - INFO - >>>>>> Starting Pitching Adjustment Stage completed <<<<<<
+2025-04-30 00:34:03,680 - pipeline.py - None - INFO - ✅ Adjusted 15 games
+2025-04-30 00:34:03,680 - pipeline.py - None - INFO - ✅ Adjusted 15 games
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - 📁 Adjusted predictions saved to: Artifacts/MLB_Artifacts/Adjusted_Predictions/adjusted_predictions_20250429_1534.json
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - 📁 Adjusted predictions saved to: Artifacts/MLB_Artifacts/Adjusted_Predictions/adjusted_predictions_20250429_1534.json
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - 
+===== Final Adjusted Predictions =====
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - 
+===== Final Adjusted Predictions =====
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - MIN @ CLE: 3.98 - 4.46 (Adj: -0.12/+0.12)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - MIN @ CLE: 3.98 - 4.46 (Adj: -0.12/+0.12)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - NYY @ BAL: 3.99 - 4.81 (Adj: +0.07/-0.07)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - NYY @ BAL: 3.99 - 4.81 (Adj: +0.07/-0.07)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - CHC @ PIT: 3.99 - 4.45 (Adj: -0.14/+0.14)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - CHC @ PIT: 3.99 - 4.45 (Adj: -0.14/+0.14)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - STL @ CIN: 3.99 - 4.51 (Adj: +0.33/-0.33)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - STL @ CIN: 3.99 - 4.51 (Adj: +0.33/-0.33)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - WSN @ PHI: 4.00 - 4.49 (Adj: +0.38/-0.38)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - WSN @ PHI: 4.00 - 4.49 (Adj: +0.38/-0.38)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - KCR @ TBR: 3.99 - 4.47 (Adj: +0.10/-0.10)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - KCR @ TBR: 3.99 - 4.47 (Adj: +0.10/-0.10)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - BOS @ TOR: 3.99 - 4.50 (Adj: +0.29/-0.29)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - BOS @ TOR: 3.99 - 4.50 (Adj: +0.29/-0.29)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - ARI @ NYM: 3.99 - 5.23 (Adj: -0.05/+0.05)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - ARI @ NYM: 3.99 - 5.23 (Adj: -0.05/+0.05)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - MIL @ CHW: 2.99 - 4.23 (Adj: +0.32/-0.32)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - MIL @ CHW: 2.99 - 4.23 (Adj: +0.32/-0.32)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - OAK @ TEX: 4.98 - 3.50 (Adj: +0.00/+0.00)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - OAK @ TEX: 4.98 - 3.50 (Adj: +0.00/+0.00)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - DET @ HOU: 3.99 - 4.44 (Adj: -0.01/+0.01)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - DET @ HOU: 3.99 - 4.44 (Adj: -0.01/+0.01)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - ATL @ COL: 3.98 - 5.20 (Adj: -0.05/+0.05)
+2025-04-30 00:34:03,681 - pipeline.py - None - INFO - ATL @ COL: 3.98 - 5.20 (Adj: -0.05/+0.05)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - LAA @ SEA: 4.98 - 4.50 (Adj: -0.19/+0.19)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - LAA @ SEA: 4.98 - 4.50 (Adj: -0.19/+0.19)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - SFG @ SDP: 3.99 - 4.50 (Adj: +0.26/-0.26)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - SFG @ SDP: 3.99 - 4.50 (Adj: +0.26/-0.26)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - MIA @ LAD: 3.99 - 4.46 (Adj: +0.08/-0.08)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - MIA @ LAD: 3.99 - 4.46 (Adj: +0.08/-0.08)
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - ============== Stage07 Players Starting Pitching Adjustments ==============
+2025-04-30 00:34:03,682 - pipeline.py - None - INFO - ============== Stage07 Players Starting Pitching Adjustments ==============
+2025-04-30 00:34:21,200 - pipeline.py - None - INFO - ============== Stage08 Weather Impact ==============
+2025-04-30 00:34:21,200 - pipeline.py - None - INFO - ============== Stage08 Weather Impact ==============
+2025-04-30 00:34:25,716 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully
+2025-04-30 00:34:25,716 - pipeline.py - None - INFO - ✅ MLB Pipeline Completed Successfully

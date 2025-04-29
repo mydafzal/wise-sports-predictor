@@ -14,6 +14,7 @@ from datetime import datetime
 from WiseSportsAI_NBA.components.modelpredictions import ModelPredictor
 from WiseSportsAI_NBA.components.injuriesimpact import InjuriesImpact
 from fastapi.middleware.cors import CORSMiddleware
+import csv  
 
 app = FastAPI()
 
@@ -263,6 +264,7 @@ async def get_mlb_predictions():
         raise HTTPException(status_code=500, detail=f"Error reading prediction file: {str(e)}")
     
     
+
 @app.get("/mlb/teamsadjustedpredictions",  tags=["MLB Predictions"])
 async def get_mlb_adjusted_predictions():
     adjusted_dir = Path("Artifacts/MLB_Artifacts/Adjusted_Predictions")
@@ -334,6 +336,7 @@ async def get_mlb_adjusted_predictions():
                           detail=f"Error processing predictions: {str(e)}")
     
 
+
 @app.get("/mlb/pitchersadjustedpredictions", tags=["MLB Predictions"])
 async def get_pitcher_adjusted_predictions():
     adjusted_dir = Path("Artifacts/MLB_Artifacts/StartingPitcherAdjustments")
@@ -398,6 +401,68 @@ async def get_pitcher_adjusted_predictions():
     except Exception as e:
         raise HTTPException(status_code=500, 
                           detail=f"Error processing predictions: {str(e)}")
+    
+
+
+@app.get("/mlb/weatheradjustedpredictions", tags=["MLB Predictions"])
+async def get_weather_adjusted_predictions():
+    """Get latest weather-adjusted predictions with impact analysis"""
+    adjusted_dir = Path("Artifacts/MLB_Artifacts/WeatherAdjustments")
+    prediction_files = list(adjusted_dir.glob("weatheradjustments_*.csv"))
+    
+    if not prediction_files:
+        raise HTTPException(status_code=404, detail="No weather-adjusted predictions found")
+
+    file_data = []
+    for file in prediction_files:
+        match = re.search(r"weatheradjustments_(\d{8})_(\d{4})\.csv", file.name)
+        if match:
+            date_str = match.group(1)
+            time_str = match.group(2)
+            dt = datetime.strptime(f"{date_str}_{time_str}", "%Y%m%d_%H%M")
+            file_data.append((dt, file))
+
+    if not file_data:
+        raise HTTPException(status_code=404, detail="No valid prediction files found")
+
+    latest_file = sorted(file_data, key=lambda x: x[0], reverse=True)[0][1]
+    
+    try:
+        processed = []
+        with open(latest_file, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    processed.append({
+                        "game_time": row["game_time"],
+                        "home_team": row["home_team"],
+                        "away_team": row["away_team"],
+                        "original_prediction": {
+                            "home_runs": float(row["original_home"]) if row["original_home"] else None,
+                            "away_runs": float(row["original_away"]) if row["original_away"] else None
+                        },
+                        "adjusted_prediction": {
+                            "home_runs": float(row["adjusted_home"]) if row["adjusted_home"] else None,
+                            "away_runs": float(row["adjusted_away"]) if row["adjusted_away"] else None
+                        },
+                        "weather_impact": row["weather_impact"],
+                        "error": row["error"] if row["error"] else None
+                    })
+                except (ValueError, KeyError) as e:
+                    continue
+
+        return JSONResponse(content={
+            "metadata": {
+                "file_date": latest_file.stem.split("_")[-2:],
+                "total_games": len(processed),
+                "valid_games": len([g for g in processed if g["error"] is None])
+            },
+            "predictions": processed
+        })
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, 
+                          detail=f"Error processing weather adjustments: {str(e)}")
     
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)
