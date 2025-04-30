@@ -9,10 +9,20 @@ from pathlib import Path
 class PitcherBasedScorer:
     def __init__(self, pitcher_stats_df):
         self.feature_config = {
-            'IP': 0.50, 'K%': 0.35, 'BB%': -0.30, 'HR%': -0.25,
-            'BA': -0.20, 'OBP': -0.20, 'SLG': -0.25, 'EV': -0.15,
-            'HardH%': -0.18, 'LD%': -0.10, 'GB%': 0.10, 'FB%': -0.08,
-            'WPA': 0.30, 'RE24': 0.25
+            'IP': 1.00,       # Innings Pitched
+            'K%': 0.50,       # Strikeout Percentage
+            'BB%': -0.40,     # Walk Percentage
+            'HR%': -0.50,     # Home Run Percentage
+            'BA': -0.20,      # Batting Average Against
+            'OBP': -0.25,     # On-Base Percentage Against
+            'SLG': -0.30,     # Slugging Percentage Against
+            'EV': -0.15,      # Exit Velocity
+            'HardH%': -0.20,  # Hard Hit Percentage
+            'LD%': -0.15,     # Line Drive Percentage
+            'GB%': 0.15,      # Ground Ball Percentage
+            'FB%': -0.25,     # Fly Ball Percentage
+            'WPA': 0.20,      # Win Probability Added
+            'RE24': 0.35      # Run Expectancy 24
         }
         
         if 'Player' not in pitcher_stats_df.columns:

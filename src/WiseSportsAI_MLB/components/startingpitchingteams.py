@@ -9,7 +9,7 @@ from WiseSportsAI_MLB.logging import logger
 class StartingPitchingAdjuster:
     def __init__(self, pitching_data_path: str):
         self.pitching_data = self._prepare_data(pitching_data_path)
-        self.feature_weights = np.array([1.00, 0.80, 0.50, 0.30, 0.30, 0.30, 0.15])
+        self.feature_weights = np.array([1.50, 0.50, 0.40, 0.35, 0.20, 0.10, 0.05])
         self._initialize_mappings()
         self._normalize_features()
 
