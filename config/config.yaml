@@ -8,3 +8,4 @@ AWS_S3:
   bucket_name: artifactmlb
   s3_folder: Artifacts  
   local_dir: Artifacts/MLB_Artifacts
+  
