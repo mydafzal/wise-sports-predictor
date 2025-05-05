@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, HTTPException, Query, Response, FastAPI
 from fastapi.responses import JSONResponse
 from typing import Dict, List, Optional, Union, Any
@@ -6,6 +5,7 @@ import pandas as pd
 import json
 import math
 import os
+import random
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -18,7 +18,6 @@ class CustomJSONEncoder(json.JSONEncoder):
         except TypeError:
             return str(obj)
 
-# Custom response class that uses our JSON encoder
 class CustomJSONResponse(JSONResponse):
     def render(self, content: Any) -> bytes:
         return json.dumps(
@@ -44,6 +43,66 @@ class BettingConfidenceCalculator:
     def calculate_spread_confidence(self, predicted_margin: float, spread_line: float) -> float:
         confidence = 50 + ((predicted_margin - spread_line) * 25)
         return min(100, max(0, confidence))
+    
+    def calculate_moneyline_confidence(self, home_score: float, away_score: float) -> dict:
+        """
+        Calculate moneyline confidence based on predicted scores.
+        Returns a dictionary with confidence percentage and recommendation.
+        """
+        home_wins = home_score > away_score
+        score_difference = abs(home_score - away_score)
+        score_tied = score_difference < 0.1
+        
+        # Calculate moneyline confidence based on score difference
+        if score_tied:
+            # For basically tied scores, use 51-53% confidence
+            moneyline_confidence = 51 + (random.random() * 2)
+        elif score_difference < 0.2:
+            # Extremely close games: 53-56% range
+            moneyline_confidence = 53 + (score_difference * 15)
+        elif score_difference < 0.5:
+            # Very close games: 56-62% range
+            moneyline_confidence = 56 + ((score_difference - 0.2) * 20)
+        elif score_difference < 1.0:
+            # Close games: 62-72% range
+            moneyline_confidence = 62 + ((score_difference - 0.5) * 20)
+        elif score_difference < 2.0:
+            # Clear favorite: 72-84% range
+            moneyline_confidence = 72 + ((score_difference - 1.0) * 12)
+        elif score_difference < 3.0:
+            # Strong favorite: 84-91% range
+            moneyline_confidence = 84 + ((score_difference - 2.0) * 7)
+        else:
+            # Blowout: 91-95% range
+            moneyline_confidence = 91 + min(4, (score_difference - 3.0) * 2)
+        
+        # Add a small random factor for variety between similar games (±2%)
+        moneyline_confidence += (random.random() * 4) - 2
+        moneyline_confidence = max(51, min(95, moneyline_confidence))
+        
+        winner = "home" if home_wins else "away"
+        
+        return {
+            "confidence": round(moneyline_confidence, 2),
+            "winner": winner
+        }
+    
+    def is_home_team_favored(self, home_moneyline: Optional[int], away_moneyline: Optional[int]) -> bool:
+        """
+        Determine if the home team is favored based on moneylines.
+        For American odds, the team with the lower (more negative) moneyline is the favorite.
+        """
+        home_ml = int(home_moneyline) if home_moneyline is not None else 0
+        away_ml = int(away_moneyline) if away_moneyline is not None else 0
+        
+        if home_ml < 0 and away_ml < 0:
+            return home_ml < away_ml
+        elif home_ml < 0:
+            return True
+        elif away_ml < 0:
+            return False
+        else:
+            return home_ml > away_ml
     
     def get_confidence_stars(self, confidence: float) -> str:
         if confidence >= 90:
@@ -71,7 +130,9 @@ def load_betting_lines(date_str: str) -> Dict:
             game_id = f"{game['away_team']}@{game['home_team']}"
             lines_dict[game_id] = {
                 'spread_line': game.get('spread_line', 0),
-                'total_line': game.get('total_line', 0)
+                'total_line': game.get('total_line', 0),
+                'home_moneyline': game.get('home_moneyline', 0),
+                'away_moneyline': game.get('away_moneyline', 0)
             }
         
         return lines_dict
@@ -148,13 +209,20 @@ async def get_finalscores(date: Optional[str] = None):
                     continue
                 
                 game_id = f"{row['away_team']}@{row['home_team']}"
-                game_lines = betting_lines.get(game_id, {'spread_line': -1.5, 'total_line': 8.5})
+                game_lines = betting_lines.get(game_id, {
+                    'spread_line': -1.5, 
+                    'total_line': 8.5,
+                    'home_moneyline': -110,
+                    'away_moneyline': -110
+                })
                 
                 # Clean all float values to ensure they're JSON serializable
                 home_runs = clean_float(row['adjusted_home'])
                 away_runs = clean_float(row['adjusted_away'])
                 spread_line = clean_float(game_lines.get('spread_line', 0))
                 total_line = clean_float(game_lines.get('total_line', 0))
+                home_moneyline = game_lines.get('home_moneyline', -110)
+                away_moneyline = game_lines.get('away_moneyline', -110)
                 
                 predicted_total = home_runs + away_runs
                 predicted_margin = home_runs - away_runs
@@ -165,11 +233,25 @@ async def get_finalscores(date: Optional[str] = None):
                 total_confidence = clean_float(calculator.calculate_total_confidence(
                     predicted_total, total_line))
                 
+                # Calculate moneyline confidence
+                moneyline_result = calculator.calculate_moneyline_confidence(home_runs, away_runs)
+                moneyline_confidence = clean_float(moneyline_result["confidence"])
+                moneyline_winner = moneyline_result["winner"]
+                
+                # Get confidence stars
+                spread_stars = calculator.get_confidence_stars(spread_confidence)
+                total_stars = calculator.get_confidence_stars(total_confidence)
+                moneyline_stars = calculator.get_confidence_stars(moneyline_confidence)
+                
                 # Create recommendations
                 total_rec = f"OVER {total_line}" if predicted_total > total_line else f"UNDER {total_line}"
                 spread_rec = (f"{row['home_team']} covers {spread_line}" 
                             if predicted_margin > spread_line 
                             else f"{row['away_team']} covers +{-spread_line}")
+                moneyline_rec = f"{row['home_team']} ML" if moneyline_winner == "home" else f"{row['away_team']} ML"
+                
+                # Is home team favored according to odds?
+                home_team_favored = calculator.is_home_team_favored(home_moneyline, away_moneyline)
                 
                 # Ensure all string values have defaults
                 weather_impact = str(row.get('weather_impact', '')) if not pd.isna(row.get('weather_impact')) else ''
@@ -187,11 +269,21 @@ async def get_finalscores(date: Optional[str] = None):
                         "total_line": total_line,
                         "predicted_total": round(predicted_total, 2),
                         "total_confidence": round(total_confidence, 2),
+                        "total_confidence_stars": total_stars,
                         "total_recommendation": total_rec,
+                        
                         "spread_line": spread_line,
                         "predicted_margin": round(predicted_margin, 2),
                         "spread_confidence": round(spread_confidence, 2),
-                        "spread_recommendation": spread_rec
+                        "spread_confidence_stars": spread_stars,
+                        "spread_recommendation": spread_rec,
+                        
+                        "home_moneyline": home_moneyline,
+                        "away_moneyline": away_moneyline,
+                        "moneyline_confidence": round(moneyline_confidence, 2),
+                        "moneyline_confidence_stars": moneyline_stars,
+                        "moneyline_recommendation": moneyline_rec,
+                        "home_team_favored_by_odds": home_team_favored
                     },
                     "weather": weather_impact,
                     "error": error_message
