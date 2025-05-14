@@ -352,6 +352,18 @@ baseball_stadiums = [
       'elevation': 466,
       'dimensions': { 'left': 336, 'center': 400, 'right': 335 },
       'homeDirection': "NE"
+    },
+    { 
+      'name': "Citizens Bank Park", 
+      'team': "PHI", 
+      'teamFullName': "Philadelphia Phillies",
+      'lat': 39.9058, 
+      'lon': -75.1666, 
+      'indoor': False, 
+      'hitterFriendlyScore': 6.4,
+      'elevation': 40,
+      'dimensions': { 'left': 329, 'center': 401, 'right': 330 },
+      'homeDirection': "NE"
     }
 ]
 
