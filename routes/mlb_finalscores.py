@@ -1,22 +1,21 @@
-from fastapi import APIRouter, HTTPException, Query, Response, FastAPI
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
-from typing import Dict, List, Optional, Union, Any
+from typing import Dict, List, Optional
 import pandas as pd
 import json
+from typing import Any
 import math
 import os
-import random
+import requests
+import re
 from pathlib import Path
 from datetime import datetime, timedelta
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
-        try:
-            if pd.isna(obj) or (isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj))):
-                return 0.0
-            return super().default(obj)
-        except TypeError:
-            return str(obj)
+        if pd.isna(obj) or (isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj))):
+            return 0.0
+        return super().default(obj)
 
 class CustomJSONResponse(JSONResponse):
     def render(self, content: Any) -> bytes:
@@ -31,277 +30,300 @@ class CustomJSONResponse(JSONResponse):
 
 router = APIRouter(tags=["MLB Predictions"])
 
-class BettingConfidenceCalculator:
+TEAM_ABBR_MAP = {
+    "Arizona Diamondbacks": "ARI",
+    "Atlanta Braves": "ATL",
+    "Baltimore Orioles": "BAL",
+    "Boston Red Sox": "BOS",
+    "Chicago Cubs": "CHC",
+    "Chicago White Sox": "CWS",
+    "Cincinnati Reds": "CIN",
+    "Cleveland Guardians": "CLE",
+    "Colorado Rockies": "COL",
+    "Detroit Tigers": "DET",
+    "Houston Astros": "HOU",
+    "Kansas City Royals": "KC",
+    "Los Angeles Angels": "LAA",
+    "Los Angeles Dodgers": "LAD",
+    "Miami Marlins": "MIA",
+    "Milwaukee Brewers": "MIL",
+    "Minnesota Twins": "MIN",
+    "New York Mets": "NYM",
+    "New York Yankees": "NYY",
+    "Oakland Athletics": "OAK",
+    "Philadelphia Phillies": "PHI",
+    "Pittsburgh Pirates": "PIT",
+    "San Diego Padres": "SD",
+    "San Francisco Giants": "SF",
+    "Seattle Mariners": "SEA",
+    "St. Louis Cardinals": "STL",
+    "Tampa Bay Rays": "TB",
+    "Texas Rangers": "TEX",
+    "Toronto Blue Jays": "TOR",
+    "Washington Nationals": "WSH"
+}
+
+class BettingCalculator:
     def __init__(self):
-        """Initialize the betting confidence calculator."""
-        pass
-    
-    def calculate_total_confidence(self, predicted_total: float, line_total: float) -> float:
-        confidence = 50 + (abs(predicted_total - line_total) * 25)
-        return min(100, confidence)
-    
-    def calculate_spread_confidence(self, predicted_margin: float, spread_line: float) -> float:
-        confidence = 50 + ((predicted_margin - spread_line) * 25)
-        return min(100, max(0, confidence))
-    
-    def calculate_moneyline_confidence(self, home_score: float, away_score: float) -> dict:
-        """
-        Calculate moneyline confidence based on predicted scores.
-        Returns a dictionary with confidence percentage and recommendation.
-        """
-        home_wins = home_score > away_score
-        score_difference = abs(home_score - away_score)
-        score_tied = score_difference < 0.1
-        
-        # Calculate moneyline confidence based on score difference
-        if score_tied:
-            # For basically tied scores, use 51-53% confidence
-            moneyline_confidence = 51 + (random.random() * 2)
-        elif score_difference < 0.2:
-            # Extremely close games: 53-56% range
-            moneyline_confidence = 53 + (score_difference * 15)
-        elif score_difference < 0.5:
-            # Very close games: 56-62% range
-            moneyline_confidence = 56 + ((score_difference - 0.2) * 20)
-        elif score_difference < 1.0:
-            # Close games: 62-72% range
-            moneyline_confidence = 62 + ((score_difference - 0.5) * 20)
-        elif score_difference < 2.0:
-            # Clear favorite: 72-84% range
-            moneyline_confidence = 72 + ((score_difference - 1.0) * 12)
-        elif score_difference < 3.0:
-            # Strong favorite: 84-91% range
-            moneyline_confidence = 84 + ((score_difference - 2.0) * 7)
-        else:
-            # Blowout: 91-95% range
-            moneyline_confidence = 91 + min(4, (score_difference - 3.0) * 2)
-        
-        # Add a small random factor for variety between similar games (±2%)
-        moneyline_confidence += (random.random() * 4) - 2
-        moneyline_confidence = max(51, min(95, moneyline_confidence))
-        
-        winner = "home" if home_wins else "away"
-        
-        return {
-            "confidence": round(moneyline_confidence, 2),
-            "winner": winner
+        self.base_odds = {
+            'moneyline': {'home': -110, 'away': -110},
+            'run_line': {'home': {'line': -1.5, 'odds': -110}, 'away': {'line': 1.5, 'odds': -110}},
+            'total_runs': {'line': 8.5, 'over': -110, 'under': -110}
         }
-    
-    def is_home_team_favored(self, home_moneyline: Optional[int], away_moneyline: Optional[int]) -> bool:
-        """
-        Determine if the home team is favored based on moneylines.
-        For American odds, the team with the lower (more negative) moneyline is the favorite.
-        """
-        home_ml = int(home_moneyline) if home_moneyline is not None else 0
-        away_ml = int(away_moneyline) if away_moneyline is not None else 0
-        
-        if home_ml < 0 and away_ml < 0:
-            return home_ml < away_ml
-        elif home_ml < 0:
-            return True
-        elif away_ml < 0:
-            return False
-        else:
-            return home_ml > away_ml
-    
-    def get_confidence_stars(self, confidence: float) -> str:
-        if confidence >= 90:
-            return "★★★★★"
-        elif confidence >= 75:
-            return "★★★★☆"
-        elif confidence >= 60:
-            return "★★★☆☆"
-        elif confidence >= 50:
-            return "★★☆☆☆"
-        else:
-            return "★☆☆☆☆"
 
-def load_betting_lines(date_str: str) -> Dict:
-    try:
-        lines_path = f"data/betting_lines/{date_str}.json"
-        if not os.path.exists(lines_path):
-            return {}
+    def get_espn_event_id(self, home_team: str, away_team: str, date: str) -> Optional[str]:
+        formatted_date = f"{date[:4]}-{date[4:6]}-{date[6:8]}"
+        try:
+            url = f"https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates={date}"
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            data = response.json()
             
-        with open(lines_path, 'r') as f:
-            betting_lines = json.load(f)
-        
-        lines_dict = {}
-        for game in betting_lines:
-            game_id = f"{game['away_team']}@{game['home_team']}"
-            lines_dict[game_id] = {
-                'spread_line': game.get('spread_line', 0),
-                'total_line': game.get('total_line', 0),
-                'home_moneyline': game.get('home_moneyline', 0),
-                'away_moneyline': game.get('away_moneyline', 0)
+            home_abbr = TEAM_ABBR_MAP.get(home_team)
+            away_abbr = TEAM_ABBR_MAP.get(away_team)
+            
+            if not home_abbr or not away_abbr:
+                return None
+
+            for event in data.get('events', []):
+                competitors = event.get('competitions', [{}])[0].get('competitors', [])
+                if len(competitors) != 2:
+                    continue
+
+                event_home = next((t for t in competitors if t.get('homeAway') == 'home'), None)
+                event_away = next((t for t in competitors if t.get('homeAway') == 'away'), None)
+
+                if not event_home or not event_away:
+                    continue
+
+                event_home_abbr = event_home.get('team', {}).get('abbreviation', '')
+                event_away_abbr = event_away.get('team', {}).get('abbreviation', '')
+
+                if event_home_abbr == home_abbr and event_away_abbr == away_abbr:
+                    return event.get('id')
+            return None
+        except Exception:
+            return None
+
+    def fetch_espn_odds(self, event_id: str) -> Dict:
+        if not event_id:
+            return self.base_odds
+            
+        try:
+            url = f"https://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/{event_id}/competitions/{event_id}/odds"
+            response = requests.get(url, timeout=10)
+            data = response.json()
+            
+            odds = self.base_odds.copy()
+            provider = data.get('items', [{}])[0]
+
+            # Moneyline
+            home_ml = provider.get('homeTeamOdds', {}).get('current', {}).get('moneyLine', {}).get('american')
+            away_ml = provider.get('awayTeamOdds', {}).get('current', {}).get('moneyLine', {}).get('american')
+            if home_ml and away_ml:
+                odds['moneyline']['home'] = int(home_ml)
+                odds['moneyline']['away'] = int(away_ml)
+
+            # Run Line
+            home_spread = self._parse_spread(provider.get('homeTeamOdds', {}).get('current', {}))
+            away_spread = self._parse_spread(provider.get('awayTeamOdds', {}).get('current', {}))
+            odds['run_line']['home'] = home_spread
+            odds['run_line']['away'] = away_spread
+
+            # Total Runs
+            over_under = provider.get('overUnder', '')
+            line_match = re.search(r"(\d+\.?\d*)", over_under)
+            if line_match:
+                odds['total_runs']['line'] = float(line_match.group(1))
+                odds['total_runs']['over'] = int(provider.get('overOdds', {}).get('american', -110))
+                odds['total_runs']['under'] = int(provider.get('underOdds', {}).get('american', -110))
+
+            return odds
+        except Exception:
+            return self.base_odds
+
+    def _parse_spread(self, odds_data: Dict) -> Dict:
+        try:
+            spread = odds_data.get('pointSpread', {}).get('american', '+1.5')
+            odds = odds_data.get('spread', {}).get('american', -110)
+            return {
+                'line': float(spread.replace('EVEN', '0')),
+                'odds': int(odds)
             }
+        except:
+            return {'line': 1.5, 'odds': -110}
+
+    def calculate_total_confidence(self, projected: float, book_line: float) -> Dict:
+        diff = abs(projected - book_line)
+        if diff >= 0.15:
+            confidence = 52.5 + (3.5 * diff)
+            recommendation = 'Over' if projected > book_line else 'Under'
+        else:
+            confidence = None
+            recommendation = 'No Edge'
         
-        return lines_dict
-    except Exception as e:
-        print(f"Error loading betting lines: {str(e)}")
-        return {}
+        # Add precise rounding
+        if confidence is not None:
+            confidence = round(confidence, 1)
+            
+        return {
+            'line': book_line,
+            'projection': round(projected, 2),
+            'difference': round(diff, 2),
+            'confidence': min(100, max(0, confidence)) if confidence else None,
+            'recommendation': recommendation,
+            'has_edge': confidence is not None
+        }
 
-def load_finalscores_predictions(date_str: str) -> pd.DataFrame:
+    def calculate_spread_confidence(self, margin: float) -> Dict:
+        abs_margin = abs(margin)
+        if abs_margin >= 0.6:
+            confidence = 52.5 + (3.5 * abs_margin)
+        else:
+            confidence = None
+        
+        # Add precise rounding
+        if confidence is not None:
+            confidence = round(confidence, 1)
+            
+        return {
+            'margin': round(margin, 2),  # Increased precision
+            'confidence': min(100, max(0, confidence)) if confidence else None,
+            'has_edge': confidence is not None
+        }
+
+    def calculate_spread_confidence(self, margin: float) -> Dict:
+        abs_margin = abs(margin)
+        if abs_margin >= 0.6:
+            confidence = 52.5 + (3.5 * abs_margin)
+        else:
+            confidence = None
+            
+        return {
+            'margin': round(margin, 1),
+            'confidence': min(100, max(0, round(confidence, 1))) if confidence else None,
+            'has_edge': confidence is not None
+        }
+
+    def get_spread_recommendation(self, margin: float, home_line: float, away_line: float) -> Dict:
+        favorite = 'home' if home_line <= -1.5 else 'away'
+        spread_line = home_line if favorite == 'home' else away_line
+        
+        if (favorite == 'home' and margin > 1.5) or (favorite == 'away' and margin < -1.5):
+            pick = f"{favorite.capitalize()} {spread_line}"
+            reason = "Projected margin > 1.5 runs"
+        else:
+            underdog = 'away' if favorite == 'home' else 'home'
+            pick = f"{underdog.capitalize()} {abs(spread_line)}"
+            reason = "Projected margin ≤ 1.5 runs"
+            
+        return {
+            'pick': pick,
+            'reason': reason,
+            'favorite': favorite,
+            'spread_line': spread_line
+        }
+
+    def get_stars(self, confidence: Optional[float]) -> str:
+        if not confidence:
+            return "★☆☆☆☆ (No Edge)"
+        if confidence >= 90: return "★★★★★"
+        if confidence >= 75: return "★★★★☆"
+        if confidence >= 60: return "★★★☆☆"
+        if confidence >= 52.5: return "★★☆☆☆"
+        return "★☆☆☆☆"
+
+def load_predictions(date: str) -> pd.DataFrame:
     try:
-        artifacts_dir = Path("Artifacts/MLB_Artifacts/WeatherAdjustments")
-        if not artifacts_dir.exists():
-            raise FileNotFoundError(f"Directory {artifacts_dir} not found")
-
-        pattern = f"weatheradjustments_{date_str}_*.csv"
-        matching_files = list(artifacts_dir.glob(pattern))
-
-        if not matching_files:
-            yesterday_date = (datetime.strptime(date_str, "%Y%m%d") - timedelta(days=1)).strftime("%Y%m%d")
-            pattern_yesterday = f"weatheradjustments_{yesterday_date}_*.csv"
-            matching_files = list(artifacts_dir.glob(pattern_yesterday))
-            if not matching_files:
-                raise FileNotFoundError(f"No predictions found for {date_str} or yesterday")
-
-        def extract_timestamp(file_path):
-            filename = file_path.stem
-            parts = filename.split('_')
-            if len(parts) >= 3:
-                try:
-                    return int(parts[2])
-                except:
-                    return 0
-            return 0
-
-        matching_files.sort(key=lambda x: extract_timestamp(x), reverse=True)
-        latest_file = matching_files[0]
-
-        df = pd.read_csv(latest_file)
-        required_cols = ['game_time', 'home_team', 'away_team', 'adjusted_home', 'adjusted_away']
-        for col in required_cols:
-            if col not in df.columns:
-                raise ValueError(f"Missing required column: {col}")
-                
-        return df
-
+        dir_path = Path("Artifacts/MLB_Artifacts/WeatherAdjustments")
+        files = sorted(dir_path.glob(f"weatheradjustments_{date}_*.csv"), 
+                       key=lambda x: x.stat().st_mtime, 
+                       reverse=True)
+        
+        if not files:
+            yesterday = (datetime.strptime(date, "%Y%m%d") - timedelta(1)).strftime("%Y%m%d")
+            files = sorted(dir_path.glob(f"weatheradjustments_{yesterday}_*.csv"), 
+                           key=lambda x: x.stat().st_mtime, 
+                           reverse=True)
+        
+        if not files:
+            raise FileNotFoundError("No prediction files found")
+            
+        return pd.read_csv(files[0])
     except Exception as e:
-        raise HTTPException(status_code=404, detail=f"Error loading predictions: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
 
-# Helper function to ensure JSON serializability
-def clean_float(value):
-    """Convert numpy/pandas numeric types to Python float and handle NaN/Inf values."""
-    if pd.isna(value) or (isinstance(value, float) and (math.isnan(value) or math.isinf(value))):
-        return 0.0
-    try:
-        return float(value)
-    except (TypeError, ValueError):
-        return 0.0
-
-@router.get("/mlb/finalscores", tags=["MLB Predictions"], response_class=CustomJSONResponse)
+@router.get("/mlb/finalscores", response_class=JSONResponse)
 async def get_finalscores(date: Optional[str] = None):
-    if not date:
-        date = datetime.today().strftime("%Y%m%d")
+    date = date or datetime.today().strftime("%Y%m%d")
+    calculator = BettingCalculator()
     
     try:
-        predictions_df = load_finalscores_predictions(date)
-        betting_lines = load_betting_lines(date)
-        calculator = BettingConfidenceCalculator()
-        
-        processed = []
-        
-        for _, row in predictions_df.iterrows():
+        df = load_predictions(date)
+        results = []
+
+        for _, row in df.iterrows():
             try:
-                # Skip rows with missing critical values
-                if pd.isna(row.get('adjusted_home')) or pd.isna(row.get('adjusted_away')):
+                if pd.isna(row['adjusted_home']) or pd.isna(row['adjusted_away']):
                     continue
-                
-                game_id = f"{row['away_team']}@{row['home_team']}"
-                game_lines = betting_lines.get(game_id, {
-                    'spread_line': -1.5, 
-                    'total_line': 8.5,
-                    'home_moneyline': -110,
-                    'away_moneyline': -110
-                })
-                
-                # Clean all float values to ensure they're JSON serializable
+
+                # Core values
                 home_runs = clean_float(row['adjusted_home'])
                 away_runs = clean_float(row['adjusted_away'])
-                spread_line = clean_float(game_lines.get('spread_line', 0))
-                total_line = clean_float(game_lines.get('total_line', 0))
-                home_moneyline = game_lines.get('home_moneyline', -110)
-                away_moneyline = game_lines.get('away_moneyline', -110)
-                
-                predicted_total = home_runs + away_runs
-                predicted_margin = home_runs - away_runs
-                
-                # Calculate confidences and ensure they're clean floats
-                spread_confidence = clean_float(calculator.calculate_spread_confidence(
-                    predicted_margin, spread_line))
-                total_confidence = clean_float(calculator.calculate_total_confidence(
-                    predicted_total, total_line))
-                
-                # Calculate moneyline confidence
-                moneyline_result = calculator.calculate_moneyline_confidence(home_runs, away_runs)
-                moneyline_confidence = clean_float(moneyline_result["confidence"])
-                moneyline_winner = moneyline_result["winner"]
-                
-                # Get confidence stars
-                spread_stars = calculator.get_confidence_stars(spread_confidence)
-                total_stars = calculator.get_confidence_stars(total_confidence)
-                moneyline_stars = calculator.get_confidence_stars(moneyline_confidence)
-                
-                # Create recommendations
-                total_rec = f"OVER {total_line}" if predicted_total > total_line else f"UNDER {total_line}"
-                spread_rec = (f"{row['home_team']} covers {spread_line}" 
-                            if predicted_margin > spread_line 
-                            else f"{row['away_team']} covers +{-spread_line}")
-                moneyline_rec = f"{row['home_team']} ML" if moneyline_winner == "home" else f"{row['away_team']} ML"
-                
-                # Is home team favored according to odds?
-                home_team_favored = calculator.is_home_team_favored(home_moneyline, away_moneyline)
-                
-                # Ensure all string values have defaults
-                weather_impact = str(row.get('weather_impact', '')) if not pd.isna(row.get('weather_impact')) else ''
-                error_message = str(row.get('error', '')) if not pd.isna(row.get('error')) else ''
-                
-                game_entry = {
-                    "game_time": str(row['game_time']),
-                    "home_team": str(row['home_team']),
-                    "away_team": str(row['away_team']),
-                    "adjusted_scores": {
-                        "home": round(home_runs, 2),
-                        "away": round(away_runs, 2)
+                total_runs = home_runs + away_runs
+                margin = home_runs - away_runs
+
+                # Get odds data
+                event_id = calculator.get_espn_event_id(row['home_team'], row['away_team'], date)
+                odds = calculator.fetch_espn_odds(event_id)
+
+                # Calculate analyses
+                total_analysis = calculator.calculate_total_confidence(total_runs, odds['total_runs']['line'])
+                spread_analysis = calculator.calculate_spread_confidence(margin)
+                spread_rec = calculator.get_spread_recommendation(
+                    margin,
+                    odds['run_line']['home']['line'],
+                    odds['run_line']['away']['line']
+                )
+
+                game_data = {
+                    'game_time': str(row['game_time']),
+                    'matchup': f"{row['away_team']} @ {row['home_team']}",
+                    'projections': {
+                        'home': round(home_runs, 2),
+                        'away': round(away_runs, 2),
+                        'total': round(total_runs, 2),
+                        'margin': round(margin, 2)
                     },
-                    "metrics": {
-                        "total_line": total_line,
-                        "predicted_total": round(predicted_total, 2),
-                        "total_confidence": round(total_confidence, 2),
-                        "total_confidence_stars": total_stars,
-                        "total_recommendation": total_rec,
-                        
-                        "spread_line": spread_line,
-                        "predicted_margin": round(predicted_margin, 2),
-                        "spread_confidence": round(spread_confidence, 2),
-                        "spread_confidence_stars": spread_stars,
-                        "spread_recommendation": spread_rec,
-                        
-                        "home_moneyline": home_moneyline,
-                        "away_moneyline": away_moneyline,
-                        "moneyline_confidence": round(moneyline_confidence, 2),
-                        "moneyline_confidence_stars": moneyline_stars,
-                        "moneyline_recommendation": moneyline_rec,
-                        "home_team_favored_by_odds": home_team_favored
+                    'analysis': {
+                        'total_runs': {
+                            **total_analysis,
+                            'stars': calculator.get_stars(total_analysis['confidence'])
+                        },
+                        'run_line': {
+                            'projection': spread_analysis['margin'],
+                            'confidence': spread_analysis['confidence'],
+                            'recommendation': spread_rec['pick'],
+                            'reason': spread_rec['reason'],
+                            'stars': calculator.get_stars(spread_analysis['confidence']),
+                            'favorite': spread_rec['favorite'],
+                            'spread_line': spread_rec['spread_line']
+                        }
                     },
-                    "weather": weather_impact,
-                    "error": error_message
+                    'current_odds': odds,
+                    'espn_event_id': event_id or 'Not found'
                 }
-                
-                processed.append(game_entry)
-                
+                results.append(game_data)
             except Exception as e:
-                print(f"Skipping game {row.get('home_team','')} due to error: {str(e)}")
-        
-        result = {
-            "date": date,
-            "games_processed": len(processed),
-            "timestamp": datetime.now().isoformat(),
-            "games": processed
-        }
-        
-        return result
-        
+                print(f"Skipping game: {str(e)}")
+
+        return {'date': date, 'games': results}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+def clean_float(value):
+    try:
+        return 0.0 if pd.isna(value) or math.isinf(value) else float(value)
+    except:
+        return 0.0
