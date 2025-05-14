@@ -191,6 +191,20 @@ class BettingCalculator:
             'confidence': min(100, max(0, confidence)) if confidence else None,
             'has_edge': confidence is not None
         }
+    
+    def calculate_moneyline_confidence(self, home_runs: float, away_runs: float) -> Dict:
+        margin = abs(home_runs - away_runs)
+        if margin >= 0.6:
+            confidence = 52.5 + (3.5 * margin)
+        else:
+            confidence = None
+            
+        return {
+            'margin': round(margin, 2),
+            'confidence': round(confidence, 1) if confidence else None,
+            'recommendation': 'Home' if home_runs > away_runs else 'Away',
+            'has_edge': confidence is not None
+        }
 
     def calculate_spread_confidence(self, margin: float) -> Dict:
         abs_margin = abs(margin)
@@ -253,6 +267,8 @@ def load_predictions(date: str) -> pd.DataFrame:
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
+
+
 @router.get("/mlb/finalscores", response_class=JSONResponse)
 async def get_finalscores(date: Optional[str] = None):
     date = date or datetime.today().strftime("%Y%m%d")
@@ -280,6 +296,7 @@ async def get_finalscores(date: Optional[str] = None):
                 # Calculate analyses
                 total_analysis = calculator.calculate_total_confidence(total_runs, odds['total_runs']['line'])
                 spread_analysis = calculator.calculate_spread_confidence(margin)
+                moneyline_analysis = calculator.calculate_moneyline_confidence(home_runs, away_runs)
                 spread_rec = calculator.get_spread_recommendation(
                     margin,
                     odds['run_line']['home']['line'],
@@ -296,6 +313,13 @@ async def get_finalscores(date: Optional[str] = None):
                         'margin': round(margin, 2)
                     },
                     'analysis': {
+                        'moneyline': {
+                            'projection': moneyline_analysis['margin'],
+                            'recommendation': moneyline_analysis['recommendation'],
+                            'confidence': moneyline_analysis['confidence'],
+                            'stars': calculator.get_stars(moneyline_analysis['confidence']),
+                            'has_edge': moneyline_analysis['has_edge']
+                        },
                         'total_runs': {
                             **total_analysis,
                             'stars': calculator.get_stars(total_analysis['confidence'])
