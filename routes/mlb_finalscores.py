@@ -162,7 +162,6 @@ class BettingCalculator:
             confidence = None
             recommendation = 'No Edge'
         
-        # Add precise rounding
         if confidence is not None:
             confidence = round(confidence, 1)
             
@@ -182,17 +181,16 @@ class BettingCalculator:
         else:
             confidence = None
         
-        # Add precise rounding
         if confidence is not None:
             confidence = round(confidence, 1)
             
         return {
-            'margin': round(margin, 2),  # Increased precision
+            'margin': round(margin, 2),
             'confidence': min(100, max(0, confidence)) if confidence else None,
             'has_edge': confidence is not None
         }
     
-    def calculate_moneyline_confidence(self, home_runs: float, away_runs: float) -> Dict:
+    def calculate_moneyline_confidence(self, home_runs: float, away_runs: float, home_team: str, away_team: str) -> Dict:
         margin = abs(home_runs - away_runs)
         if margin >= 0.6:
             confidence = 52.5 + (3.5 * margin)
@@ -202,39 +200,27 @@ class BettingCalculator:
         return {
             'margin': round(margin, 2),
             'confidence': round(confidence, 1) if confidence else None,
-            'recommendation': 'Home' if home_runs > away_runs else 'Away',
+            'recommendation': home_team if home_runs > away_runs else away_team,
             'has_edge': confidence is not None
         }
 
-    def calculate_spread_confidence(self, margin: float) -> Dict:
-        abs_margin = abs(margin)
-        if abs_margin >= 0.6:
-            confidence = 52.5 + (3.5 * abs_margin)
-        else:
-            confidence = None
-            
-        return {
-            'margin': round(margin, 1),
-            'confidence': min(100, max(0, round(confidence, 1))) if confidence else None,
-            'has_edge': confidence is not None
-        }
-
-    def get_spread_recommendation(self, margin: float, home_line: float, away_line: float) -> Dict:
+    def get_spread_recommendation(self, margin: float, home_line: float, away_line: float, home_team: str, away_team: str) -> Dict:
         favorite = 'home' if home_line <= -1.5 else 'away'
         spread_line = home_line if favorite == 'home' else away_line
+        favorite_team = home_team if favorite == 'home' else away_team
+        underdog_team = away_team if favorite == 'home' else home_team
         
         if (favorite == 'home' and margin > 1.5) or (favorite == 'away' and margin < -1.5):
-            pick = f"{favorite.capitalize()} {spread_line}"
+            pick = f"{favorite_team} {spread_line}"
             reason = "Projected margin > 1.5 runs"
         else:
-            underdog = 'away' if favorite == 'home' else 'home'
-            pick = f"{underdog.capitalize()} {abs(spread_line)}"
+            pick = f"{underdog_team} {abs(spread_line)}"
             reason = "Projected margin ≤ 1.5 runs"
             
         return {
             'pick': pick,
             'reason': reason,
-            'favorite': favorite,
+            'favorite': favorite_team,
             'spread_line': spread_line
         }
 
@@ -267,8 +253,6 @@ def load_predictions(date: str) -> pd.DataFrame:
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
-
-
 @router.get("/mlb/finalscores", response_class=JSONResponse)
 async def get_finalscores(date: Optional[str] = None):
     date = date or datetime.today().strftime("%Y%m%d")
@@ -283,6 +267,10 @@ async def get_finalscores(date: Optional[str] = None):
                 if pd.isna(row['adjusted_home']) or pd.isna(row['adjusted_away']):
                     continue
 
+                # Get team names
+                home_team = row['home_team']
+                away_team = row['away_team']
+
                 # Core values
                 home_runs = clean_float(row['adjusted_home'])
                 away_runs = clean_float(row['adjusted_away'])
@@ -290,22 +278,28 @@ async def get_finalscores(date: Optional[str] = None):
                 margin = home_runs - away_runs
 
                 # Get odds data
-                event_id = calculator.get_espn_event_id(row['home_team'], row['away_team'], date)
+                event_id = calculator.get_espn_event_id(home_team, away_team, date)
                 odds = calculator.fetch_espn_odds(event_id)
 
                 # Calculate analyses
                 total_analysis = calculator.calculate_total_confidence(total_runs, odds['total_runs']['line'])
                 spread_analysis = calculator.calculate_spread_confidence(margin)
-                moneyline_analysis = calculator.calculate_moneyline_confidence(home_runs, away_runs)
+                moneyline_analysis = calculator.calculate_moneyline_confidence(
+                    home_runs, away_runs, home_team, away_team
+                )
                 spread_rec = calculator.get_spread_recommendation(
                     margin,
                     odds['run_line']['home']['line'],
-                    odds['run_line']['away']['line']
+                    odds['run_line']['away']['line'],
+                    home_team,
+                    away_team
                 )
 
                 game_data = {
                     'game_time': str(row['game_time']),
-                    'matchup': f"{row['away_team']} @ {row['home_team']}",
+                    'matchup': f"{away_team} @ {home_team}",
+                    'home_team_name': home_team,
+                    'away_team_name': away_team,
                     'projections': {
                         'home': round(home_runs, 2),
                         'away': round(away_runs, 2),
