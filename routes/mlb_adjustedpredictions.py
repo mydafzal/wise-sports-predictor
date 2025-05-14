@@ -125,22 +125,37 @@ async def get_weather_adjusted_predictions():
             reader = csv.DictReader(f)
             for row in reader:
                 try:
+                    # Parse original prediction values, ensuring we get values if they exist
+                    original_home = float(row["original_home"]) if row["original_home"] and row["original_home"].strip() else None
+                    original_away = float(row["original_away"]) if row["original_away"] and row["original_away"].strip() else None
+                    
+                    # Parse adjusted prediction values
+                    adjusted_home = float(row["adjusted_home"]) if row["adjusted_home"] and row["adjusted_home"].strip() else None
+                    adjusted_away = float(row["adjusted_away"]) if row["adjusted_away"] and row["adjusted_away"].strip() else None
+                    
+                    # If there's a stadium error, use original values for adjusted predictions
+                    has_stadium_error = row.get("error") and "Stadium not found" in row["error"]
+                    if has_stadium_error:
+                        adjusted_home = original_home
+                        adjusted_away = original_away
+                    
                     processed.append({
                         "game_time": row["game_time"],
                         "home_team": row["home_team"],
                         "away_team": row["away_team"],
                         "original_prediction": {
-                            "home_runs": float(row["original_home"]) if row["original_home"] else None,
-                            "away_runs": float(row["original_away"]) if row["original_away"] else None
+                            "home_runs": original_home,
+                            "away_runs": original_away
                         },
                         "adjusted_prediction": {
-                            "home_runs": float(row["adjusted_home"]) if row["adjusted_home"] else None,
-                            "away_runs": float(row["adjusted_away"]) if row["adjusted_away"] else None
+                            "home_runs": adjusted_home,
+                            "away_runs": adjusted_away
                         },
                         "weather_impact": row["weather_impact"],
                         "error": row["error"] if row["error"] else None
                     })
-                except (KeyError, ValueError):
+                except (KeyError, ValueError) as e:
+                    print(f"Error processing row: {row}, Error: {str(e)}")
                     continue
 
         return JSONResponse(content={

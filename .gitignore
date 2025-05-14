@@ -1,3 +1,5 @@
 myenv/
 Research/
 Artifacts/MLB_Artifacts
+config.bat
+node_modules
