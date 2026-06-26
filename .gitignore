@@ -1,4 +1,9 @@
 myenv/
 Research/
 Artifacts/MLB_Artifacts
-logs/ 
+logs/
+__pycache__/
+*.pyc
+.DS_Store
+config.bat
+node_modules
